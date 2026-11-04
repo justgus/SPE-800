@@ -1,0 +1,180 @@
+\begin{theindex}
+
+  \item acceptance criterion, \hyperpage{9}
+  \item AGENTS.md, \hyperpage{62}
+  \item AI
+    \subitem architecture as maintained input, \hyperpage{2}
+  \item AI agent, \hyperpage{60}
+    \subitem agent-count decision, \hyperpage{85}
+    \subitem aiaCoordinator, \hyperpage{86}
+    \subitem aiaDeveloper, \hyperpage{86}
+    \subitem aiaReviewer, \hyperpage{86}
+    \subitem architecture workflow, \hyperpage{4}, \hyperpage{42}
+    \subitem completion checklist, \hyperpage{79}
+    \subitem consistency rules, \hyperpage{70}
+    \subitem context pack, \hyperpage{68}
+    \subitem context routing, \hyperpage{60}
+    \subitem embedded systems tailoring, \hyperpage{58}
+    \subitem example prompts, \hyperpage{60}, \hyperpage{76}
+    \subitem execution workflow, \hyperpage{81}
+    \subitem guide activity, \hyperpage{64}
+    \subitem human review, \hyperpage{60}, \hyperpage{78}
+    \subitem independent review, \hyperpage{81}
+    \subitem LaTeX installation prompt, \hyperpage{42}
+    \subitem linked references, \hyperpage{61}
+    \subitem parallel delegation, \hyperpage{81}
+    \subitem project initialization, \hyperpage{3}
+    \subitem quick start, \hyperpage{61}
+    \subitem repository bootstrap, \hyperpage{62}
+    \subitem skill selection, \hyperpage{64}
+    \subitem task steps, \hyperpage{71}
+    \subitem terminology consistency, \hyperpage{61}
+    \subitem TikZ requirement, \hyperpage{60}
+  \item Appendix
+    \subitem AI Agent Usage Guide, \hyperpage{60}
+    \subitem Document Authoring Guide, \hyperpage{42}
+  \item architecture
+    \subitem AI-assisted design, \hyperpage{2}
+
+  \indexspace
+
+  \item build tools, \hyperpage{42}
+
+  \indexspace
+
+  \item Chapter
+    \subitem Introduction, \hyperpage{1}
+  \item CLAUDE.md, \hyperpage{62}
+
+  \indexspace
+
+  \item diagram
+    \subitem TikZ source, \hyperpage{46}
+  \item document conventions, \hyperpage{42}
+  \item document history, \hyperpage{93}
+  \item domain tailoring profile, \hyperpage{4}
+    \subitem embedded systems, \hyperpage{52}
+
+  \indexspace
+
+  \item embedded systems, \hyperpage{52}
+
+  \indexspace
+
+  \item hardware--software co-design, \hyperpage{52}
+
+  \indexspace
+
+  \item introduction, \hyperpage{1}
+
+  \indexspace
+
+  \item LaTeX, \hyperpage{42}
+
+  \indexspace
+
+  \item Muresan, Darian, \hyperpage{iii}
+
+  \indexspace
+
+  \item normative language, \hyperpage{1}
+
+  \indexspace
+
+  \item priority, \hyperpage{1}, \hyperpage{11}
+
+  \indexspace
+
+  \item Requirement
+    \subitem REQ-B-001, \hyperpage{19}
+    \subitem REQ-C-001, \hyperpage{22}
+    \subitem REQ-D-001, \hyperpage{22}
+    \subitem REQ-F-001, \hyperpage{20}
+    \subitem REQ-F-002, \hyperpage{20}
+    \subitem REQ-F-003, \hyperpage{20}
+    \subitem REQ-I-001, \hyperpage{21}
+    \subitem REQ-Q-001, \hyperpage{20}
+    \subitem REQ-S-001, \hyperpage{21}
+  \item requirement, \hyperpage{11}
+    \subitem business, \hyperpage{19}
+    \subitem category catalog, \hyperpage{14}
+    \subitem constraint, \hyperpage{22}
+    \subitem data, \hyperpage{22}
+    \subitem domain profile, \hyperpage{14}
+    \subitem family code, \hyperpage{11}
+    \subitem functional, \hyperpage{13}
+    \subitem identifier convention, \hyperpage{11}
+    \subitem implementation version, \hyperpage{11}
+    \subitem interface, \hyperpage{21}
+    \subitem quality, \hyperpage{13}
+    \subitem scope qualifier, \hyperpage{11}
+    \subitem security, \hyperpage{21}
+    \subitem status, \hyperpage{13}
+  \item requirements traceability matrix, \hyperpage{35}
+
+  \indexspace
+
+  \item SKILL.md, \hyperpage{62}
+  \item source of truth, \hyperpage{1}, \hyperpage{60}
+  \item status
+    \subitem Done, \hyperpage{13}
+    \subitem In Progress, \hyperpage{13}
+    \subitem Open, \hyperpage{13}
+    \subitem Retired, \hyperpage{13}
+
+  \indexspace
+
+  \item template
+    \subitem project initialization, \hyperpage{3}
+    \subitem tailoring, \hyperpage{4}
+  \item template attribution, \hyperpage{iii}
+  \item template provenance, \hyperpage{42}
+  \item TestCase
+    \subitem TC-001, \hyperpage{33}
+    \subitem TC-002, \hyperpage{33}
+    \subitem TC-003, \hyperpage{33}
+    \subitem TC-004, \hyperpage{34}
+    \subitem TC-005, \hyperpage{34}
+    \subitem TC-006, \hyperpage{34}
+    \subitem TC-007, \hyperpage{34}
+    \subitem TC-008, \hyperpage{34}
+    \subitem TC-009, \hyperpage{34}
+  \item TikZ, \hyperpage{42}
+  \item traceability, \hyperpage{35}
+
+  \indexspace
+
+  \item use case diagram, \hyperpage{23}
+  \item UseCase
+    \subitem UC-001, \hyperpage{24}
+    \subitem UC-002, \hyperpage{24}
+    \subitem UC-003, \hyperpage{24}
+  \item user story, \hyperpage{9}
+  \item UserStory
+    \subitem US-001, \hyperpage{9}
+    \subitem US-002, \hyperpage{9}
+    \subitem US-003, \hyperpage{10}
+
+  \indexspace
+
+  \item V-model, \hyperpage{1}
+  \item Validation
+    \subitem VAL-001, \hyperpage{39}
+    \subitem VAL-002, \hyperpage{40}
+    \subitem VAL-003, \hyperpage{40}
+  \item validation, \hyperpage{39}
+  \item validation scenario, \hyperpage{39}
+  \item Verification
+    \subitem VER-001, \hyperpage{37}
+    \subitem VER-002, \hyperpage{37}
+    \subitem VER-003, \hyperpage{37}
+    \subitem VER-004, \hyperpage{37}
+    \subitem VER-005, \hyperpage{38}
+    \subitem VER-006, \hyperpage{38}
+    \subitem VER-007, \hyperpage{38}
+    \subitem VER-008, \hyperpage{38}
+    \subitem VER-009, \hyperpage{38}
+  \item verification, \hyperpage{37}
+  \item verification method, \hyperpage{37}
+
+\end{theindex}

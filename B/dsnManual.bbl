@@ -1,0 +1,80 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{#1}
+\def\UrlFont{\rmfamily}
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{ISO15288}
+\BIBentryALTinterwordspacing
+\emph{{ISO/IEC/IEEE 15288:2023, Systems and Software Engineering---System Life
+  Cycle Processes}}, International Organization for Standardization Std.
+  ISO/IEC/IEEE 15\,288:2023, 2023. [Online]. Available:
+  \url{https://www.iso.org/standard/81702.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ISO12207}
+\BIBentryALTinterwordspacing
+\emph{{ISO/IEC/IEEE 12207:2026, Systems and Software Engineering---Software
+  Life Cycle Processes}}, International Organization for Standardization Std.
+  ISO/IEC/IEEE 12\,207:2026, 2026. [Online]. Available:
+  \url{https://www.iso.org/standard/90219.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{HomebrewInstallation}
+\BIBentryALTinterwordspacing
+\emph{{Homebrew Installation}}, Homebrew, accessed: October 13, 2026. [Online].
+  Available: \url{https://brew.sh/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{MacTeXDistribution}
+\BIBentryALTinterwordspacing
+\emph{{MacTeX Distribution}}, TeX Users Group, accessed: October 13, 2026.
+  [Online]. Available: \url{https://tug.org/mactex/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{MiKTeXInstallation}
+\BIBentryALTinterwordspacing
+\emph{{Installing MiKTeX}}, MiKTeX, accessed: October 13, 2026. [Online].
+  Available: \url{https://miktex.org/howto/install-miktex}
+\BIBentrySTDinterwordspacing
+
+\bibitem{CodexSubagents}
+\BIBentryALTinterwordspacing
+\emph{{Codex Subagents}}, OpenAI, accessed: October 13, 2026. [Online].
+  Available: \url{https://learn.chatgpt.com/docs/agent-configuration/subagents}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ClaudeCodeSubagents}
+\BIBentryALTinterwordspacing
+\emph{{Claude Code: Create Custom Subagents}}, Anthropic, accessed: October 13,
+  2026. [Online]. Available: \url{https://code.claude.com/docs/en/sub-agents}
+\BIBentrySTDinterwordspacing
+
+\bibitem{GeminiCLISubagents}
+\BIBentryALTinterwordspacing
+\emph{{Gemini CLI: Subagents}}, Google, accessed: October 13, 2026. [Online].
+  Available: \url{https://geminicli.com/docs/core/subagents/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{GrokMultiAgent}
+\BIBentryALTinterwordspacing
+\emph{{Grok: Multi-agent Research}}, xAI, accessed: October 13, 2026. [Online].
+  Available:
+  \url{https://docs.x.ai/developers/model-capabilities/text/multi-agent}
+\BIBentrySTDinterwordspacing
+
+\end{thebibliography}

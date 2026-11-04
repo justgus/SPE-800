@@ -1,0 +1,123 @@
+\indexentry{template attribution|hyperpage}{iii}
+\indexentry{Muresan, Darian|hyperpage}{iii}
+\indexentry{introduction|hyperpage}{1}
+\indexentry{Chapter!Introduction|hyperpage}{1}
+\indexentry{normative language|hyperpage}{1}
+\indexentry{priority|hyperpage}{1}
+\indexentry{source of truth|hyperpage}{1}
+\indexentry{V-model|hyperpage}{1}
+\indexentry{AI!architecture as maintained input|hyperpage}{2}
+\indexentry{architecture!AI-assisted design|hyperpage}{2}
+\indexentry{template!project initialization|hyperpage}{3}
+\indexentry{AI agent!project initialization|hyperpage}{3}
+\indexentry{domain tailoring profile|hyperpage}{4}
+\indexentry{template!tailoring|hyperpage}{4}
+\indexentry{AI agent!architecture workflow|hyperpage}{4}
+\indexentry{user story|hyperpage}{9}
+\indexentry{acceptance criterion|hyperpage}{9}
+\indexentry{UserStory!US-001|hyperpage}{9}
+\indexentry{UserStory!US-002|hyperpage}{9}
+\indexentry{UserStory!US-003|hyperpage}{10}
+\indexentry{requirement|hyperpage}{11}
+\indexentry{requirement!implementation version|hyperpage}{11}
+\indexentry{priority|hyperpage}{11}
+\indexentry{requirement!identifier convention|hyperpage}{11}
+\indexentry{requirement!family code|hyperpage}{11}
+\indexentry{requirement!scope qualifier|hyperpage}{11}
+\indexentry{requirement!functional|hyperpage}{13}
+\indexentry{requirement!quality|hyperpage}{13}
+\indexentry{requirement!status|hyperpage}{13}
+\indexentry{status!Open|hyperpage}{13}
+\indexentry{status!In Progress|hyperpage}{13}
+\indexentry{status!Done|hyperpage}{13}
+\indexentry{status!Retired|hyperpage}{13}
+\indexentry{requirement!category catalog|hyperpage}{14}
+\indexentry{requirement!domain profile|hyperpage}{14}
+\indexentry{requirement!business|hyperpage}{19}
+\indexentry{Requirement!REQ-B-001|hyperpage}{19}
+\indexentry{Requirement!REQ-F-001|hyperpage}{20}
+\indexentry{Requirement!REQ-F-002|hyperpage}{20}
+\indexentry{Requirement!REQ-F-003|hyperpage}{20}
+\indexentry{Requirement!REQ-Q-001|hyperpage}{20}
+\indexentry{requirement!interface|hyperpage}{21}
+\indexentry{Requirement!REQ-I-001|hyperpage}{21}
+\indexentry{requirement!security|hyperpage}{21}
+\indexentry{Requirement!REQ-S-001|hyperpage}{21}
+\indexentry{requirement!data|hyperpage}{22}
+\indexentry{Requirement!REQ-D-001|hyperpage}{22}
+\indexentry{requirement!constraint|hyperpage}{22}
+\indexentry{Requirement!REQ-C-001|hyperpage}{22}
+\indexentry{use case diagram|hyperpage}{23}
+\indexentry{UseCase!UC-001|hyperpage}{24}
+\indexentry{UseCase!UC-002|hyperpage}{24}
+\indexentry{UseCase!UC-003|hyperpage}{24}
+\indexentry{TestCase!TC-001|hyperpage}{33}
+\indexentry{TestCase!TC-002|hyperpage}{33}
+\indexentry{TestCase!TC-003|hyperpage}{33}
+\indexentry{TestCase!TC-004|hyperpage}{34}
+\indexentry{TestCase!TC-005|hyperpage}{34}
+\indexentry{TestCase!TC-006|hyperpage}{34}
+\indexentry{TestCase!TC-007|hyperpage}{34}
+\indexentry{TestCase!TC-008|hyperpage}{34}
+\indexentry{TestCase!TC-009|hyperpage}{34}
+\indexentry{traceability|hyperpage}{35}
+\indexentry{requirements traceability matrix|hyperpage}{35}
+\indexentry{verification|hyperpage}{37}
+\indexentry{verification method|hyperpage}{37}
+\indexentry{Verification!VER-001|hyperpage}{37}
+\indexentry{Verification!VER-002|hyperpage}{37}
+\indexentry{Verification!VER-003|hyperpage}{37}
+\indexentry{Verification!VER-004|hyperpage}{37}
+\indexentry{Verification!VER-005|hyperpage}{38}
+\indexentry{Verification!VER-006|hyperpage}{38}
+\indexentry{Verification!VER-007|hyperpage}{38}
+\indexentry{Verification!VER-008|hyperpage}{38}
+\indexentry{Verification!VER-009|hyperpage}{38}
+\indexentry{validation|hyperpage}{39}
+\indexentry{validation scenario|hyperpage}{39}
+\indexentry{Validation!VAL-001|hyperpage}{39}
+\indexentry{Validation!VAL-002|hyperpage}{40}
+\indexentry{Validation!VAL-003|hyperpage}{40}
+\indexentry{LaTeX|hyperpage}{42}
+\indexentry{TikZ|hyperpage}{42}
+\indexentry{document conventions|hyperpage}{42}
+\indexentry{build tools|hyperpage}{42}
+\indexentry{AI agent!LaTeX installation prompt|hyperpage}{42}
+\indexentry{Appendix!Document Authoring Guide|hyperpage}{42}
+\indexentry{template provenance|hyperpage}{42}
+\indexentry{AI agent!architecture workflow|hyperpage}{42}
+\indexentry{diagram!TikZ source|hyperpage}{46}
+\indexentry{domain tailoring profile!embedded systems|hyperpage}{52}
+\indexentry{embedded systems|hyperpage}{52}
+\indexentry{hardware--software co-design|hyperpage}{52}
+\indexentry{AI agent!embedded systems tailoring|hyperpage}{58}
+\indexentry{AI agent|hyperpage}{60}
+\indexentry{AI agent!context routing|hyperpage}{60}
+\indexentry{AI agent!example prompts|hyperpage}{60}
+\indexentry{AI agent!human review|hyperpage}{60}
+\indexentry{AI agent!TikZ requirement|hyperpage}{60}
+\indexentry{Appendix!AI Agent Usage Guide|hyperpage}{60}
+\indexentry{source of truth|hyperpage}{60}
+\indexentry{AI agent!terminology consistency|hyperpage}{61}
+\indexentry{AI agent!linked references|hyperpage}{61}
+\indexentry{AI agent!quick start|hyperpage}{61}
+\indexentry{AI agent!repository bootstrap|hyperpage}{62}
+\indexentry{AGENTS.md|hyperpage}{62}
+\indexentry{CLAUDE.md|hyperpage}{62}
+\indexentry{SKILL.md|hyperpage}{62}
+\indexentry{AI agent!guide activity|hyperpage}{64}
+\indexentry{AI agent!skill selection|hyperpage}{64}
+\indexentry{AI agent!context pack|hyperpage}{68}
+\indexentry{AI agent!consistency rules|hyperpage}{70}
+\indexentry{AI agent!task steps|hyperpage}{71}
+\indexentry{AI agent!example prompts|hyperpage}{76}
+\indexentry{AI agent!human review|hyperpage}{78}
+\indexentry{AI agent!completion checklist|hyperpage}{79}
+\indexentry{AI agent!execution workflow|hyperpage}{81}
+\indexentry{AI agent!parallel delegation|hyperpage}{81}
+\indexentry{AI agent!independent review|hyperpage}{81}
+\indexentry{AI agent!agent-count decision|hyperpage}{85}
+\indexentry{AI agent!aiaCoordinator|hyperpage}{86}
+\indexentry{AI agent!aiaDeveloper|hyperpage}{86}
+\indexentry{AI agent!aiaReviewer|hyperpage}{86}
+\indexentry{document history|hyperpage}{93}

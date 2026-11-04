@@ -1,0 +1,9 @@
+\begin{frame}{Organization makes the architecture usable}
+\begin{itemize}
+  \item \textbf{Give each chapter one responsibility:} state its purpose and expected result; keep definitions in their authoritative locations.
+  \item \textbf{Keep AI instructions in the manual:} author them as \texttt{.tex} chapters so the compiled PDF provides contents, hyperlinks, and cross-references. Thin \texttt{.md} entry files point to that guidance.
+  \item \textbf{Use UML wherever practical for software architecture:} choose diagrams that express structure, behavior, components, and deployment with consistent semantics.
+  \item \textbf{Keep diagrams editable:} organize TikZ sources by chapter and link diagrams to the artifacts they describe.
+\end{itemize}
+\end{frame}
+\note{Sources: DSN Document Authoring Guide, AI Agent Usage Guide, and architecture-view chapters. Organization is essential for finding and maintaining authoritative information. AI skill definitions and execution instructions live in LaTeX and are published as navigable parts of the manual; AGENTS.md, CLAUDE.md, and SKILL.md remain thin discovery pointers. UML is the preferred notation for software architecture wherever it fits the question. TikZ is the editable drawing source, not a substitute for UML semantics.}

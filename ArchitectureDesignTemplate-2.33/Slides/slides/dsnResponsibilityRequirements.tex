@@ -1,0 +1,41 @@
+\begin{frame}{Requirements}
+\framesubtitle{Chapter 5: a foundation for design, implementation, and verification}
+\begin{block}{Responsibility}
+Capture all applicable obligations for the system and its development in a verifiable form.
+\end{block}
+\begin{itemize}
+  \item \textbf{Classify by purpose:} functional (what it does), quality / non-functional (how well), and constraints (binding limits).
+  \item \textbf{Slice the requirements package:} use business, interface, security, and data families; filter by subsystem, quality subtype, priority, status, or version. Keep one authoritative requirement and link across views.
+  \item Write singular, verifiable requirements with stable IDs. Use the registers, including priority, status, and \textbf{In Version}; link use cases and tests.
+\end{itemize}
+\vspace{0.1cm}
+\textbf{Expected result:} A controlled set of obligations that can be implemented and assessed.
+\end{frame}
+\note{Source: Requirements chapter (dsnRequirements.tex), especially the identifier convention, functional and quality distinction, and category catalog. Families and review views are adaptable; each requirement has one primary register and a stable identifier. Specialized registers may include both functional and quality obligations. Filter or link rather than copying requirements. Leave In Version unassigned until implementation is complete in a controlled version.}
+
+\begin{frame}{The full scope of requirements}
+\framesubtitle{Chapter 5: one of the most important chapters}
+\begin{itemize}
+  \item \textbf{Include all types of requirements:} the chapter extends beyond the usual functional, quality, business, interface, security, and data requirements.
+  \item \textbf{Developer requirements:} coding conventions, tools, build environments, testing practices, and development workflows.
+  \item \textbf{AI requirements:} agent instructions, permitted actions, human review, and required evidence.
+  \item \textbf{Naming requirements:} namespaces, class names, identifiers, files, and document conventions.
+  \item \textbf{All applicable constraints:} technology, platforms, standards, regulation, resources, schedule, budget, and organizational policies.
+\end{itemize}
+\vspace{0.1cm}
+{\small\textbf{Tailor to the domain:} Use template tailoring profiles to customize requirements---for example, embedded systems may add timing, memory, power, and hardware constraints.}
+\end{frame}
+\note{Sources for tailoring: Introduction, Template Tailoring and Domain Profiles; Requirements, Domain Profile Impact on Requirements. Evaluate each applicable profile and turn relevant concerns into project requirements or links to existing requirements, with documented exclusions. Embedded timing, memory, power, and hardware constraints are illustrative concerns, not automatically applicable obligations. The breadth of this chapter is emphasized at the user's direction. Requirements may govern the product, its developers, AI agents, and the engineering process. These examples are concerns to capture, not new requirement identifier families. Reuse the template's defined families according to the primary obligation; follow its approval convention before introducing a family or scope code. Detailed AI, naming, and authoring guidance can remain in its authoritative chapter and be referenced from the requirements package without duplicating it.}
+
+\begin{frame}{Quality subtypes and scenarios}
+\framesubtitle{Chapter 5: prompts for design decisions}
+\begin{itemize}
+  \item \textbf{Use subtypes to prompt questions:} performance and capacity; reliability and recovery; security and privacy; usability and accessibility; maintainability and testability; portability and interoperability.
+  \item \textbf{Ask what the system must handle:} peak load, failures, threats, different users, future changes, and external dependencies. Define measurable conditions and success criteria.
+  \item \textbf{Optional extension: quality scenarios.} Describe the stimulus, operating conditions, affected part of the system, expected response, and measurable outcome.
+  \item Reference scenarios from the \textbf{requirements package}; link them to the relevant requirement IDs, design decisions, and tests.
+\end{itemize}
+\vspace{0.1cm}
+{\small\textbf{Example --- recoverability:} During acquisition, a connection fails; reconnect within 5 seconds and report any lost samples.}
+\end{frame}
+\note{Source for quality subtypes: the Requirements chapter category catalog. This list prompts consideration; select applicable concerns and justify omissions. Quality scenarios are an optional extension proposed for this presentation, not an existing scenario register in the template. Give each scenario a stable reference in the requirements package and link it to measurable quality requirements and verification evidence. The recovery example is illustrative, not a project requirement or an agreed threshold. A fuller scenario can identify the stimulus source, stimulus, environment, affected artifact, response, and response measure.}

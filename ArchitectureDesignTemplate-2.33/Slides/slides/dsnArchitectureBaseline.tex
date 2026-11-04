@@ -1,0 +1,14 @@
+\begin{frame}{Record the architecture at each revision}
+\begin{itemize}
+  \item \textbf{Version the document:} identify the architecture revision explicitly.
+  \item \textbf{Maintain its history:} record the date, version, author, and change; link each entry to the affected content.
+  \item \textbf{Check it in with the code:} preserve the architecture sources and linked evidence for the corresponding software revision.
+\end{itemize}
+\vspace{0.2cm}
+\begin{slidecallout}{A record of the system at that point in time}
+A shared revision shows the design, implementation status, and evidence that belong together.
+\end{slidecallout}
+\vspace{0.12cm}
+{\small\textbf{Future direction:} A sufficiently complete architecture might one day support regenerating code instead of storing it.}
+\end{frame}
+\note{Sources: DSN Document History, Implementation, Traceability, and Introduction chapters. The version identifies the document; the history explains its evolution; source control preserves the corresponding artifact set. Check in editable LaTeX and TikZ sources with the software and preserve evidence versions or stable references. The future direction is a possibility, not a current template capability: replacing stored code would require reproducible generation, controlled tools and dependencies, and verification of the generated implementation.}

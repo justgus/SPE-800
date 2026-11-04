@@ -1,0 +1,124 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerThemeSlides}[2026/09/26 brand-neutral slides presentation theme]
+
+\RequirePackage{tikz}
+\usetikzlibrary{positioning}
+\RequirePackage{ragged2e}
+\RequirePackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\providecommand{\TemplateVersion}{Unversioned}
+
+\mode<presentation>
+
+\definecolor{SlidePrimary}{HTML}{245A73}
+\definecolor{SlideSecondary}{HTML}{526D7C}
+\definecolor{SlideDark}{HTML}{263238}
+\definecolor{SlideLight}{HTML}{EAF1F4}
+\definecolor{SlideGray}{HTML}{F5F7F8}
+\definecolor{SlideLine}{HTML}{D5DEE3}
+
+\newcommand{\coursecode}[1]{\def\insertcoursecode{#1}}
+\coursecode{}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=0.62cm,text margin right=0.72cm}
+\setbeamercolor{normal text}{fg=SlideDark,bg=white}
+\setbeamercolor{structure}{fg=SlidePrimary}
+\setbeamercolor{frametitle}{fg=SlideDark,bg=white}
+\setbeamercolor{framesubtitle}{fg=SlidePrimary,bg=white}
+\setbeamercolor{itemize item}{fg=SlidePrimary}
+\setbeamercolor{itemize subitem}{fg=SlideSecondary}
+\setbeamercolor{enumerate item}{fg=SlidePrimary}
+\setbeamercolor{block title}{fg=white,bg=SlidePrimary}
+\setbeamercolor{block body}{fg=SlideDark,bg=SlideLight}
+\setbeamercolor{alerted text}{fg=SlidePrimary}
+
+\setbeamerfont{title}{size=\fontsize{27}{31},series=\bfseries}
+\setbeamerfont{subtitle}{size=\fontsize{14}{18}}
+\setbeamerfont{author}{size=\fontsize{11}{14}}
+\setbeamerfont{institute}{size=\fontsize{9}{11}}
+\setbeamerfont{frametitle}{size=\fontsize{20}{23},series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\fontsize{10.5}{13}}
+\setbeamerfont{normal text}{size=\fontsize{14}{18}}
+\setbeamerfont{footline}{size=\fontsize{7.5}{9}}
+
+\setbeamertemplate{itemize item}{\raise0.16ex\hbox{\color{SlidePrimary}\rule{0.56ex}{0.56ex}}}
+\setbeamertemplate{itemize subitem}{\raise0.18ex\hbox{\color{SlideSecondary}\rule{0.45ex}{0.45ex}}}
+\setbeamertemplate{enumerate item}{\color{SlidePrimary}\bfseries\insertenumlabel.}
+\setlength{\leftmargini}{1.25em}
+\setlength{\leftmarginii}{1.15em}
+
+\setbeamertemplate{frametitle}{%
+  \vspace*{0.24cm}%
+  \begin{beamercolorbox}[wd=0.90\paperwidth,leftskip=0pt,sep=0pt]{frametitle}
+    \usebeamerfont{frametitle}\insertframetitle\strut
+    \ifx\insertframesubtitle\@empty\else
+      \\[0.08cm]{\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut}
+    \fi
+  \end{beamercolorbox}%
+  \vspace*{0.12cm}%
+}
+
+\setbeamertemplate{footline}{%
+  \leavevmode\hbox{%
+    \begin{beamercolorbox}[wd=0.82\paperwidth,ht=0.42cm,dp=0.13cm,leftskip=0.58cm]{author in head/foot}%
+      \usebeamerfont{footline}\color{SlideDark}Template v\TemplateVersion
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.18\paperwidth,ht=0.42cm,dp=0.13cm,rightskip=0.47cm plus 1fil]{page number in head/foot}%
+      \hfill\usebeamerfont{footline}\color{SlidePrimary}\insertframenumber
+    \end{beamercolorbox}%
+  }
+}
+
+\setbeamertemplate{title page}{%
+  \vspace*{0.16\paperheight}
+  {\usebeamerfont{title}\color{SlideDark}\inserttitle\par}
+  \vspace{0.20cm}
+  {\usebeamerfont{subtitle}\color{SlidePrimary}\insertsubtitle\par}
+  \vspace{0.65cm}
+  {\usebeamerfont{author}\color{SlideDark}\insertauthor\par}
+  {\usebeamerfont{institute}\color{SlideDark}\insertinstitute\par}
+  {\usebeamerfont{institute}\color{SlideDark}\insertdate\par}
+}
+
+\newcommand{\SlideCenteredFrame}[2]{%
+  {\setbeamertemplate{footline}{}%
+   \begin{frame}[plain]
+     \begin{tikzpicture}[remember picture,overlay]
+       \fill[SlidePrimary] (current page.south west) rectangle (current page.north east);
+       \node[anchor=center,text width=0.70\paperwidth,align=center] at (current page.center) {%
+         \hyphenpenalty=10000
+         {\fontsize{28}{32}\selectfont\bfseries\color{white}#1\par}
+         #2
+         \vspace{0.30cm}{\fontsize{9}{11}\selectfont\color{white}Template v\TemplateVersion\par}};
+     \end{tikzpicture}
+   \end{frame}}%
+}
+
+\newcommand{\SlideTitleFrame}{%
+  \SlideCenteredFrame{\inserttitle}{%
+    \vspace{0.30cm}{\fontsize{13}{17}\selectfont\color{white}\insertsubtitle\par}%
+    \vspace{0.45cm}{\fontsize{11}{14}\selectfont\color{white}\insertauthor\par}%
+    {\fontsize{9}{11}\selectfont\color{white}\insertinstitute\par\insertdate\par}}%
+}
+
+\newcommand{\SlideSectionFrame}[2][]{%
+  \SlideCenteredFrame{#2}{%
+    \if\relax\detokenize{#1}\relax\else
+      \vspace{0.30cm}{\fontsize{13}{17}\selectfont\color{white}#1\par}%
+    \fi}%
+}
+
+\newcommand{\SlideThankYouFrame}[1][Thank you!]{%
+  \SlideCenteredFrame{#1}{}%
+}
+
+\newenvironment{slidecallout}[1]{%
+  \setbeamercolor{block title}{fg=white,bg=SlidePrimary}%
+  \setbeamercolor{block body}{fg=SlideDark,bg=SlideLight}%
+  \begin{block}{#1}}{\end{block}}
+
+\AtBeginEnvironment{itemize}{\setlength{\itemsep}{0.38em}}
+\AtBeginEnvironment{enumerate}{\setlength{\itemsep}{0.38em}}
+
+\mode<all>

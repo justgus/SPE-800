@@ -1,0 +1,25 @@
+\begin{frame}{Think of the template as code for architecture}
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+\begin{block}{A structured source project}
+\begin{itemize}
+  \item A main file assembles the manual.
+  \item Chapter files separate responsibilities.
+  \item Chapter folders hold editable TikZ diagrams.
+  \item Build scripts produce the readable PDF.
+\end{itemize}
+\end{block}
+\column{0.48\textwidth}
+\begin{block}{A developer's workflow}
+\begin{itemize}
+  \item Record architecture artifacts in source control alongside the software.
+  \item Review text and diagram changes as diffs.
+  \item Update design, code, and linked evidence together.
+  \item Rebuild and check links before baselining a revision.
+\end{itemize}
+\end{block}
+\end{columns}
+\vspace{0.2cm}
+\textbf{The file structure organizes the architecture; revisions preserve how it evolves.}
+\end{frame}
+\note{The analogy is to a software source tree: the entry point includes responsibility-focused modules and shared assets, and a build produces a deliverable. Maintain the editable LaTeX and TikZ sources with the product revision. Record evidence versions and locations so links remain meaningful for that baseline. This is an authoring and configuration-management approach; the architecture itself is not executable software.}

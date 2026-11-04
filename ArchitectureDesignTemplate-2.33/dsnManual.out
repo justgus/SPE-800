@@ -1,0 +1,214 @@
+\BOOKMARK [0][-]{chapter*.2}{Template Attribution}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Chapter Responsibility}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{How to Use This Chapter}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Purpose}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Scope}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.5}{Audience}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.6}{Normative Language and Priority}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.7}{Document as Source of Truth}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.8}{Architecture as Maintained Input for AI Design}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.9}{Initializing a New Project from This Template}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.10}{Template Tailoring and Domain Profiles}{chapter.1}% 12
+\BOOKMARK [1][-]{section.1.11}{Using This Template with AI Agents}{chapter.1}% 13
+\BOOKMARK [1][-]{section.1.12}{V-Model Organization}{chapter.1}% 14
+\BOOKMARK [0][-]{chapter.2}{Development Plan}{}% 15
+\BOOKMARK [1][-]{section.2.1}{Chapter Responsibility}{chapter.2}% 16
+\BOOKMARK [1][-]{section.2.2}{How to Use This Chapter}{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.3}{Domain Profile Selection}{chapter.2}% 18
+\BOOKMARK [1][-]{section.2.4}{Example}{chapter.2}% 19
+\BOOKMARK [0][-]{chapter.3}{System Context}{}% 20
+\BOOKMARK [1][-]{section.3.1}{Chapter Responsibility}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.2}{How to Use This Chapter}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.3}{Example}{chapter.3}% 23
+\BOOKMARK [0][-]{chapter.4}{User Stories}{}% 24
+\BOOKMARK [1][-]{section.4.1}{Chapter Responsibility}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.2}{How to Use This Chapter}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.3}{User Story Register}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.4}{Review Rules}{chapter.4}% 28
+\BOOKMARK [0][-]{chapter.5}{Requirements}{}% 29
+\BOOKMARK [1][-]{section.5.1}{Chapter Responsibility}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.2}{How to Use This Chapter}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.3}{Requirement Identifier Naming Convention}{chapter.5}% 32
+\BOOKMARK [1][-]{section.5.4}{Functional and Quality Requirements}{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.5}{Requirement Status Model}{chapter.5}% 34
+\BOOKMARK [1][-]{section.5.6}{Requirement Category Catalog}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.7}{Domain Profile Impact on Requirements}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.8}{Creating a Project-Specific Category}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.9}{Review Rules}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.10}{Category-Specific Requirement Registers}{chapter.5}% 39
+\BOOKMARK [2][-]{subsection.5.10.1}{Business Requirements}{section.5.10}% 40
+\BOOKMARK [2][-]{subsection.5.10.2}{Functional Requirements}{section.5.10}% 41
+\BOOKMARK [2][-]{subsection.5.10.3}{Quality Requirements}{section.5.10}% 42
+\BOOKMARK [2][-]{subsection.5.10.4}{Interface Requirements}{section.5.10}% 43
+\BOOKMARK [2][-]{subsection.5.10.5}{Security Requirements}{section.5.10}% 44
+\BOOKMARK [2][-]{subsection.5.10.6}{Data Requirements}{section.5.10}% 45
+\BOOKMARK [2][-]{subsection.5.10.7}{Constraint Requirements}{section.5.10}% 46
+\BOOKMARK [0][-]{chapter.6}{Use Cases}{}% 47
+\BOOKMARK [1][-]{section.6.1}{Chapter Responsibility}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.2}{How to Use This Chapter}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.3}{High-Level Use Case Diagram}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.4}{Submit a Service Request}{chapter.6}% 51
+\BOOKMARK [1][-]{section.6.5}{View Request Status}{chapter.6}% 52
+\BOOKMARK [1][-]{section.6.6}{Export Request History}{chapter.6}% 53
+\BOOKMARK [0][-]{chapter.7}{Architecture Overview}{}% 54
+\BOOKMARK [1][-]{section.7.1}{Chapter Responsibility}{chapter.7}% 55
+\BOOKMARK [1][-]{section.7.2}{How to Use This Chapter}{chapter.7}% 56
+\BOOKMARK [1][-]{section.7.3}{Decision Template and Example}{chapter.7}% 57
+\BOOKMARK [0][-]{chapter.8}{User Interface Design}{}% 58
+\BOOKMARK [1][-]{section.8.1}{Chapter Responsibility}{chapter.8}% 59
+\BOOKMARK [1][-]{section.8.2}{How to Use This Chapter}{chapter.8}% 60
+\BOOKMARK [1][-]{section.8.3}{Example}{chapter.8}% 61
+\BOOKMARK [0][-]{chapter.9}{Logical View}{}% 62
+\BOOKMARK [1][-]{section.9.1}{Chapter Responsibility}{chapter.9}% 63
+\BOOKMARK [1][-]{section.9.2}{How to Use This Chapter}{chapter.9}% 64
+\BOOKMARK [1][-]{section.9.3}{Example}{chapter.9}% 65
+\BOOKMARK [0][-]{chapter.10}{Process View}{}% 66
+\BOOKMARK [1][-]{section.10.1}{Chapter Responsibility}{chapter.10}% 67
+\BOOKMARK [1][-]{section.10.2}{How to Use This Chapter}{chapter.10}% 68
+\BOOKMARK [1][-]{section.10.3}{Example State Model}{chapter.10}% 69
+\BOOKMARK [0][-]{chapter.11}{Development View}{}% 70
+\BOOKMARK [1][-]{section.11.1}{Chapter Responsibility}{chapter.11}% 71
+\BOOKMARK [1][-]{section.11.2}{How to Use This Chapter}{chapter.11}% 72
+\BOOKMARK [1][-]{section.11.3}{Example}{chapter.11}% 73
+\BOOKMARK [0][-]{chapter.12}{Physical View}{}% 74
+\BOOKMARK [1][-]{section.12.1}{Chapter Responsibility}{chapter.12}% 75
+\BOOKMARK [1][-]{section.12.2}{How to Use This Chapter}{chapter.12}% 76
+\BOOKMARK [1][-]{section.12.3}{Example}{chapter.12}% 77
+\BOOKMARK [0][-]{chapter.13}{Implementation}{}% 78
+\BOOKMARK [1][-]{section.13.1}{Chapter Responsibility}{chapter.13}% 79
+\BOOKMARK [1][-]{section.13.2}{How to Use This Chapter}{chapter.13}% 80
+\BOOKMARK [1][-]{section.13.3}{Example}{chapter.13}% 81
+\BOOKMARK [0][-]{chapter.14}{Tests}{}% 82
+\BOOKMARK [1][-]{section.14.1}{Chapter Responsibility}{chapter.14}% 83
+\BOOKMARK [1][-]{section.14.2}{How to Use This Chapter}{chapter.14}% 84
+\BOOKMARK [1][-]{section.14.3}{Example Test Cases}{chapter.14}% 85
+\BOOKMARK [0][-]{chapter.15}{Traceability}{}% 86
+\BOOKMARK [1][-]{section.15.1}{Chapter Responsibility}{chapter.15}% 87
+\BOOKMARK [1][-]{section.15.2}{How to Use This Chapter}{chapter.15}% 88
+\BOOKMARK [1][-]{section.15.3}{Traceability Register}{chapter.15}% 89
+\BOOKMARK [0][-]{chapter.16}{Verification}{}% 90
+\BOOKMARK [1][-]{section.16.1}{Chapter Responsibility}{chapter.16}% 91
+\BOOKMARK [1][-]{section.16.2}{How to Use This Chapter}{chapter.16}% 92
+\BOOKMARK [1][-]{section.16.3}{Verification Register}{chapter.16}% 93
+\BOOKMARK [0][-]{chapter.17}{Validation}{}% 94
+\BOOKMARK [1][-]{section.17.1}{Chapter Responsibility}{chapter.17}% 95
+\BOOKMARK [1][-]{section.17.2}{How to Use This Chapter}{chapter.17}% 96
+\BOOKMARK [1][-]{section.17.3}{Validation Register}{chapter.17}% 97
+\BOOKMARK [0][-]{chapter.18}{Release}{}% 98
+\BOOKMARK [1][-]{section.18.1}{Chapter Responsibility}{chapter.18}% 99
+\BOOKMARK [1][-]{section.18.2}{How to Use This Chapter}{chapter.18}% 100
+\BOOKMARK [1][-]{section.18.3}{Example Checklist}{chapter.18}% 101
+\BOOKMARK [0][-]{appendix.A}{Document Authoring Guide}{}% 102
+\BOOKMARK [1][-]{section.A.1}{Chapter Responsibility}{appendix.A}% 103
+\BOOKMARK [1][-]{section.A.2}{How to Use This Appendix}{appendix.A}% 104
+\BOOKMARK [1][-]{section.A.3}{Template Provenance}{appendix.A}% 105
+\BOOKMARK [1][-]{section.A.4}{AI-Assisted Authoring}{appendix.A}% 106
+\BOOKMARK [1][-]{section.A.5}{File Naming}{appendix.A}% 107
+\BOOKMARK [2][-]{subsection.A.5.1}{Document-Authoring Requirements}{section.A.5}% 108
+\BOOKMARK [1][-]{section.A.6}{One Responsibility per Chapter}{appendix.A}% 109
+\BOOKMARK [1][-]{section.A.7}{Adding a Chapter}{appendix.A}% 110
+\BOOKMARK [1][-]{section.A.8}{Diagram Authoring with TikZ}{appendix.A}% 111
+\BOOKMARK [1][-]{section.A.9}{Building the PDF}{appendix.A}% 112
+\BOOKMARK [2][-]{subsection.A.9.1}{Installing the Tools on macOS}{section.A.9}% 113
+\BOOKMARK [2][-]{subsection.A.9.2}{Installing the Tools on Windows}{section.A.9}% 114
+\BOOKMARK [2][-]{subsection.A.9.3}{Installing the Tools on Ubuntu or Debian Linux}{section.A.9}% 115
+\BOOKMARK [2][-]{subsection.A.9.4}{AI-Agent Installation}{section.A.9}% 116
+\BOOKMARK [2][-]{subsection.A.9.5}{Building on macOS and Linux}{section.A.9}% 117
+\BOOKMARK [2][-]{subsection.A.9.6}{Building with Windows PowerShell}{section.A.9}% 118
+\BOOKMARK [2][-]{subsection.A.9.7}{Manual Build Sequence}{section.A.9}% 119
+\BOOKMARK [2][-]{subsection.A.9.8}{Build Verification and Troubleshooting}{section.A.9}% 120
+\BOOKMARK [1][-]{section.A.10}{Authoring Rules}{appendix.A}% 121
+\BOOKMARK [1][-]{section.A.11}{Citations and Bibliography}{appendix.A}% 122
+\BOOKMARK [1][-]{section.A.12}{Selective Builds}{appendix.A}% 123
+\BOOKMARK [0][-]{appendix.B}{Embedded Systems Tailoring Profile}{}% 124
+\BOOKMARK [1][-]{section.B.1}{Chapter Responsibility}{appendix.B}% 125
+\BOOKMARK [1][-]{section.B.2}{How to Use This Appendix}{appendix.B}% 126
+\BOOKMARK [1][-]{section.B.3}{Applicability}{appendix.B}% 127
+\BOOKMARK [1][-]{section.B.4}{Core-Chapter Tailoring Map}{appendix.B}% 128
+\BOOKMARK [1][-]{section.B.5}{Hardware\205Software Boundary and Allocation}{appendix.B}% 129
+\BOOKMARK [1][-]{section.B.6}{Embedded Requirement Categories}{appendix.B}% 130
+\BOOKMARK [1][-]{section.B.7}{Required Architecture Views}{appendix.B}% 131
+\BOOKMARK [1][-]{section.B.8}{Interfaces and Protocols}{appendix.B}% 132
+\BOOKMARK [1][-]{section.B.9}{Resource Budgets}{appendix.B}% 133
+\BOOKMARK [1][-]{section.B.10}{Safety, Reliability, and Fault Management}{appendix.B}% 134
+\BOOKMARK [1][-]{section.B.11}{Embedded Security}{appendix.B}% 135
+\BOOKMARK [1][-]{section.B.12}{Toolchain and Configuration Control}{appendix.B}% 136
+\BOOKMARK [1][-]{section.B.13}{Embedded Verification and Validation}{appendix.B}% 137
+\BOOKMARK [1][-]{section.B.14}{AI Tailoring Instructions}{appendix.B}% 138
+\BOOKMARK [1][-]{section.B.15}{Embedded-Profile Completion Checklist}{appendix.B}% 139
+\BOOKMARK [0][-]{appendix.C}{AI Agent Usage Guide}{}% 140
+\BOOKMARK [1][-]{section.C.1}{Chapter Responsibility}{appendix.C}% 141
+\BOOKMARK [1][-]{section.C.2}{How to Use This Appendix}{appendix.C}% 142
+\BOOKMARK [1][-]{section.C.3}{Governing Principles}{appendix.C}% 143
+\BOOKMARK [1][-]{section.C.4}{AI Quick Start}{appendix.C}% 144
+\BOOKMARK [1][-]{section.C.5}{Repository AI Bootstrap}{appendix.C}% 145
+\BOOKMARK [1][-]{section.C.6}{Guide Activity}{appendix.C}% 146
+\BOOKMARK [1][-]{section.C.7}{AI Skills Register}{appendix.C}% 147
+\BOOKMARK [1][-]{section.C.8}{Task-Specific Context Packs}{appendix.C}% 148
+\BOOKMARK [2][-]{subsection.C.8.1}{Planning and Estimation Context}{section.C.8}% 149
+\BOOKMARK [2][-]{subsection.C.8.2}{Domain-Profile Context}{section.C.8}% 150
+\BOOKMARK [2][-]{subsection.C.8.3}{User-Story Context}{section.C.8}% 151
+\BOOKMARK [2][-]{subsection.C.8.4}{Requirements Context}{section.C.8}% 152
+\BOOKMARK [2][-]{subsection.C.8.5}{Use-Case Context}{section.C.8}% 153
+\BOOKMARK [2][-]{subsection.C.8.6}{Architecture Context}{section.C.8}% 154
+\BOOKMARK [2][-]{subsection.C.8.7}{Testing and Evidence Context}{section.C.8}% 155
+\BOOKMARK [2][-]{subsection.C.8.8}{Release Context}{section.C.8}% 156
+\BOOKMARK [2][-]{subsection.C.8.9}{Document-Authoring Context}{section.C.8}% 157
+\BOOKMARK [1][-]{section.C.9}{Mandatory Consistency Rules}{appendix.C}% 158
+\BOOKMARK [1][-]{section.C.10}{Skill-Specific Steps and Acceptance}{appendix.C}% 159
+\BOOKMARK [2][-]{subsection.C.10.1}{Estimate AI Work}{section.C.10}% 160
+\BOOKMARK [2][-]{subsection.C.10.2}{Initialize a Project}{section.C.10}% 161
+\BOOKMARK [2][-]{subsection.C.10.3}{Tailor an Embedded System}{section.C.10}% 162
+\BOOKMARK [2][-]{subsection.C.10.4}{Create Repository AI Bootstrap Files}{section.C.10}% 163
+\BOOKMARK [2][-]{subsection.C.10.5}{Develop User Stories}{section.C.10}% 164
+\BOOKMARK [2][-]{subsection.C.10.6}{Add or Change a Requirement}{section.C.10}% 165
+\BOOKMARK [2][-]{subsection.C.10.7}{Add or Change a Use Case}{section.C.10}% 166
+\BOOKMARK [2][-]{subsection.C.10.8}{Develop or Change Architecture}{section.C.10}% 167
+\BOOKMARK [2][-]{subsection.C.10.9}{Add Tests or Evidence}{section.C.10}% 168
+\BOOKMARK [2][-]{subsection.C.10.10}{Perform Verification}{section.C.10}% 169
+\BOOKMARK [2][-]{subsection.C.10.11}{Perform Validation}{section.C.10}% 170
+\BOOKMARK [2][-]{subsection.C.10.12}{Review and Prepare a Release}{section.C.10}% 171
+\BOOKMARK [2][-]{subsection.C.10.13}{Review Consistency}{section.C.10}% 172
+\BOOKMARK [2][-]{subsection.C.10.14}{Compile or Troubleshoot}{section.C.10}% 173
+\BOOKMARK [1][-]{section.C.11}{Example AI Requests and Prompts}{appendix.C}% 174
+\BOOKMARK [2][-]{subsection.C.11.1}{Initialize the Architecture Book}{section.C.11}% 175
+\BOOKMARK [2][-]{subsection.C.11.2}{Tailor an Embedded System}{section.C.11}% 176
+\BOOKMARK [2][-]{subsection.C.11.3}{Create Repository AI Bootstrap Files}{section.C.11}% 177
+\BOOKMARK [2][-]{subsection.C.11.4}{Develop Requirements}{section.C.11}% 178
+\BOOKMARK [2][-]{subsection.C.11.5}{Develop Use Cases}{section.C.11}% 179
+\BOOKMARK [2][-]{subsection.C.11.6}{Develop an Architecture Decision}{section.C.11}% 180
+\BOOKMARK [2][-]{subsection.C.11.7}{Develop Tests and Traceability}{section.C.11}% 181
+\BOOKMARK [2][-]{subsection.C.11.8}{Review Release Readiness}{section.C.11}% 182
+\BOOKMARK [1][-]{section.C.12}{Human Decisions and Information Boundaries}{appendix.C}% 183
+\BOOKMARK [1][-]{section.C.13}{Completion Checklist}{appendix.C}% 184
+\BOOKMARK [0][-]{appendix.D}{AI-Assisted Execution Workflow}{}% 185
+\BOOKMARK [1][-]{section.D.1}{Chapter Responsibility}{appendix.D}% 186
+\BOOKMARK [1][-]{section.D.2}{Purpose and Scope}{appendix.D}% 187
+\BOOKMARK [1][-]{section.D.3}{Starting the Workflow in an AI Chat}{appendix.D}% 188
+\BOOKMARK [2][-]{subsection.D.3.1}{Start Any Selected AI Skill}{section.D.3}% 189
+\BOOKMARK [2][-]{subsection.D.3.2}{Develop an Approved Change}{section.D.3}% 190
+\BOOKMARK [2][-]{subsection.D.3.3}{Prepare a Requirements Package}{section.D.3}% 191
+\BOOKMARK [2][-]{subsection.D.3.4}{Other AI Tools}{section.D.3}% 192
+\BOOKMARK [1][-]{section.D.4}{Plan the Selected Tasks}{appendix.D}% 193
+\BOOKMARK [1][-]{section.D.5}{Choose and Invoke Agents}{appendix.D}% 194
+\BOOKMARK [1][-]{section.D.6}{Responsibilities and Handoffs}{appendix.D}% 195
+\BOOKMARK [1][-]{section.D.7}{Develop, Integrate, and Verify}{appendix.D}% 196
+\BOOKMARK [1][-]{section.D.8}{Validate with Stakeholders}{appendix.D}% 197
+\BOOKMARK [1][-]{section.D.9}{Project Tailoring Checklist}{appendix.D}% 198
+\BOOKMARK [0][-]{appendix.E}{AI Prompt Log}{}% 199
+\BOOKMARK [1][-]{section.E.1}{Chapter Responsibility}{appendix.E}% 200
+\BOOKMARK [1][-]{section.E.2}{How to Use This Appendix}{appendix.E}% 201
+\BOOKMARK [1][-]{section.E.3}{Example Record}{appendix.E}% 202
+\BOOKMARK [1][-]{section.E.4}{Requirement Scope or Family Extension Record}{appendix.E}% 203
+\BOOKMARK [0][-]{appendix.F}{Test Evidence}{}% 204
+\BOOKMARK [1][-]{section.F.1}{Chapter Responsibility}{appendix.F}% 205
+\BOOKMARK [1][-]{section.F.2}{How to Use This Appendix}{appendix.F}% 206
+\BOOKMARK [1][-]{section.F.3}{Example Evidence Record}{appendix.F}% 207
+\BOOKMARK [0][-]{appendix.G}{Document History}{}% 208
+\BOOKMARK [1][-]{section.G.1}{Chapter Responsibility}{appendix.G}% 209
+\BOOKMARK [1][-]{section.G.2}{How to Use This Appendix}{appendix.G}% 210
+\BOOKMARK [0][-]{section*.212}{Glossary}{}% 211
+\BOOKMARK [0][-]{section*.214}{Acronyms}{}% 212
+\BOOKMARK [0][-]{appendix*.216}{Bibliography}{}% 213
+\BOOKMARK [0][-]{section*.217}{Index}{}% 214
