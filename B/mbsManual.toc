@@ -1,0 +1,208 @@
+\contentsline {chapter}{Template Attribution}{iii}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Chapter Responsibility}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}How to Use This Chapter}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Purpose}{1}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Scope}{1}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Audience}{2}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Normative Language and Priority}{2}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Document as Source of Truth}{2}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Architecture as Maintained Input for AI Design}{2}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Initializing a New Project from This Template}{3}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Template Tailoring and Domain Profiles}{4}{section.1.10}%
+\contentsline {section}{\numberline {1.11}Using This Template with AI Agents}{4}{section.1.11}%
+\contentsline {section}{\numberline {1.12}V-Model Organization}{4}{section.1.12}%
+\contentsline {chapter}{\numberline {2}Development Plan}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Chapter Responsibility}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Confirmed Governance}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Domain Profile Selection}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Stage and Change Control}{7}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Owned Questions and Decision Gates}{7}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Risks and Lifecycle Gates}{8}{section.2.6}%
+\contentsline {chapter}{\numberline {3}System Context}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Chapter Responsibility}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Supported Boundary}{9}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Stakeholders and Interfaces}{9}{section.3.3}%
+\contentsline {chapter}{\numberline {4}User Stories}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Chapter Responsibility}{11}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Candidate Need}{11}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Requirements}{12}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Chapter Responsibility}{12}{section.5.1}%
+\contentsline {section}{\numberline {5.2}How to Use This Chapter}{12}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Requirement Identifier Naming Convention}{12}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Functional and Quality Requirements}{14}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Requirement Status Model}{14}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Requirement Category Catalog}{15}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Domain Profile Impact on Requirements}{15}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Creating a Project-Specific Category}{18}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Review Rules}{19}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Project Candidate Requirements}{19}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Embedded Concern Coverage and Gaps}{20}{section.5.11}%
+\contentsline {chapter}{\numberline {6}Use Cases}{21}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Chapter Responsibility}{21}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Deliver Hardware-Sensor Samples}{21}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Architecture Overview}{23}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Chapter Responsibility}{23}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Confirmed Technology Direction}{23}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Decisions Awaiting Evidence}{23}{section.7.3}%
+\contentsline {chapter}{\numberline {8}User Interface Design}{24}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Chapter Responsibility}{24}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Control App Interaction Gap}{24}{section.8.2}%
+\contentsline {chapter}{\numberline {9}Logical View}{25}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Chapter Responsibility}{25}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Conceptual Responsibilities}{25}{section.9.2}%
+\contentsline {chapter}{\numberline {10}Process View}{26}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Chapter Responsibility}{26}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Known Data Direction}{26}{section.10.2}%
+\contentsline {chapter}{\numberline {11}Development View}{27}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Chapter Responsibility}{27}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Current Source Organization}{27}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Future Application Organization}{27}{section.11.3}%
+\contentsline {chapter}{\numberline {12}Physical View}{28}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Chapter Responsibility}{28}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Deployment Boundaries}{28}{section.12.2}%
+\contentsline {chapter}{\numberline {13}Implementation}{29}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Chapter Responsibility}{29}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Application Baseline}{29}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Complete Documentation Build}{29}{section.13.3}%
+\contentsline {chapter}{\numberline {14}Tests}{30}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Chapter Responsibility}{30}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Candidate Test Definitions}{30}{section.14.2}%
+\contentsline {chapter}{\numberline {15}Traceability}{32}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Chapter Responsibility}{32}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Project Traceability Register}{32}{section.15.2}%
+\contentsline {chapter}{\numberline {16}Verification}{33}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Chapter Responsibility}{33}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Verification Register}{33}{section.16.2}%
+\contentsline {chapter}{\numberline {17}Validation}{35}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Chapter Responsibility}{35}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Validation Register}{35}{section.17.2}%
+\contentsline {chapter}{\numberline {18}Release}{36}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Chapter Responsibility}{36}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Documentation Candidate}{36}{section.18.2}%
+\contentsline {section}{\numberline {18.3}Publication Gate}{36}{section.18.3}%
+\contentsline {chapter}{\numberline {A}Document Authoring Guide}{37}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Chapter Responsibility}{37}{section.A.1}%
+\contentsline {section}{\numberline {A.2}How to Use This Appendix}{37}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Template Provenance}{37}{section.A.3}%
+\contentsline {section}{\numberline {A.4}AI-Assisted Authoring}{37}{section.A.4}%
+\contentsline {section}{\numberline {A.5}File Naming}{38}{section.A.5}%
+\contentsline {subsection}{\numberline {A.5.1}Document-Authoring Requirements}{38}{subsection.A.5.1}%
+\contentsline {section}{\numberline {A.6}One Responsibility per Chapter}{40}{section.A.6}%
+\contentsline {section}{\numberline {A.7}Adding a Chapter}{40}{section.A.7}%
+\contentsline {section}{\numberline {A.8}Diagram Authoring with TikZ}{41}{section.A.8}%
+\contentsline {section}{\numberline {A.9}Building the PDF}{41}{section.A.9}%
+\contentsline {subsection}{\numberline {A.9.1}Installing the Tools on macOS}{42}{subsection.A.9.1}%
+\contentsline {subsection}{\numberline {A.9.2}Installing the Tools on Windows}{42}{subsection.A.9.2}%
+\contentsline {subsection}{\numberline {A.9.3}Installing the Tools on Ubuntu or Debian Linux}{43}{subsection.A.9.3}%
+\contentsline {subsection}{\numberline {A.9.4}AI-Agent Installation}{43}{subsection.A.9.4}%
+\contentsline {subsection}{\numberline {A.9.5}Building on macOS and Linux}{44}{subsection.A.9.5}%
+\contentsline {subsection}{\numberline {A.9.6}Building with Windows PowerShell}{44}{subsection.A.9.6}%
+\contentsline {subsection}{\numberline {A.9.7}Manual Build Sequence}{44}{subsection.A.9.7}%
+\contentsline {subsection}{\numberline {A.9.8}Build Verification and Troubleshooting}{44}{subsection.A.9.8}%
+\contentsline {section}{\numberline {A.10}Authoring Rules}{45}{section.A.10}%
+\contentsline {section}{\numberline {A.11}Citations and Bibliography}{45}{section.A.11}%
+\contentsline {section}{\numberline {A.12}Selective Builds}{46}{section.A.12}%
+\contentsline {section}{\numberline {A.13}Project Naming and Inherited Support Files}{46}{section.A.13}%
+\contentsline {chapter}{\numberline {B}Embedded Systems Tailoring Profile}{47}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Chapter Responsibility}{47}{section.B.1}%
+\contentsline {section}{\numberline {B.2}How to Use This Appendix}{47}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Applicability}{47}{section.B.3}%
+\contentsline {section}{\numberline {B.4}Core-Chapter Tailoring Map}{48}{section.B.4}%
+\contentsline {section}{\numberline {B.5}Hardware--Software Boundary and Allocation}{49}{section.B.5}%
+\contentsline {section}{\numberline {B.6}Embedded Requirement Categories}{49}{section.B.6}%
+\contentsline {section}{\numberline {B.7}Required Architecture Views}{50}{section.B.7}%
+\contentsline {section}{\numberline {B.8}Interfaces and Protocols}{51}{section.B.8}%
+\contentsline {section}{\numberline {B.9}Resource Budgets}{52}{section.B.9}%
+\contentsline {section}{\numberline {B.10}Safety, Reliability, and Fault Management}{52}{section.B.10}%
+\contentsline {section}{\numberline {B.11}Embedded Security}{53}{section.B.11}%
+\contentsline {section}{\numberline {B.12}Toolchain and Configuration Control}{53}{section.B.12}%
+\contentsline {section}{\numberline {B.13}Embedded Verification and Validation}{53}{section.B.13}%
+\contentsline {section}{\numberline {B.14}AI Tailoring Instructions}{53}{section.B.14}%
+\contentsline {section}{\numberline {B.15}Embedded-Profile Completion Checklist}{54}{section.B.15}%
+\contentsline {chapter}{\numberline {C}AI Agent Usage Guide}{56}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Chapter Responsibility}{56}{section.C.1}%
+\contentsline {section}{\numberline {C.2}How to Use This Appendix}{56}{section.C.2}%
+\contentsline {section}{\numberline {C.3}Governing Principles}{56}{section.C.3}%
+\contentsline {paragraph}{Consistent terminology.}{57}{section*.119}%
+\contentsline {paragraph}{Linked architecture references.}{57}{section*.120}%
+\contentsline {section}{\numberline {C.4}AI Quick Start}{57}{section.C.4}%
+\contentsline {section}{\numberline {C.5}Repository AI Bootstrap}{58}{section.C.5}%
+\contentsline {paragraph}{AI Skills and tasks.}{59}{section*.121}%
+\contentsline {section}{\numberline {C.6}Guide Activity}{60}{section.C.6}%
+\contentsline {section}{\numberline {C.7}AI Skills Register}{60}{section.C.7}%
+\contentsline {section}{\numberline {C.8}Task-Specific Context Packs}{64}{section.C.8}%
+\contentsline {subsection}{\numberline {C.8.1}Planning and Estimation Context}{64}{subsection.C.8.1}%
+\contentsline {subsection}{\numberline {C.8.2}Domain-Profile Context}{64}{subsection.C.8.2}%
+\contentsline {subsection}{\numberline {C.8.3}User-Story Context}{64}{subsection.C.8.3}%
+\contentsline {subsection}{\numberline {C.8.4}Requirements Context}{65}{subsection.C.8.4}%
+\contentsline {subsection}{\numberline {C.8.5}Use-Case Context}{65}{subsection.C.8.5}%
+\contentsline {subsection}{\numberline {C.8.6}Architecture Context}{65}{subsection.C.8.6}%
+\contentsline {subsection}{\numberline {C.8.7}Testing and Evidence Context}{65}{subsection.C.8.7}%
+\contentsline {subsection}{\numberline {C.8.8}Release Context}{65}{subsection.C.8.8}%
+\contentsline {subsection}{\numberline {C.8.9}Document-Authoring Context}{66}{subsection.C.8.9}%
+\contentsline {section}{\numberline {C.9}Mandatory Consistency Rules}{66}{section.C.9}%
+\contentsline {section}{\numberline {C.10}Skill-Specific Steps and Acceptance}{67}{section.C.10}%
+\contentsline {subsection}{\numberline {C.10.1}Estimate AI Work}{67}{subsection.C.10.1}%
+\contentsline {subsection}{\numberline {C.10.2}Initialize a Project}{68}{subsection.C.10.2}%
+\contentsline {subsection}{\numberline {C.10.3}Tailor an Embedded System}{68}{subsection.C.10.3}%
+\contentsline {subsection}{\numberline {C.10.4}Create Repository AI Bootstrap Files}{68}{subsection.C.10.4}%
+\contentsline {subsection}{\numberline {C.10.5}Develop User Stories}{69}{subsection.C.10.5}%
+\contentsline {subsection}{\numberline {C.10.6}Add or Change a Requirement}{69}{subsection.C.10.6}%
+\contentsline {subsection}{\numberline {C.10.7}Add or Change a Use Case}{69}{subsection.C.10.7}%
+\contentsline {subsection}{\numberline {C.10.8}Develop or Change Architecture}{70}{subsection.C.10.8}%
+\contentsline {subsection}{\numberline {C.10.9}Add Tests or Evidence}{70}{subsection.C.10.9}%
+\contentsline {subsection}{\numberline {C.10.10}Perform Verification}{70}{subsection.C.10.10}%
+\contentsline {subsection}{\numberline {C.10.11}Perform Validation}{71}{subsection.C.10.11}%
+\contentsline {subsection}{\numberline {C.10.12}Review and Prepare a Release}{71}{subsection.C.10.12}%
+\contentsline {subsection}{\numberline {C.10.13}Review Consistency}{71}{subsection.C.10.13}%
+\contentsline {subsection}{\numberline {C.10.14}Compile or Troubleshoot}{72}{subsection.C.10.14}%
+\contentsline {section}{\numberline {C.11}Example AI Requests and Prompts}{72}{section.C.11}%
+\contentsline {paragraph}{Prompt formatting.}{72}{section*.192}%
+\contentsline {subsection}{\numberline {C.11.1}Initialize the Architecture Book}{72}{subsection.C.11.1}%
+\contentsline {subsection}{\numberline {C.11.2}Tailor an Embedded System}{73}{subsection.C.11.2}%
+\contentsline {subsection}{\numberline {C.11.3}Create Repository AI Bootstrap Files}{73}{subsection.C.11.3}%
+\contentsline {subsection}{\numberline {C.11.4}Develop Requirements}{73}{subsection.C.11.4}%
+\contentsline {subsection}{\numberline {C.11.5}Develop Use Cases}{73}{subsection.C.11.5}%
+\contentsline {subsection}{\numberline {C.11.6}Develop an Architecture Decision}{74}{subsection.C.11.6}%
+\contentsline {subsection}{\numberline {C.11.7}Develop Tests and Traceability}{74}{subsection.C.11.7}%
+\contentsline {subsection}{\numberline {C.11.8}Review Release Readiness}{74}{subsection.C.11.8}%
+\contentsline {section}{\numberline {C.12}Human Decisions and Information Boundaries}{74}{section.C.12}%
+\contentsline {section}{\numberline {C.13}Completion Checklist}{75}{section.C.13}%
+\contentsline {chapter}{\numberline {D}AI-Assisted Execution Workflow}{77}{appendix.D}%
+\contentsline {section}{\numberline {D.1}Chapter Responsibility}{77}{section.D.1}%
+\contentsline {section}{\numberline {D.2}Purpose and Scope}{77}{section.D.2}%
+\contentsline {section}{\numberline {D.3}Starting the Workflow in an AI Chat}{78}{section.D.3}%
+\contentsline {subsection}{\numberline {D.3.1}Start Any Selected AI Skill}{79}{subsection.D.3.1}%
+\contentsline {subsection}{\numberline {D.3.2}Develop an Approved Change}{79}{subsection.D.3.2}%
+\contentsline {subsection}{\numberline {D.3.3}Prepare a Requirements Package}{80}{subsection.D.3.3}%
+\contentsline {subsection}{\numberline {D.3.4}Other AI Tools}{80}{subsection.D.3.4}%
+\contentsline {section}{\numberline {D.4}Plan the Selected Tasks}{81}{section.D.4}%
+\contentsline {section}{\numberline {D.5}Choose and Invoke Agents}{81}{section.D.5}%
+\contentsline {section}{\numberline {D.6}Responsibilities and Handoffs}{82}{section.D.6}%
+\contentsline {section}{\numberline {D.7}Develop, Integrate, and Verify}{83}{section.D.7}%
+\contentsline {section}{\numberline {D.8}Validate with Stakeholders}{83}{section.D.8}%
+\contentsline {section}{\numberline {D.9}Project Tailoring Checklist}{84}{section.D.9}%
+\contentsline {chapter}{\numberline {E}AI Prompt Log}{87}{appendix.E}%
+\contentsline {section}{\numberline {E.1}Chapter Responsibility}{87}{section.E.1}%
+\contentsline {section}{\numberline {E.2}Document Setup: November 3, 2026}{87}{section.E.2}%
+\contentsline {section}{\numberline {E.3}Instantiation Review: November 5, 2026}{87}{section.E.3}%
+\contentsline {section}{\numberline {E.4}Evidence Used}{88}{section.E.4}%
+\contentsline {section}{\numberline {E.5}Technical Owner Correction: November 5, 2026}{88}{section.E.5}%
+\contentsline {chapter}{\numberline {F}Test Evidence}{89}{appendix.F}%
+\contentsline {section}{\numberline {F.1}Chapter Responsibility}{89}{section.F.1}%
+\contentsline {section}{\numberline {F.2}Product Evidence State}{89}{section.F.2}%
+\contentsline {section}{\numberline {F.3}Document Evidence}{89}{section.F.3}%
+\contentsline {chapter}{\numberline {G}Instantiation Review}{90}{appendix.G}%
+\contentsline {section}{\numberline {G.1}Chapter Responsibility}{90}{section.G.1}%
+\contentsline {section}{\numberline {G.2}Scope and Method}{90}{section.G.2}%
+\contentsline {section}{\numberline {G.3}Acceptance Checks and Current Results}{90}{section.G.3}%
+\contentsline {section}{\numberline {G.4}Source and Asset Conventions}{91}{section.G.4}%
+\contentsline {section}{\numberline {G.5}Required Human Review}{91}{section.G.5}%
+\contentsline {chapter}{\numberline {H}Document History}{92}{appendix.H}%
+\contentsline {section}{\numberline {H.1}Chapter Responsibility}{92}{section.H.1}%
+\contentsline {section}{\numberline {H.2}Project Draft History}{92}{section.H.2}%
+\contentsline {chapter}{Glossary}{94}{section*.193}%
+\contentsline {chapter}{Acronyms}{96}{section*.195}%
+\contentsline {chapter}{Bibliography}{97}{appendix*.197}%
+\contentsline {chapter}{Index}{98}{section*.198}%

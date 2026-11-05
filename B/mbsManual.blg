@@ -1,0 +1,83 @@
+This is BibTeX, Version 0.99e (TeX Live 2026)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: mbsManual.aux
+A level-1 auxiliary file: mbsPrologue.aux
+A level-1 auxiliary file: mbsIntroduction.aux
+A level-1 auxiliary file: mbsDevelopmentPlan.aux
+A level-1 auxiliary file: mbsSystemContext.aux
+A level-1 auxiliary file: mbsUserStories.aux
+A level-1 auxiliary file: mbsRequirements.aux
+A level-1 auxiliary file: mbsUseCases.aux
+A level-1 auxiliary file: mbsArchitectureOverview.aux
+A level-1 auxiliary file: mbsUserInterfaceDesign.aux
+A level-1 auxiliary file: mbsLogicalView.aux
+A level-1 auxiliary file: mbsProcessView.aux
+A level-1 auxiliary file: mbsDevelopmentView.aux
+A level-1 auxiliary file: mbsPhysicalView.aux
+A level-1 auxiliary file: mbsImplementation.aux
+A level-1 auxiliary file: mbsTests.aux
+A level-1 auxiliary file: mbsTraceability.aux
+A level-1 auxiliary file: mbsVerification.aux
+A level-1 auxiliary file: mbsValidation.aux
+A level-1 auxiliary file: mbsRelease.aux
+A level-1 auxiliary file: mbsDocumentGuide.aux
+A level-1 auxiliary file: mbsEmbeddedSystemsProfile.aux
+A level-1 auxiliary file: mbsAIAgentGuide.aux
+A level-1 auxiliary file: mbsAIImplementationWorkflow.aux
+A level-1 auxiliary file: mbsAIPromptLog.aux
+A level-1 auxiliary file: mbsTestEvidence.aux
+A level-1 auxiliary file: mbsInstantiationReview.aux
+A level-1 auxiliary file: mbsDocumentHistory.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: mbsReferences.bib
+-- IEEEtran.bst version 1.10 (2002/09/27) by Michael Shell.
+-- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+You've used 11 entries,
+            3975 wiz_defined-function locations,
+            883 strings with 9257 characters,
+and the built_in function-call counts, 4825 in all, are:
+= -- 354
+> -- 63
+< -- 46
++ -- 35
+- -- 8
+* -- 213
+:= -- 862
+add.period$ -- 11
+call.type$ -- 11
+change.case$ -- 9
+chr.to.int$ -- 138
+cite$ -- 11
+duplicate$ -- 365
+empty$ -- 359
+format.name$ -- 2
+if$ -- 1023
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 79
+newline$ -- 71
+num.names$ -- 2
+pop$ -- 180
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 369
+stack$ -- 0
+substring$ -- 160
+swap$ -- 291
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 0
+warning$ -- 0
+while$ -- 4
+width$ -- 13
+write$ -- 127
