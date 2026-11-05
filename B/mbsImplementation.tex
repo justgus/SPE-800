@@ -8,7 +8,7 @@ State the confirmed language constraint and reproducible documentation build.
 
 
 \section{Application Baseline}
-Both applications use C++ (\RequirementRef{REQ-C-101}, \RequirementRef{REQ-C-102}; rationale in \ArchitectureRef{ARC-101}). No C++ standard, compiler, SDK, RTOS, host toolkit, library, application build command, or implementation version is selected. See \hyperref[Question:Q-106]{Q-106}. This stage contains no application implementation or executed product tests.
+The macOS control app and previously scoped embedded software use C++ (\RequirementRef{REQ-C-101}, \RequirementRef{REQ-C-102}; rationale in \ArchitectureRef{ARC-101}). No C++ standard, compiler, SDK, RTOS, host toolkit, library, application build command, or implementation version is selected. See \hyperref[Question:Q-106]{Q-106} and the unresolved embedded allocation in \hyperref[Question:Q-116]{Q-116}. This stage contains no application implementation or executed product tests.
 
 \section{Complete Documentation Build}
 From B on macOS/Linux:
@@ -19,4 +19,4 @@ This executes pdflatex, BibTeX, makeglossaries, makeindex, and two more pdflatex
 \begin{verbatim}
 .\mbsMakefilePowerShell.ps1 -Action pdf
 \end{verbatim}
-The PowerShell path is documented but has not been executed in this macOS review. Toolchain and review evidence belong in \ChapterRef{InstantiationReview} and \ChapterRef{TestEvidence}. A PDF build verifies document processing, not application conformance.
+The PowerShell path builds documentation; it does not add Windows to the application scope and has not been executed in this macOS review. Toolchain and review evidence belong in \ChapterRef{InstantiationReview} and \ChapterRef{TestEvidence}. A PDF build verifies document processing, not application conformance.

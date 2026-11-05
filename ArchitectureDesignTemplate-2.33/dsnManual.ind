@@ -1,37 +1,37 @@
 \begin{theindex}
 
   \item acceptance criterion, \hyperpage{9}
-  \item AGENTS.md, \hyperpage{62}
+  \item AGENTS.md, \hyperpage{63}
   \item AI
     \subitem architecture as maintained input, \hyperpage{2}
-  \item AI agent, \hyperpage{60}
-    \subitem agent-count decision, \hyperpage{85}
-    \subitem aiaCoordinator, \hyperpage{86}
-    \subitem aiaDeveloper, \hyperpage{86}
-    \subitem aiaReviewer, \hyperpage{86}
+  \item AI agent, \hyperpage{61}
+    \subitem agent-count decision, \hyperpage{86}
+    \subitem aiaCoordinator, \hyperpage{87}
+    \subitem aiaDeveloper, \hyperpage{87}
+    \subitem aiaReviewer, \hyperpage{87}
     \subitem architecture workflow, \hyperpage{4}, \hyperpage{42}
-    \subitem completion checklist, \hyperpage{79}
-    \subitem consistency rules, \hyperpage{70}
-    \subitem context pack, \hyperpage{68}
-    \subitem context routing, \hyperpage{60}
+    \subitem completion checklist, \hyperpage{80}
+    \subitem consistency rules, \hyperpage{71}
+    \subitem context pack, \hyperpage{69}
+    \subitem context routing, \hyperpage{61}
     \subitem embedded systems tailoring, \hyperpage{58}
-    \subitem example prompts, \hyperpage{60}, \hyperpage{76}
-    \subitem execution workflow, \hyperpage{81}
-    \subitem guide activity, \hyperpage{64}
-    \subitem human review, \hyperpage{60}, \hyperpage{78}
-    \subitem independent review, \hyperpage{81}
+    \subitem example prompts, \hyperpage{61}, \hyperpage{77}
+    \subitem execution workflow, \hyperpage{82}
+    \subitem guide activity, \hyperpage{65}
+    \subitem human review, \hyperpage{61}, \hyperpage{79}
+    \subitem independent review, \hyperpage{82}
     \subitem LaTeX installation prompt, \hyperpage{42}
-    \subitem linked references, \hyperpage{61}
-    \subitem parallel delegation, \hyperpage{81}
+    \subitem linked references, \hyperpage{62}
+    \subitem parallel delegation, \hyperpage{82}
     \subitem project initialization, \hyperpage{3}
-    \subitem quick start, \hyperpage{61}
-    \subitem repository bootstrap, \hyperpage{62}
-    \subitem skill selection, \hyperpage{64}
-    \subitem task steps, \hyperpage{71}
-    \subitem terminology consistency, \hyperpage{61}
-    \subitem TikZ requirement, \hyperpage{60}
+    \subitem quick start, \hyperpage{62}
+    \subitem repository bootstrap, \hyperpage{63}
+    \subitem skill selection, \hyperpage{65}
+    \subitem task steps, \hyperpage{72}
+    \subitem terminology consistency, \hyperpage{62}
+    \subitem TikZ requirement, \hyperpage{61}
   \item Appendix
-    \subitem AI Agent Usage Guide, \hyperpage{60}
+    \subitem AI Agent Usage Guide, \hyperpage{61}
     \subitem Document Authoring Guide, \hyperpage{42}
   \item architecture
     \subitem AI-assisted design, \hyperpage{2}
@@ -44,14 +44,14 @@
 
   \item Chapter
     \subitem Introduction, \hyperpage{1}
-  \item CLAUDE.md, \hyperpage{62}
+  \item CLAUDE.md, \hyperpage{63}
 
   \indexspace
 
   \item diagram
     \subitem TikZ source, \hyperpage{46}
   \item document conventions, \hyperpage{42}
-  \item document history, \hyperpage{93}
+  \item document history, \hyperpage{94}
   \item domain tailoring profile, \hyperpage{4}
     \subitem embedded systems, \hyperpage{52}
 
@@ -114,8 +114,8 @@
 
   \indexspace
 
-  \item SKILL.md, \hyperpage{62}
-  \item source of truth, \hyperpage{1}, \hyperpage{60}
+  \item SKILL.md, \hyperpage{63}
+  \item source of truth, \hyperpage{1}, \hyperpage{61}
   \item status
     \subitem Done, \hyperpage{13}
     \subitem In Progress, \hyperpage{13}

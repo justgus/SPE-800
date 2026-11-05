@@ -3,20 +3,20 @@
   "active_tex_files": 38,
   "active_tikz_files": 8,
   "artifact_counts": {
-    "UserStory": 1,
-    "Requirement": 6,
-    "UseCase": 1,
-    "Architecture": 2,
-    "TestCase": 6,
-    "Verification": 6,
-    "Validation": 1
+    "UserStory": 3,
+    "Requirement": 13,
+    "UseCase": 3,
+    "Architecture": 4,
+    "TestCase": 13,
+    "Verification": 13,
+    "Validation": 3
   },
   "checks": [
     "all active inputs exist",
     "mbs namespace and TikZ owner paths",
     "no active includeonly",
     "artifact IDs unique and references defined",
-    "six requirement/test/verification mappings reciprocal",
+    "13 requirement mappings reciprocal across all seven registers",
     "no fabricated product pass or completed requirement",
     "active bibliography citations resolve"
   ]

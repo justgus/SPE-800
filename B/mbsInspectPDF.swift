@@ -22,9 +22,9 @@ for i in 0..<doc.pageCount {
         else if a.url != nil || a.action is PDFActionURL { externalLinks += 1 }
         else { unresolvedLinks += 1 }
     }
-    if [14,16,33,72,96,97].contains(i) || i == 0 || (i >= 12 && (i < 47 || content.contains("Figure ") || content.contains("Instantiation Review") || content.contains("Project Document History") || content.contains("Glossary"))) {
-        try png(page.thumbnail(of:NSSize(width:1200,height:1600),for:.mediaBox),String(format:"mbsPage%03d.png",i+1)); selected.append(i+1)
-    }
+    // Render every page so inspection does not depend on fixed chapter offsets.
+    try png(page.thumbnail(of:NSSize(width:1200,height:1600),for:.mediaBox),String(format:"mbsPage%03d.png",i+1))
+    selected.append(i+1)
 }
 for start in stride(from:0,to:doc.pageCount,by:16) {
     let canvas = NSImage(size:NSSize(width:1600,height:2240)); canvas.lockFocus()
