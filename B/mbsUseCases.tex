@@ -1,0 +1,40 @@
+\chapter{Use Cases}
+\ChapterLabel{UseCases}
+\section{Chapter Responsibility}
+\label{Section:UseCasesResponsibility}
+Describe the supported end-to-end scenario without inventing control behavior.
+
+\noindent\textbf{Expected result:} A reviewable project record with explicit evidence and gaps.
+
+
+\section{Deliver Hardware-Sensor Samples}
+\small
+\begin{tabularx}{\linewidth}{L{3.1cm}Y}
+\caption{Sensor Sample Delivery Use Case\label{Table:SensorUseCase}}\\
+\toprule
+Field & Candidate scenario\\\midrule
+\endfirsthead
+\toprule
+Field & Candidate scenario\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+ID & \UseCaseID{UC-101}\\
+Source story & \UserStoryRef{US-101}\\
+Requirements & \RequirementRef{REQ-F-101}, \RequirementRef{REQ-F-102}, \RequirementRef{REQ-F-103}, \RequirementRef{REQ-C-101}, \RequirementRef{REQ-C-102}, \RequirementRef{REQ-C-103}\\
+Tests & \TestCaseRef{TC-101}, \TestCaseRef{TC-102}, \TestCaseRef{TC-103}, \TestCaseRef{TC-104}, \TestCaseRef{TC-105}, \TestCaseRef{TC-106}\\
+Actor & Intended sensor-system user; exact role \hyperref[Question:Q-101]{Q-101}\\
+Preconditions & A selected sensor, embedded target, transport, and host platform are available and configured. Their selection and configuration procedures are unresolved: \hyperref[Question:Q-102]{Q-102}, \hyperref[Question:Q-103]{Q-103}, \hyperref[Question:Q-106]{Q-106}, \hyperref[Question:Q-107]{Q-107}\\
+Trigger & Sensor data becomes available under an agreed acquisition scenario; no start button or command is implied.\\
+Main flow & The sensor supplies sampled data; the embedded software acquires it and transfers it; the control app receives it.\\
+Success outcome & The agreed samples are observable at the control-app receive boundary. Representation, comparison, timing, and evidence criteria remain \hyperref[Question:Q-103]{Q-103}, \hyperref[Question:Q-104]{Q-104}, \hyperref[Question:Q-108]{Q-108}\\
+Exceptions & Invalid data, missing samples, disconnect, overflow, and recovery require technical decisions in \hyperref[Question:Q-107]{Q-107}. These are open flows, not specified behavior.\\
+Postconditions & The selected data-delivery scenario is complete. Persistence, display, actuation, and reverse commands are not yet specified; see \hyperref[Question:Q-105]{Q-105}\\
+\end{tabularx}
+\normalsize
+
+Figure~\ref{Figure:UseCaseDiagram} links the supported goal to its definition.
+\begin{figure}[htbp]\centering
+\input{TikZ/mbsUseCases/mbsUseCaseDiagram.tex}
+\caption{Candidate sample-delivery goal; actor role remains open.}\label{Figure:UseCaseDiagram}
+\end{figure}

@@ -1,0 +1,8 @@
+\begin{tikzpicture}[box/.style={draw=mbsBlue,fill=mbsLightBlue,align=center,text width=2.5cm,minimum height=1.5cm,font=\small},>=Latex]
+\node[box] (sensor) at (0,0) {Hardware sensor\\selection open};
+\node[box] (embedded) at (4,0) {Embedded software\\C++};
+\node[box] (host) at (8,0) {Control app\\C++};
+\node[draw=mbsGray,dashed,fit=(embedded)(host),inner sep=0.4cm,label={[font=\small]below:System of interest}] {};
+\draw[->] (sensor.east) -- node[above=3pt,fill=white,inner sep=1pt,font=\scriptsize,text width=1.15cm,align=center]{sampled\\data} (embedded.west);
+\draw[->] (embedded.east) -- node[above=3pt,fill=white,inner sep=1pt,font=\scriptsize,text width=1.15cm,align=center]{sampled\\data} (host.west);
+\end{tikzpicture}

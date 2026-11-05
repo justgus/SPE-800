@@ -1,0 +1,16 @@
+\chapter{Architecture Overview}
+\ChapterLabel{ArchitectureOverview}
+\section{Chapter Responsibility}
+\label{Section:ArchitectureOverviewResponsibility}
+Record supported design constraints and expose decisions that remain open.
+
+\noindent\textbf{Expected result:} A reviewable project record with explicit evidence and gaps.
+
+
+\section{Confirmed Technology Direction}
+\ArchitectureID{ARC-101}: Both applications use C++, as supplied by the user on November 5, 2026. Drivers: \RequirementRef{REQ-C-101} and \RequirementRef{REQ-C-102}. This is a user-selected constraint; no comparative language evaluation was supplied. Alternatives were not evaluated in this stage. Consequences to assess include target/host compiler support, runtime libraries, driver availability, and language-standard compatibility (\hyperref[Question:Q-106]{Q-106}).
+
+\ArchitectureID{ARC-102}: The supported conceptual boundary contains an embedded software application and a host control app connected by sample transfer. Drivers: \RequirementRef{REQ-F-101}, \RequirementRef{REQ-F-102}, and \RequirementRef{REQ-F-103}, and platform constraint \RequirementRef{REQ-C-103} (coverage pending \hyperref[Question:Q-106]{Q-106}). See Figure~\ref{Figure:SensorContext}. This allocation restates the user scenario; it selects neither a communication protocol nor a queue, thread, or class architecture.
+
+\section{Decisions Awaiting Evidence}
+Direct driver access versus a hardware abstraction, synchronous versus buffered transfer, and native versus shared host UI frameworks are potential trade studies. None is selected. Hardware, transport, latency, resources, faults, and host behavior must first be resolved through \hyperref[Table:OwnedQuestions]{the owned questions}. Detailed architecture acceptance remains pending.

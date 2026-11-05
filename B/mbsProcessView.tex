@@ -1,0 +1,11 @@
+\chapter{Process View}
+\ChapterLabel{ProcessView}
+\section{Chapter Responsibility}
+\label{Section:ProcessViewResponsibility}
+Record the supported runtime sequence and its missing operating semantics.
+
+\noindent\textbf{Expected result:} A reviewable project record with explicit evidence and gaps.
+
+
+\section{Known Data Direction}
+The candidate sequence in \UseCaseRef{UC-101} is sensor sample availability, acquisition by embedded software, transfer, and receipt by the control app. No concurrency model, scheduling mechanism, buffering policy, sampling trigger, timestamp source, or state machine has been selected. Timing/resource decisions remain \hyperref[Question:Q-104]{Q-104}; startup, stop, fault, degraded-mode, and recovery transitions remain \hyperref[Question:Q-107]{Q-107}. These decisions block a meaningful Mealy/Moore state model and transition table.

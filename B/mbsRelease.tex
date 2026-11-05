@@ -1,0 +1,16 @@
+\chapter{Release}
+\ChapterLabel{Release}
+\section{Chapter Responsibility}
+\label{Section:ReleaseResponsibility}
+Identify the documentation candidate and preserve human publication and release decisions.
+
+\noindent\textbf{Expected result:} A reviewable project record with explicit evidence and gaps.
+
+
+\section{Documentation Candidate}
+The candidate consists of the authored \texttt{mbs} LaTeX chapters, bibliography, separate editable TikZ sources, retained support assets, build files, discovery pointers, and the generated \path|mbsManual.pdf| for review. Document version 2.33 identifies the inherited template lineage, not a released application. The project baseline version remains \hyperref[Question:Q-110]{Q-110}. No software release package exists.
+
+\section{Publication Gate}
+First obtain technical acceptance from the assigned acceptance authority and the user's acceptance/publication authorization for the exact reviewed candidate. Then commit the reviewed sources on main and push to the configured origin. Later changes use branches and pull requests, as controlled in \ChapterRef{DevelopmentPlan}. No commit or push is authorized by this draft. Remaining engineering gaps are visible in \hyperref[Table:OwnedQuestions]{the owned questions}; a successful document build cannot close them.
+
+Software release, deployment, rollback, support, and field-service criteria remain future work dependent on \hyperref[Question:Q-107]{Q-107}, \hyperref[Question:Q-109]{Q-109}.

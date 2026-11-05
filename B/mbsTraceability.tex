@@ -1,0 +1,30 @@
+\chapter{Traceability}
+\ChapterLabel{Traceability}
+\section{Chapter Responsibility}
+\label{Section:TraceabilityResponsibility}
+Maintain reciprocal links from the supplied scenario to pending evidence.
+
+\noindent\textbf{Expected result:} A reviewable project record with explicit evidence and gaps.
+
+
+\section{Project Traceability Register}
+Every row originates in \UserStoryRef{US-101} and \UseCaseRef{UC-101}; stakeholder validation is \ValidationRef{VAL-101}. Implementation version is unassigned for every row. No implementation or result is implied by these links. The source facts are recorded in \ChapterRef{AIPromptLog}.
+\small
+\begin{tabularx}{\linewidth}{L{2.5cm}L{2.0cm}Y}
+\caption{Traceability Register\label{Table:TraceabilityMatrix}}\\
+\toprule
+Requirement & Test & Design and verification\\\midrule
+\endfirsthead
+\toprule
+Requirement & Test & Design and verification\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\RequirementRef{REQ-F-101} & \TestCaseRef{TC-101} & \ArchitectureRef{ARC-102}; \VerificationRef{VER-101}; \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ValidationRef{VAL-101}\\
+\RequirementRef{REQ-F-102} & \TestCaseRef{TC-102} & \ArchitectureRef{ARC-102}; \VerificationRef{VER-102}; \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ValidationRef{VAL-101}\\
+\RequirementRef{REQ-F-103} & \TestCaseRef{TC-103} & \ArchitectureRef{ARC-102}; \VerificationRef{VER-103}; \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ValidationRef{VAL-101}\\
+\RequirementRef{REQ-C-101} & \TestCaseRef{TC-104} & \ArchitectureRef{ARC-101}; \VerificationRef{VER-104}; \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ValidationRef{VAL-101}\\
+\RequirementRef{REQ-C-102} & \TestCaseRef{TC-105} & \ArchitectureRef{ARC-101}; \VerificationRef{VER-105}; \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ValidationRef{VAL-101}\\
+\RequirementRef{REQ-C-103} & \TestCaseRef{TC-106} & \ArchitectureRef{ARC-102}; \VerificationRef{VER-106}; \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ValidationRef{VAL-101}\\
+\end{tabularx}
+\normalsize

@@ -1,0 +1,13 @@
+\chapter{Logical View}
+\ChapterLabel{LogicalView}
+\section{Chapter Responsibility}
+\label{Section:LogicalViewResponsibility}
+Describe supported application responsibilities without inventing a C++ class hierarchy.
+
+\noindent\textbf{Expected result:} A reviewable project record with explicit evidence and gaps.
+
+
+\section{Conceptual Responsibilities}
+The embedded software acquires and transfers sensor samples (\RequirementRef{REQ-F-101}, \RequirementRef{REQ-F-102}); the control app receives them (\RequirementRef{REQ-F-103}). Sample units, representation, ownership, lifetime, ordering, and validity are unresolved in \hyperref[Question:Q-102]{Q-102}, \hyperref[Question:Q-103]{Q-103}.
+
+No class or interface design is approved. A class diagram and class-responsibility register will follow the data and interface decisions. This avoids treating conceptual application boundaries as implemented C++ classes. The required register and linked class rows are governed by \hyperref[Requirement:DOCCLASS001]{DOC-CLASS-001} and \hyperref[Requirement:DOCLINK001]{DOC-LINK-001}.

@@ -1,0 +1,6 @@
+\begin{tikzpicture}[>=Latex]
+\node[draw,align=center,text width=2.6cm,minimum height=1.2cm] (actor) at (0,0) {Intended user\\role open};
+\node[draw,ellipse,align=center,text width=4cm,minimum height=1.5cm] (goal) at (6,0) {\hyperref[UseCase:UC-101]{UC-101: Deliver hardware-sensor samples}};
+\draw (actor.east) -- (goal.west);
+\node[draw,dashed,fit=(goal),inner sep=0.5cm,label=above:{Sensor system}] {};
+\end{tikzpicture}

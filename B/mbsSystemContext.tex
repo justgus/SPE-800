@@ -1,0 +1,25 @@
+\chapter{System Context}
+\ChapterLabel{SystemContext}
+\section{Chapter Responsibility}
+\label{Section:SystemContextResponsibility}
+Define the sensor-system boundary and its external relationships.
+
+\noindent\textbf{Expected result:} A reviewable project record with explicit evidence and gaps.
+
+
+\index{embedded software application}
+\index{control app}
+\index{sensor sample}
+\section{Supported Boundary}
+The system of interest contains the embedded software application and the host control app. The hardware sensor supplies sampled data to the embedded side; the control app receives that data on a host computer. The sensor and host hardware are environmental dependencies, not hardware developed in this documentation stage. Embedded software and control app are C++; the OS families named in the scope are macOS, Windows, and Linux. Their exact support matrix remains \hyperref[Question:Q-106]{Q-106}.
+
+Figure~\ref{Figure:SensorContext} records only this supported data direction. Arrows do not select a protocol, connector, queue, thread model, or timing behavior. Bidirectional control has not been specified (\hyperref[Question:Q-105]{Q-105}).
+\begin{figure}[htbp]
+\centering
+\input{TikZ/mbsSystemContext/mbsSensorContext.tex}
+\caption{Sensor-to-control-app context; transport and hardware remain open.}
+\label{Figure:SensorContext}
+\end{figure}
+
+\section{Stakeholders and Interfaces}
+The supplied engineering owners are in \hyperref[Table:ProjectOwners]{the owner register}. The intended operator and mission need remain \hyperref[Question:Q-101]{Q-101}. Hardware, sample semantics, transport, constraints, failure behavior, and evidence remain \hyperref[Question:Q-102]{Q-102}, \hyperref[Question:Q-103]{Q-103}, \hyperref[Question:Q-104]{Q-104}, \hyperref[Question:Q-107]{Q-107}, \hyperref[Question:Q-108]{Q-108}. Course laboratory examples are context, not a selected sensor, FTDI device, or mandatory project architecture.
