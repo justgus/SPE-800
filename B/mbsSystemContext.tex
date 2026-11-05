@@ -2,24 +2,45 @@
 \ChapterLabel{SystemContext}
 \section{Chapter Responsibility}
 \label{Section:SystemContextResponsibility}
-Define the sensor-system boundary and its external relationships.
+Define the mission, system boundary, stakeholders, and external result boundary.
 
-\noindent\textbf{Expected result:} A reviewable project record with explicit evidence and gaps.
+\noindent\textbf{Expected result:} An explicit measurement-usability mission, boundary, and stakeholder context.
 
+\index{measurement usability}\index{ADC0804}\index{FT245R}\index{Operator}\index{Integrator}\index{Maintainer}
+\section{Mission and Boundary}
+\label{Section:MeasurementMission}
+The mission is to determine whether the measurement can be used. The system of interest includes the sensor coupled with an ADC0804, the clock/counter, interface logic, the FT245R data path, and the host control app on macOS. A downstream consumer is outside the system boundary and receives the published result. The physical quantity, operating context, and measurable intended-use success remain \hyperref[Question:Q-101]{Q-101}, \hyperref[Question:Q-102]{Q-102}, \hyperref[Question:Q-113]{Q-113}.
 
-\index{embedded software application}
-\index{control app}
-\index{sensor sample}
-\section{Supported Boundary}
-The system of interest contains the embedded software application and the host control app. The hardware sensor supplies sampled data to the embedded side; the control app receives that data on a host computer. The sensor and host hardware are environmental dependencies, not hardware developed in this documentation stage. Embedded software and control app are C++; the OS families named in the scope are macOS, Windows, and Linux. Their exact support matrix remains \hyperref[Question:Q-106]{Q-106}.
+The user selected the ADC0804 8-bit conversion code and a clock/counter value as two parallel inputs to the FT245R data path. Interface logic will define how they are captured, associated, and transferred. The FT245R USB-to-parallel interface carries those data to the host. The host qualifies the measurement and publishes code, status, and timing data to the downstream consumer. These are logical responsibilities, not a selected pin-level implementation or packet format.
 
-Figure~\ref{Figure:SensorContext} records only this supported data direction. Arrows do not select a protocol, connector, queue, thread model, or timing behavior. Bidirectional control has not been specified (\hyperref[Question:Q-105]{Q-105}).
+Figure~\ref{Figure:SensorContext} records the selected components and data direction. The diagram does not claim simultaneous capture, an 8-bit counter, a timestamp unit, or two separate physical FT245R ports. The FT245R datasheet's block diagram shows the D0--D7 FIFO data bus \cite{FT245RDatasheet}; the interface logic's arbitration and record encoding remain \hyperref[Question:Q-103]{Q-103}, \hyperref[Question:Q-112]{Q-112}. The ADC0804's 8-bit conversion interface is supported by its vendor documentation \cite{ADC0804Datasheet}. These sources do not establish the project's voltage range, timing limits, or complete schematic.
 \begin{figure}[htbp]
 \centering
-\input{TikZ/mbsSystemContext/mbsSensorContext.tex}
-\caption{Sensor-to-control-app context; transport and hardware remain open.}
+\resizebox{\linewidth}{!}{\input{TikZ/mbsSystemContext/mbsSensorContext.tex}}
+\caption{Measurement path with logical conversion/counter inputs and a downstream result boundary.}
 \label{Figure:SensorContext}
 \end{figure}
 
-\section{Stakeholders and Interfaces}
-The supplied engineering owners are in \hyperref[Table:ProjectOwners]{the owner register}. The intended operator and mission need remain \hyperref[Question:Q-101]{Q-101}. Hardware, sample semantics, transport, constraints, failure behavior, and evidence remain \hyperref[Question:Q-102]{Q-102}, \hyperref[Question:Q-103]{Q-103}, \hyperref[Question:Q-104]{Q-104}, \hyperref[Question:Q-107]{Q-107}, \hyperref[Question:Q-108]{Q-108}. Course laboratory examples are context, not a selected sensor, FTDI device, or mandatory project architecture.
+\section{Stakeholders}
+\label{Section:MeasurementStakeholders}
+The following needs were supplied by the user. Stakeholder roles are distinct from engineering ownership in \hyperref[Table:ProjectOwners]{the owner register}.
+
+\small
+\begin{tabularx}{\linewidth}{L{2.5cm}Y}
+\caption{Measurement Stakeholder Needs\label{Table:StakeholderNeeds}}\\
+\toprule
+Stakeholder & Need and story\\\midrule
+\endfirsthead
+\toprule
+Stakeholder & Need and story\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\phantomsection\label{Stakeholder:Operator}Operator & Cares about the decision: whether the measurement can be used. \UserStoryRef{US-101}.\\
+\phantomsection\label{Stakeholder:Integrator}Integrator & Cares about the meaning and format of the published result. \UserStoryRef{US-102}.\\
+\phantomsection\label{Stakeholder:Maintainer}Maintainer & Needs to know whether the source is connected and operating properly. \UserStoryRef{US-103}.\\
+\end{tabularx}
+\normalsize
+
+\section{Stage and Allocation Boundaries}
+This stage remains documentation only; no circuit, firmware, host implementation, or product evidence is produced. macOS is the current host scope, replacing the earlier macOS/Windows/Linux scope. Both software applications retain the earlier C++ direction. The execution target and responsibility of embedded software relative to interface logic remain \hyperref[Question:Q-116]{Q-116}. Selecting ADC0804 and FT245R does not select a processor, FPGA, microcontroller, multiplexer, or host driver. The control app is the host application throughout this book; its name does not imply reverse commands or a graphical UI.

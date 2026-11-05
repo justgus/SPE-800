@@ -2,12 +2,33 @@
 \ChapterLabel{LogicalView}
 \section{Chapter Responsibility}
 \label{Section:LogicalViewResponsibility}
-Describe supported application responsibilities without inventing a C++ class hierarchy.
+Define conceptual responsibilities and data boundaries without selecting C++ classes.
 
-\noindent\textbf{Expected result:} A reviewable project record with explicit evidence and gaps.
+\noindent\textbf{Expected result:} A consistent conceptual responsibility and interface model.
 
+\section{Responsibility and Contract Map}
+These are conceptual responsibilities, not implemented classes. No class diagram or C++ API is selected. Future class/interface diagrams require the titled, linked responsibility register under \hyperref[Requirement:DOCCLASS001]{DOC-CLASS-001} and \hyperref[Requirement:DOCLINK001]{DOC-LINK-001}.
 
-\section{Conceptual Responsibilities}
-The embedded software acquires and transfers sensor samples (\RequirementRef{REQ-F-101}, \RequirementRef{REQ-F-102}); the control app receives them (\RequirementRef{REQ-F-103}). Sample units, representation, ownership, lifetime, ordering, and validity are unresolved in \hyperref[Question:Q-102]{Q-102}, \hyperref[Question:Q-103]{Q-103}.
+\small
+\begin{tabularx}{\linewidth}{L{3.0cm}Y}
+\caption{Measurement Responsibilities\label{Table:MeasurementResponsibilities}}\\
+\toprule
+Responsibility & Inputs, outputs, and governing links\\\midrule
+\endfirsthead
+\toprule
+Responsibility & Inputs, outputs, and governing links\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Analog conversion & \RequirementRef{REQ-F-101}; sensor signal to ADC0804 8-bit conversion code. Analog span/reference/calibration: \hyperref[Question:Q-102]{Q-102}.\\
+Counter observation & \RequirementRef{REQ-F-104}; clock/counter to counter value. Width, event and rollover: \hyperref[Question:Q-111]{Q-111}.\\
+Capture and association & \RequirementRef{REQ-F-105}; conversion and counter inputs to an associated acquisition record. No record layout is selected: \hyperref[Question:Q-112]{Q-112}.\\
+FT245R transfer and host reception & \RequirementRef{REQ-F-102}, \RequirementRef{REQ-F-103}; associated acquisition data across parallel/USB boundaries. Framing and partial records: \hyperref[Question:Q-103]{Q-103}.\\
+Qualification & \RequirementRef{REQ-F-106}; received measurement evidence to a usability disposition under \hyperref[Question:Q-113]{Q-113}.\\
+Publication & \RequirementRef{REQ-F-107}, \RequirementRef{REQ-I-101}; code, status, timing to downstream consumer under \hyperref[Question:Q-114]{Q-114}.\\
+Source condition & \RequirementRef{REQ-F-108}, \RequirementRef{REQ-F-109}; defined observations to Maintainer connection/health information under \hyperref[Question:Q-115]{Q-115}.\\
+\end{tabularx}
+\normalsize
 
-No class or interface design is approved. A class diagram and class-responsibility register will follow the data and interface decisions. This avoids treating conceptual application boundaries as implemented C++ classes. The required register and linked class rows are governed by \hyperref[Requirement:DOCCLASS001]{DOC-CLASS-001} and \hyperref[Requirement:DOCLINK001]{DOC-LINK-001}.
+\section{Data Meaning and Invariants Awaiting Definition}
+Conversion code, counter value, host qualification status, and published code are separate terms. The published code is not assumed to be the raw conversion code. Counter value is not assumed to be elapsed time, absolute time, or the host receive timestamp. A record's association, timing origin, field units, lifecycle, and representation are defined only after \hyperref[Question:Q-111]{Q-111}, \hyperref[Question:Q-112]{Q-112}, \hyperref[Question:Q-114]{Q-114} is resolved. No packed structure, byte order, checksum, or wall-clock mapping is introduced here.
