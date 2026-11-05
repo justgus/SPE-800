@@ -1,0 +1,54 @@
+# LaTeX intermediate files (manuals, chapter includes, and slides).
+*.aux
+*.log
+*.toc
+*.lof
+*.lot
+*.lol
+*.loa
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.synctex.gz(busy)
+*.dvi
+*.xdv
+
+# Bibliography intermediates.
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+# Glossary, acronym, and index intermediates.
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.glg-abr
+*.glg-acr
+*.glg-main
+*.idx
+*.ilg
+*.ind
+# These styles are generated for the manuals; other authored styles stay visible.
+*Manual.ist
+*Manual.xdy
+
+# Beamer navigation and verbatim intermediates.
+*.nav
+*.snm
+*.vrb
+
+# Hyperref bookmark intermediates; do not ignore unrelated .out files.
+*Manual.out
+dsnSlidesArchitectureTemplates.out
+dsnSlidesArchitectureTemplatesInstructor.out
+
+# macOS Finder metadata.
+.DS_Store
+
+# Keep final PDFs, source/diagram assets, and retained JSON evidence trackable.
