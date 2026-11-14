@@ -1,0 +1,15 @@
+\chapter{Process View}
+\ChapterLabel{ProcessView}
+\section{Chapter Responsibility}
+\label{Section:ProcessViewResponsibility}
+Describe conversion, association, qualification, and publication while exposing timing/fault gaps.
+
+\noindent\textbf{Expected result:} A defined high-level measurement flow with capture and fault semantics left explicit.
+
+\section{Measurement Flow}
+The high-level flow is \UseCaseRef{UC-101}: conversion code and clock/counter value become available; interface logic captures and associates them, transfers the acquisition record through FT245R USB, and the macOS host receives, qualifies, and publishes the result. Figure~\ref{Figure:SensorContext} shows this direction; \ArchitectureRef{ARC-103} and \ArchitectureRef{ARC-104} define the allocation.
+
+The word alongside does not guarantee simultaneous sampling or coherent capture. Conversion completion, counter transition/rollover, serialization, USB delivery, host qualification, and publication are different events. Their ordering, deadlines, latency, clock relationships, and timestamps remain \hyperref[Question:Q-103]{Q-103}, \hyperref[Question:Q-104]{Q-104}, \hyperref[Question:Q-111]{Q-111}, \hyperref[Question:Q-112]{Q-112}. No thread, queue, scheduling, or state-machine structure is selected.
+
+\section{Fault and Maintenance Paths}
+\UseCaseRef{UC-103} addresses source connection and operating health independently of measurement qualification. A connection can exist without demonstrated operation, and a received record does not by itself prove measurement usability. The required evidence, stale/unknown behavior, fault detection, recovery, and publication policy remain \hyperref[Question:Q-107]{Q-107}, \hyperref[Question:Q-113]{Q-113}, \hyperref[Question:Q-114]{Q-114}, \hyperref[Question:Q-115]{Q-115}. A complete state model and exception transition table depend on those decisions; this revision does not invent fail-safe or suppression behavior.

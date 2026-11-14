@@ -1,0 +1,33 @@
+\chapter{Instantiation Review}
+\ChapterLabel{InstantiationReview}
+\section{Chapter Responsibility}
+\label{Section:InstantiationReviewResponsibility}
+Report AIS-02 evidence, checks, limitations, and required human dispositions.
+
+\noindent\textbf{Expected result:} A reviewable project record with explicit evidence and gaps.
+
+
+\section{Scope and Method}
+\hyperref[Skill:AIS-02]{AIS-02} governs initialization. The
+\hyperref[Table:ProjectDomainProfiles]{profile decision} guides embedded
+tailoring, and \hyperref[Skill:AIS-13]{AIS-13} and
+\hyperref[Skill:AIS-14]{AIS-14} guide consistency and build checks.
+Codex drafted and self-reviewed the candidate sequentially because chapter
+inputs and trace registers share dependencies. The prior draft supplies
+stable IDs and trace mappings.
+
+\section{Review Checks}
+Run the complete build and source check from the project directory.
+\begin{verbatim}
+make -f s8sMakefileMacLinux pdf
+python3 s8sCheckSources.py
+\end{verbatim}
+Check active inputs, naming, unique IDs, citations, and reciprocal mappings.
+Review the final LaTeX log, render all pages, inspect figures and tables,
+and check internal links. Compare the reusable template's file inventory
+and hashes before and after authoring.
+
+\section{Required Human Dispositions}
+Michael Stoddard coordinates review and the
+\hyperref[Table:OwnedQuestions]{owned questions}. Dr. Darian Muresan retains
+technical acceptance authority. See the publication gate in \ChapterRef{Release}.

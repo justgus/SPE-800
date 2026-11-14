@@ -1,0 +1,98 @@
+\chapter{System Context}
+\ChapterLabel{SystemContext}
+\section{Chapter Responsibility}
+\label{Section:SystemContextResponsibility}
+Define the mission, system boundary, stakeholders, and external result boundary.
+
+\noindent\textbf{Expected result:} An explicit measurement-usability mission, boundary, and stakeholder context.
+
+\index{measurement usability}\index{ADC0804}\index{FT245R}\index{Operator}\index{Integrator}\index{Maintainer}
+\section{Mission and Boundary}
+\label{Section:MeasurementMission}
+The mission is to determine whether a measurement can be used. In
+Figure~\ref{Figure:SensorContext}, the system of interest includes the
+acquisition hardware and the C++ control app on macOS. The sensor, ADC0804,
+clock/counter, interface logic, and FT245R are external to the control app.
+The physical quantity enters the system at the sensor. The downstream
+consumer is external to the system and receives the published result.
+The arrows show the direction and content of the measurement flow. See
+\ArchitectureRef{ARC-103} and \ArchitectureRef{ARC-104} for the allocation
+and its requirement links.
+\begin{figure}[!htbp]
+\centering
+\input{TikZ/s8sSystemContext/s8sSensorContext.tex}
+\caption{Measurement flow across the acquisition hardware, control app, and downstream consumer boundaries.}
+\label{Figure:SensorContext}
+\end{figure}
+
+\section{Boundary Information and Open Questions}
+\label{Section:ContextBoundaryInformation}
+\begin{description}[leftmargin=0pt,labelindent=0pt,labelsep=0pt,style=nextline]
+\item[Physical quantity to sensor to ADC0804.]
+The sensor responds to the physical quantity and supplies an analog signal
+to the ADC0804. Identify the sensor and quantity, then establish the
+operating conditions, signal units and range, conversion reference, and
+calibration needed to interpret the conversion code
+(\hyperref[Question:Q-101]{Q-101}, \hyperref[Question:Q-102]{Q-102}).
+
+\item[ADC0804 and clock/counter to interface logic.]
+The ADC0804 supplies an 8-bit conversion code \cite{ADC0804Datasheet}.
+The clock/counter supplies a counter value through a separate logical input.
+Define the counter width, clock, capture event, reset, rollover, and
+relationship to measurement time. Establish how the interface logic associates
+the code with the correct counter value and how much capture skew is allowed
+(\hyperref[Question:Q-111]{Q-111}, \hyperref[Question:Q-112]{Q-112},
+\hyperref[Question:Q-104]{Q-104}).
+
+\item[Interface logic to FT245R.]
+The interface logic sends the associated conversion code and counter value
+through the FT245R parallel FIFO data path. The FT245R datasheet identifies
+the D0--D7 data bus \cite{FT245RDatasheet}. Engineering must establish
+electrical compatibility, bus ownership, handshake, transfer order,
+record framing, and handling of incomplete transfers and backpressure
+(\hyperref[Question:Q-102]{Q-102}, \hyperref[Question:Q-103]{Q-103},
+\hyperref[Question:Q-112]{Q-112}).
+
+\item[FT245R to control app.]
+USB carries the associated conversion code and counter value to the control
+app. Define the macOS driver and API, reception and recovery behavior, and
+the evidence and decision rules the control app uses to assess measurement
+usability. Establish what observations support connection and operating-health
+reporting and how the Maintainer receives that information
+(\hyperref[Question:Q-106]{Q-106}, \hyperref[Question:Q-107]{Q-107},
+\hyperref[Question:Q-113]{Q-113}, \hyperref[Question:Q-115]{Q-115}).
+
+\item[Control app to downstream consumer.]
+The control app qualifies measurement usability and publishes code, status,
+and timing. Identify the receiving application or system and define the code
+meaning, status semantics, timing origin and units, schema and version,
+delivery transport, and incomplete or error result policy with the consumer
+(\hyperref[Question:Q-114]{Q-114}).
+\end{description}
+
+The Operator's decision presentation and any configuration or reverse command
+flow remain open in \hyperref[Question:Q-105]{Q-105}.
+
+\section{Stakeholders}
+\label{Section:MeasurementStakeholders}
+The following needs were supplied by the user. Stakeholder roles are distinct from engineering ownership in \hyperref[Table:ProjectOwners]{the owner register}.
+
+\small
+\begin{tabularx}{\linewidth}{L{2.5cm}Y}
+\caption{Measurement Stakeholder Needs\label{Table:StakeholderNeeds}}\\
+\toprule
+Stakeholder & Need and story\\\midrule
+\endfirsthead
+\toprule
+Stakeholder & Need and story\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\phantomsection\label{Stakeholder:Operator}Operator & Cares about the decision: whether the measurement can be used. \UserStoryRef{US-101}.\\
+\phantomsection\label{Stakeholder:Integrator}Integrator & Cares about the meaning and format of the published result. \UserStoryRef{US-102}.\\
+\phantomsection\label{Stakeholder:Maintainer}Maintainer & Needs to know whether the source is connected and operating properly. \UserStoryRef{US-103}.\\
+\end{tabularx}
+\normalsize
+
+\section{Stage and Allocation Boundaries}
+This stage remains documentation only; no circuit, firmware, host implementation, or product evidence is produced. macOS is the current host scope, replacing the earlier macOS/Windows/Linux scope. Both software applications retain the earlier C++ direction. The execution target and responsibility of embedded software relative to interface logic remain \hyperref[Question:Q-116]{Q-116}. Selecting ADC0804 and FT245R does not select a processor, FPGA, microcontroller, multiplexer, or host driver. The control app is the host application throughout this book; its name does not imply reverse commands or a graphical UI.

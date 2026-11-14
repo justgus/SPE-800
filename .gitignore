@@ -52,4 +52,4 @@ dsnSlidesArchitectureTemplatesInstructor.out
 .DS_Store
 
 # Keep final PDFs, source/diagram assets, and retained JSON evidence trackable.
-Architecture
+/Architecture/README.md~

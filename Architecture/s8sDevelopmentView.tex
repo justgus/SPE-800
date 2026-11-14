@@ -1,0 +1,14 @@
+\chapter{Development View}
+\ChapterLabel{DevelopmentView}
+\section{Chapter Responsibility}
+\label{Section:DevelopmentViewResponsibility}
+Separate document deliverables from the future C++ source and build organization.
+
+\noindent\textbf{Expected result:} A reviewable project record with explicit evidence and gaps.
+
+
+\section{Current Source Organization}
+The architecture root is \path|s8sManual.tex|. Core chapters use \texttt{s8s} filenames; each TikZ source is stored under its including chapter's base name. The build produces \path|s8sManual.pdf|. Source naming and inherited support-file exceptions are in \ChapterRef{DocumentGuide}.
+
+\section{Future Application Organization}
+The two C++ application deliverables follow \RequirementRef{REQ-C-101} and \RequirementRef{REQ-C-102}. The control app targets macOS. Shared libraries, modules, repository layout, dependency rules, CI, packaging, and adapters are not selected. Interface logic is not assumed to be an embedded C++ module; its allocation remains \hyperref[Question:Q-116]{Q-116}. Decisions depend on \hyperref[Question:Q-102]{Q-102}, \hyperref[Question:Q-103]{Q-103}, \hyperref[Question:Q-106]{Q-106}. No application code or build instructions are asserted by this documentation stage.
