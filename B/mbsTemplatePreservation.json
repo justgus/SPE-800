@@ -1,7 +1,0 @@
-{
-  "result": "PASS",
-  "method": "SHA-256 inventory before and after measurement architecture revision",
-  "files_compared": 169,
-  "template_changed_by_this_task": false,
-  "preexisting_changes_preserved": true
-}
