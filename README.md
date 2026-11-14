@@ -9,12 +9,12 @@ path to a C++ host application on macOS, and publishes qualified code, status,
 and timing data to a downstream consumer. Capture, association, qualification,
 and publication contracts remain to be specified.
 
-- [Project overview, stakeholders, open decisions, and build instructions](B/mbsReadme.md)
-- [Architecture source](B/mbsManual.tex)
-- [Architecture PDF](B/mbsManual.pdf)
+- [Project overview, stakeholders, open decisions, and build instructions](Architecture/s8sReadme.md)
+- [Architecture source](Architecture/s8sManual.tex)
+- [Architecture PDF](Architecture/s8sManual.pdf)
 
 `ArchitectureDesignTemplate-2.33/` holds the reusable template. Project-specific
-work belongs in `B/`; the template is preserved for reuse. This stage covers
+work belongs in `Architecture/`; the template is preserved for reuse. This stage covers
 documentation only. Source documents are authoritative; README summaries are
 updated with architecture changes and link to those sources.
 
