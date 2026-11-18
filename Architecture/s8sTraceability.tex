@@ -25,15 +25,15 @@ Story & Requirement & Verification & Pass evidence\\\midrule
 \UserStoryRef{US-01}, \UserStoryRef{US-02} & \RequirementRef{REQ-F-101} & \VerificationRef{VER-101} & Pending. No pass evidence recorded.\\
 \UserStoryRef{US-01}, \UserStoryRef{US-02} & \RequirementRef{REQ-F-102} & \VerificationRef{VER-102} & Pending. No pass evidence recorded.\\
 \UserStoryRef{US-01}, \UserStoryRef{US-02} & \RequirementRef{REQ-F-103} & \VerificationRef{VER-103} & Pending. No pass evidence recorded.\\
-\UserStoryRef{US-01} & \RequirementRef{REQ-C-101} & \VerificationRef{VER-104} & Pending. No pass evidence recorded.\\
-\UserStoryRef{US-01} & \RequirementRef{REQ-C-102} & \VerificationRef{VER-105} & Pending. No pass evidence recorded.\\
-\UserStoryRef{US-01}, \UserStoryRef{US-03} & \RequirementRef{REQ-C-103} & \VerificationRef{VER-106} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01} (supporting) & \RequirementRef{REQ-C-101} & \VerificationRef{VER-104} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01} (supporting) & \RequirementRef{REQ-C-102} & \VerificationRef{VER-105} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01}, \UserStoryRef{US-03} (partial) & \RequirementRef{REQ-C-103} & \VerificationRef{VER-106} & Pending. No pass evidence recorded.\\
 \UserStoryRef{US-01}, \UserStoryRef{US-02} & \RequirementRef{REQ-F-104} & \VerificationRef{VER-107} & Pending. No pass evidence recorded.\\
 \UserStoryRef{US-01}, \UserStoryRef{US-02} & \RequirementRef{REQ-F-105} & \VerificationRef{VER-108} & Pending. No pass evidence recorded.\\
 \UserStoryRef{US-01} & \RequirementRef{REQ-F-106} & \VerificationRef{VER-109} & Pending. No pass evidence recorded.\\
 \UserStoryRef{US-01}, \UserStoryRef{US-02}, \UserStoryRef{US-04} & \RequirementRef{REQ-F-107} & \VerificationRef{VER-110} & Pending. No pass evidence recorded.\\
-\UserStoryRef{US-01} & \RequirementRef{REQ-F-108} & \VerificationRef{VER-111} & Pending. No pass evidence recorded.\\
-\UserStoryRef{US-01} & \RequirementRef{REQ-F-109} & \VerificationRef{VER-112} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01} (supporting) & \RequirementRef{REQ-F-108} & \VerificationRef{VER-111} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01} (supporting) & \RequirementRef{REQ-F-109} & \VerificationRef{VER-112} & Pending. No pass evidence recorded.\\
 \UserStoryRef{US-04} & \RequirementRef{REQ-I-101} & \VerificationRef{VER-113} & Pending. No pass evidence recorded.\\
 \UserStoryRef{US-01}, \UserStoryRef{US-02} & \RequirementRef{REQ-SMP-01} & \VerificationRef{VER-114} & Pending. No pass evidence recorded.\\
 \UserStoryRef{US-02} & \RequirementRef{REQ-TIM-01} & \VerificationRef{VER-115} & Pending. No pass evidence recorded.\\
@@ -41,6 +41,8 @@ Story & Requirement & Verification & Pass evidence\\\midrule
 \UserStoryRef{US-01} & \RequirementRef{REQ-SMP-02} & \VerificationRef{VER-117} & Pending. No pass evidence recorded.\\
 \UserStoryRef{US-01} & \RequirementRef{REQ-TIM-02} & \VerificationRef{VER-118} & Pending. No pass evidence recorded.\\
 \UserStoryRef{US-04} & \RequirementRef{REQ-OMS-01} & \VerificationRef{VER-119} & Pending. No pass evidence recorded.\\
+\RequirementRef{REQ-F-110} & \TestCaseRef{TC-120} & \UserStoryRef{US-01}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-104}; \VerificationRef{VER-120}; \ValidationRef{VAL-120}\\
+\UserStoryRef{US-01} & \RequirementRef{REQ-F-110} & \VerificationRef{VER-120} & Pending. No pass evidence recorded.\\
 \end{tabularx}
 \normalsize
 
@@ -78,5 +80,32 @@ Requirement & Test & Need, scenario, design, and evidence\\\midrule
 \RequirementRef{REQ-SMP-02} & \TestCaseRef{TC-117} & \UserStoryRef{US-01}; \UseCaseRef{UC-02}; \ArchitectureRef{ARC-105}; \VerificationRef{VER-117}; \ValidationRef{VAL-118}\\
 \RequirementRef{REQ-TIM-02} & \TestCaseRef{TC-118} & \UserStoryRef{US-01}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-105}; \VerificationRef{VER-118}; \ValidationRef{VAL-119}\\
 \RequirementRef{REQ-OMS-01} & \TestCaseRef{TC-119} & \UserStoryRef{US-04}; \UseCaseRef{UC-02}; \ArchitectureRef{ARC-105}; \VerificationRef{VER-119}; \ValidationRef{VAL-105}\\
+\end{tabularx}
+\normalsize
+
+\section{Quality Scenario Coverage}
+The table links candidate evidence and open decisions to each quality scenario.
+Decision owners are listed in \hyperref[Section:ReviewDecisions]{the technical review decision agenda}.
+
+\small
+\begin{tabularx}{\linewidth}{L{1.75cm}YL{3.05cm}}
+\caption{Quality Scenario Coverage\label{Table:QualityScenarioCoverage}}\\
+\toprule
+Scenario & Candidate requirement and evidence & Open decisions\\\midrule
+\endfirsthead
+\toprule
+Scenario & Candidate requirement and evidence & Open decisions\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\hyperref[Scenario:QS-01]{QS-01} & \RequirementRef{REQ-F-105}, \RequirementRef{REQ-F-106}, \RequirementRef{REQ-SMP-01}; \TestCaseRef{TC-108}, \TestCaseRef{TC-109}, \TestCaseRef{TC-114} & \hyperref[Question:Q-122]{Q-122}\\
+\hyperref[Scenario:QS-02]{QS-02} & \RequirementRef{REQ-TIM-01}; \TestCaseRef{TC-115} covers local latency & \hyperref[Question:Q-120]{Q-120}\\
+\hyperref[Scenario:QS-03]{QS-03} & \RequirementRef{REQ-TIM-02}, \RequirementRef{REQ-F-110}; \TestCaseRef{TC-118}, \TestCaseRef{TC-120} & \hyperref[Question:Q-119]{Q-119}, \hyperref[Question:Q-123]{Q-123}\\
+\hyperref[Scenario:QS-04]{QS-04} & \RequirementRef{REQ-SMP-02}; \TestCaseRef{TC-117} covers local staleness & \hyperref[Question:Q-122]{Q-122}, \hyperref[Question:Q-126]{Q-126}\\
+\hyperref[Scenario:QS-05]{QS-05} & \RequirementRef{REQ-IF-01}, \RequirementRef{REQ-I-101}; \ValidationRef{VAL-102} & \hyperref[Question:Q-118]{Q-118}, \hyperref[Question:Q-124]{Q-124}\\
+\hyperref[Scenario:QS-06]{QS-06} & \RequirementRef{REQ-OMS-01}; \TestCaseRef{TC-119} covers approved mapping & \hyperref[Question:Q-125]{Q-125}, \hyperref[Question:Q-126]{Q-126}\\
+\hyperref[Scenario:QS-07]{QS-07} & \RequirementRef{REQ-SMP-02}, \RequirementRef{REQ-OMS-01}; \TestCaseRef{TC-117}, \TestCaseRef{TC-119} & \hyperref[Question:Q-122]{Q-122}, \hyperref[Question:Q-125]{Q-125}\\
+\hyperref[Scenario:QS-08]{QS-08} & Recovery requirement and evidence pending & \hyperref[Question:Q-126]{Q-126}\\
+\hyperref[Scenario:QS-09]{QS-09} & \RequirementRef{REQ-OMS-01}; \ValidationRef{VAL-105} covers status interpretation & \hyperref[Question:Q-124]{Q-124}, \hyperref[Question:Q-125]{Q-125}\\
 \end{tabularx}
 \normalsize

@@ -111,6 +111,95 @@ CAL service contract & TBD & Michael Stoddard & December 2, 2026\\
 \end{tabularx}
 \normalsize
 
+\section{Technical Review Decision Agenda}
+\label{Section:ReviewDecisions}
+The answers below are TBD. Michael Stoddard owns coordination and records
+the agreed answers with the affected stakeholders and acceptance authority.
+The OMS status decisions retain their target dates in
+\hyperref[Table:OMSStatusDecisions]{the OMS decision register}.
+
+\subsection{High-Priority Decisions}
+
+\paragraph{Q-118. Local and mission sample boundaries.}\label{Question:Q-118}
+Who produces and consumes the local record, and who owns mission sample
+publication? Is the local consumer the mission gateway, another component,
+or an external client? Does the Mission application consume qualified samples
+over OMS, and if so, which approved sample contract and delivery endpoint
+apply? Which boundary do \RequirementRef{REQ-F-107} and
+\RequirementRef{REQ-I-101} govern? Which field meanings, clocks, encodings,
+sequence rollover, and invalid or incomplete record dispositions apply at
+each boundary? Record the agreed endpoints and contract identifiers.
+
+\paragraph{Q-119. Operator presentation.}\label{Question:Q-119}
+Where does the Operator see the reading information? What should appear for
+valid, invalid, unavailable, and stale readings, including whether the last
+value remains visible? Is age measured from conversion-ready time, sample
+capture, or another event? Specify units, display precision, update cadence,
+and how unknown age is shown. Which observations and use decisions should
+the Operator make in the reference cases for \ValidationRef{VAL-120}?
+
+\paragraph{Q-120. Continuous delivery.}\label{Question:Q-120}
+What input rates, burst lengths, run duration, and concurrent processing
+loads represent intended operation? What minimum delivery rate, maximum
+inter-reading gap, and loss, duplication, or reordering limits apply at the
+Mission application? How much buffering is required, and what should
+happen at saturation? Name the load fixture, observation point, and
+reference stream for \ValidationRef{VAL-117}. Keep the 10 ms local
+publication allocation distinct from mission delivery limits.
+
+\paragraph{Q-121. Field platform coverage.}\label{Question:Q-121}
+Which part of the subsystem must execute on macOS, iOS, Windows, and Linux?
+Which operating-system versions, processor architectures, connection
+methods, permissions, and drivers qualify on each? Which platforms are
+required in the next baseline and which will be delivered later? Identify
+the representative field devices and the connection and reading-receipt
+success criteria for each platform. Reconcile the result with
+\hyperref[Question:Q-106]{Q-106} and the macOS-only
+\RequirementRef{REQ-C-103}.
+
+\paragraph{Q-122. Readiness, validity, and stale state.}\label{Question:Q-122}
+What edge or level constitutes one ready event, and how are multiple or
+partial events handled? Which inputs classify a sample as valid, invalid,
+or unqualified? Does an invalid or unqualified sample reset the stale
+timer? What is reported before the first valid reading and at the 100 ms
+boundary, including simultaneous arrival of a valid sample? What event
+restores valid output after staleness or a fault? Provide expected
+observations for the readiness and stale-state tests.
+
+\subsection{Additional Decisions}
+
+\paragraph{Q-123. Timing and measurement uncertainty.}\label{Question:Q-123}
+Where are conversion-ready, timestamp capture, local publication, and
+stale-state transition observed? How are corresponding events and records
+matched? What clock synchronization, resolution, calibration, and maximum
+measurement uncertainty are required? How should a result whose uncertainty
+straddles the 10 ms, 100 ms, or 1 ms limit be classified? Identify the
+approved test loads, fixtures, and repeat conditions.
+
+\paragraph{Q-124. Endpoint replacement.}\label{Question:Q-124}
+Which alternate sensor and Mission application qualify as compatible
+replacements? Which configurations, adapters, or setup changes are permitted,
+and which would count as redesign? What sample and status workflows must
+succeed before and after each independent swap, and what record of the
+changes establishes that the connection was reused?
+
+\paragraph{Q-125. OMS status meaning.}\label{Question:Q-125}
+Which combinations of connection and operating-health evidence map to valid,
+stale, and faulted status? How are contradictory, ambiguous, or missing
+observations handled, and which state has precedence when several apply?
+For each approved state or transition, what should the gateway emit and what
+should the Mission application infer? Record the applicable program values
+and approval source in \hyperref[Table:OMSStatusDecisions]{the OMS decision
+register} before advancing \RequirementRef{REQ-OMS-01}.
+
+\paragraph{Q-126. Mission delivery degradation and recovery.}\label{Question:Q-126}
+What should the Mission application observe during loss of sample input,
+loss of OMS delivery, and restoration? During an outage, should the gateway
+discard, retain, or coalesce samples and status, and how are gaps signaled?
+What sample or status may be published first after restoration? Specify
+loss, recovery-time, and freshness limits, and identify the test fixtures
+and the observation points for both mission outputs.
+
 \section{Risks and Lifecycle Gates}
 Unresolved capture coherence may pair a conversion with the wrong counter value. Undefined qualification or publication semantics may produce an unusable decision or a misinterpreted result. Source connection may be confused with source health. ADC0804 and FT245R are selected, but remaining electrical, timing, allocation, and macOS-version decisions still block detailed design and conformance claims. Owners and affected decisions are identified in \hyperref[Table:OwnedQuestions]{the question register}. No probabilities, severity ratings, schedules, or mitigations have been approved.
 

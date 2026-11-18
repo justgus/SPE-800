@@ -130,6 +130,7 @@ lifecycle. A status change shall not erase or replace the assigned priority.
 \textbf{Status} & \textbf{Meaning} & \textbf{In Version Rule}\\
 \midrule
 \endhead
+Proposed & The obligation is under review. Resolve and record its approval conditions before activating it. & Enter \NoVersion.\\
 \ReqStatusOpen & The requirement is active, but implementation has not started. Deferred work remains Open until work begins or the requirement is retired. & Enter \NoVersion.\\
 \ReqStatusInProgress & Implementation or integration work has started, but the requirement does not yet satisfy the definition of Done. & Enter \NoVersion.\\
 \ReqStatusDone & The requirement is implemented; mapped tests pass; verification is complete; traceability is current; and the completed behavior is included in a controlled version. & Enter the first controlled version containing the completed requirement.\\
@@ -260,7 +261,7 @@ it into singular requirements and assign each one a primary category.
 
 \section{Review Rules}
 Reject a requirement row if its priority, status, use-case mapping, or test-case
-mapping is empty. The \textbf{Status} field shall contain Open, In Progress,
+mapping is empty. The \textbf{Status} field shall contain Proposed, Open, In Progress,
 Done, or Retired. The \textbf{In Version} field shall follow
 \hyperref[Table:RequirementStatusDefinitions]{the status definitions}. Confirm
 that reciprocal mappings appear in the user-story, use-case, test,
@@ -302,6 +303,7 @@ ID & Obligation, lifecycle, trace links, and open detail\\\midrule
 \RequirementID{REQ-SMP-02} & When no new qualified sample is available, the acquisition service shall mark its current output stale no later than 100 ms after publication of the previous valid sample. \textbf{Family.} Functional behavior with a freshness limit. \textbf{Priority.} \gls{must} (proposed). \textbf{Status.} \ReqStatusOpen. \textbf{In Version.} \NoVersion. \textbf{Need.} \UserStoryRef{US-01}. \textbf{Use case.} \UseCaseRef{UC-02}. \textbf{Test.} \TestCaseRef{TC-117}. Owner is the acquisition service. The full sensor-to-consumer freshness budget is a separate system decision. Approve the 100 ms teaching allocation, clock, and observable state interface in \hyperref[Question:Q-104]{Q-104} and \hyperref[Question:Q-113]{Q-113}.\\
 \RequirementID{REQ-TIM-02} & For each conversion-ready event, the acquisition service shall record a timestamp for the corresponding sample with an error of no more than 1 ms relative to the event time measured by a calibrated reference clock. \textbf{Family.} Quality, timestamp accuracy. \textbf{Priority.} \gls{must} (proposed). \textbf{Status.} \ReqStatusOpen. \textbf{In Version.} \NoVersion. \textbf{Need.} \UserStoryRef{US-01}. \textbf{Use case.} \UseCaseRef{UC-01}. \textbf{Test.} \TestCaseRef{TC-118}. Owner is the acquisition service and its timestamp source. Approve the 1 ms allocation, clock synchronization, and test conditions in \hyperref[Question:Q-104]{Q-104} and \hyperref[Question:Q-111]{Q-111}.\\
 \RequirementID{REQ-OMS-01} & When the acquisition service reports sensor status as valid, stale, or faulted, the mission gateway shall publish the corresponding derived status data product through the program-approved OMS CAL interface, using the approved UCI message mapping and service contract. \textbf{Family.} Interface. \textbf{Priority.} \gls{must} (proposed). \textbf{Status.} Proposed. \textbf{In Version.} \NoVersion. \textbf{Need.} \UserStoryRef{US-04}. \textbf{Use case.} \UseCaseRef{UC-02}. \textbf{Test.} \TestCaseRef{TC-119}. Retain Proposed until the \hyperref[Table:OMSStatusDecisions]{owned OMS interface decisions} are resolved and the program-approved values are recorded. OMS is the selected project interface.\\
+\RequirementID{REQ-F-110} & At the agreed point of use, the system shall present sensor reading value, validity, availability, and age to the Operator according to the presentation contract, including explicit indication when a reading is unavailable. \textbf{Priority.} \gls{must} (proposed). \textbf{Status.} Proposed. \textbf{In Version.} \NoVersion. \textbf{Need.} \UserStoryRef{US-01}. \textbf{Use case.} \UseCaseRef{UC-01}. \textbf{Test.} \TestCaseRef{TC-120}. Define the presentation endpoint, unavailable-value representation, and age semantics in \hyperref[Question:Q-119]{Q-119}.\\
 \end{tabularx}
 \normalsize
 
