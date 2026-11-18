@@ -64,23 +64,50 @@ ID & Owner & Question and impact\\\midrule
 \endhead
 \bottomrule
 \endlastfoot
-\phantomsection\label{Question:Q-101}Q-101 & Michael Stoddard & Confirmed: mission is measurement usability; stakeholders are Operator, Integrator, and Maintainer. Define the intended operating context and measurable stakeholder success for SPE-800-Sensor. Blocks final validation criteria.\\
+\phantomsection\label{Question:Q-101}Q-101 & Michael Stoddard & Confirmed: mission is measurement usability; stakeholders are Operator, Acquisition-Developer, Field-Engineer, and Mission-Integrator. Define the intended operating context and measurable stakeholder success for SPE-800-Sensor. Blocks final validation criteria.\\
 \phantomsection\label{Question:Q-102}Q-102 & Michael Stoddard & Confirmed: ADC0804 produces an 8-bit conversion code; FT245R supplies the USB-to-parallel path. Select sensor/physical quantity, signal range and units, ADC reference and conversion clock/handshake, calibration, exact device/board revisions, and electrical compatibility. Blocks the schematic and analog acceptance limits.\\
 \phantomsection\label{Question:Q-103}Q-103 & Michael Stoddard & Confirmed: two logical parallel inputs feed the interface logic and FT245R USB data path. Define bus ownership, strobes/handshake, transfer order, framing, record boundaries, error detection, loss and backpressure behavior. Blocks a realizable transfer contract; see \hyperref[Question:Q-112]{Q-112}.\\
 \phantomsection\label{Question:Q-104}Q-104 & Michael Stoddard & Set sampling rate, capture skew, end-to-end latency, jitter, queue/resource budgets, power limits, and operating conditions with units and tolerances. Hardware selection alone does not supply project performance limits.\\
-\phantomsection\label{Question:Q-105}Q-105 & Michael Stoddard & Confirmed: the host qualifies measurements and publishes code, status, and timing. Define the human interaction form, Operator decision presentation, Maintainer access, and whether configuration, storage, or reverse commands are needed. No GUI or command channel is selected.\\
+\phantomsection\label{Question:Q-105}Q-105 & Michael Stoddard & Confirmed: the host qualifies measurements and publishes code, status, and timing. Define the human interaction form, Operator decision presentation, Field-Engineer access, and whether configuration, storage, or reverse commands are needed. No GUI or command channel is selected.\\
 \phantomsection\label{Question:Q-106}Q-106 & Michael Stoddard & Confirmed: the current host is macOS; Windows/Linux are outside this revision. Select macOS versions, CPU architectures, C++ standard, compilers, libraries, FT245R driver/API, permissions, packaging, and build tools. Blocks reproducible host builds.\\
 \phantomsection\label{Question:Q-107}Q-107 & Michael Stoddard & Define startup, shutdown, reset, disconnect, malformed/partial records, invalid data, overflow, stalled operation, degraded behavior, safe states, recovery, and security/privacy boundaries. Fault detection and handling are not implied by the named devices.\\
-\phantomsection\label{Question:Q-108}Q-108 & Michael Stoddard & Select reference analog inputs and conversion/counter vectors, fault fixtures, expected qualification/publication results, evidence retention, and representatives of all three stakeholders. Define executable procedures after the interface and decision contracts are accepted.\\
+\phantomsection\label{Question:Q-108}Q-108 & Michael Stoddard & Select reference analog inputs and conversion/counter vectors, fault fixtures, expected qualification/publication results, evidence retention, and representatives of all four stakeholders. Define executable procedures after the interface and decision contracts are accepted.\\
 \phantomsection\label{Question:Q-109}Q-109 & Michael Stoddard & Assess manufacturing/provisioning, field updates, maintenance, environment, standards, and component lifecycle for the selected devices; propose coverage or non-applicability dispositions for acceptance-authority approval.\\
 \phantomsection\label{Question:Q-110}Q-110 & Michael Stoddard & Propose milestones, risk dispositions, requirement priorities, and the next document baseline version; route this documentation candidate for technical acceptance.\\
 \phantomsection\label{Question:Q-111}Q-111 & Michael Stoddard & Define counter width, clock source/frequency/accuracy, capture event, reset and rollover rules, clock-domain crossing, and the relation of counter value to measurement time. Blocks timing interpretation; the counter is not assumed to be 8-bit or an absolute timestamp.\\
 \phantomsection\label{Question:Q-112}Q-112 & Michael Stoddard & Define when code and counter are captured, how coherence is ensured, how one association is identified across transfer, and what happens on conversion/counter transitions, reset, partial transfer, or overflow. Compare capture/latch/serialization alternatives after constraints are known; none is selected.\\
 \phantomsection\label{Question:Q-113}Q-113 & Michael Stoddard & Define the host qualification rules for measurement usability, all decision inputs, units, freshness/integrity limits, boundary conditions, and unknown/unusable outcomes. Blocks the decision oracle and any usable-measurement claim.\\
-\phantomsection\label{Question:Q-114}Q-114 & Michael Stoddard & Define published code meaning (conversion code versus another code), status semantics, timing fields/origin/units/rollover, association, schema/version/encoding, delivery transport, cadence, and incomplete/error result policy with the downstream consumer. Blocks Integrator interpretation and publication tests.\\
-\phantomsection\label{Question:Q-115}Q-115 & Michael Stoddard & Define what source means (USB device, interface logic, ADC/sensor, clock/counter, or the complete chain), connection evidence, operating-health evidence, diagnostic coverage, reporting mechanism, stale/unknown handling, and false-positive limits. Blocks Maintainer acceptance; enumeration and data arrival alone do not establish full source health.\\
+\phantomsection\label{Question:Q-114}Q-114 & Michael Stoddard & The Mission application interface uses Open Mission Systems (OMS). Define the sample and sensor-status interfaces for both use cases. The \hyperref[Table:OMSStatusDecisions]{OMS status decisions} govern \RequirementRef{REQ-OMS-01}. Define published code meaning (conversion code versus another code), status semantics, timing fields/origin/units/rollover, association, schema/version/encoding, delivery transport, cadence, and incomplete/error result policy with the downstream consumer. Blocks Mission-Integrator interpretation and publication tests.\\
+\phantomsection\label{Question:Q-115}Q-115 & Michael Stoddard & Define what source means (USB device, interface logic, ADC/sensor, clock/counter, or the complete chain), connection evidence, operating-health evidence, diagnostic coverage, reporting mechanism, stale/unknown handling, and false-positive limits. Blocks Field-Engineer acceptance; enumeration and data arrival alone do not establish full source health.\\
 \phantomsection\label{Question:Q-116}Q-116 & Michael Stoddard & Allocate interface logic and embedded C++ responsibilities to selected hardware, firmware, or programmable logic, or explicitly revise the earlier embedded-application obligation. Do not infer an MCU, FPGA, or firmware requirement from FT245R selection. Blocks implementation decomposition and embedded-toolchain verification.\\
 \phantomsection\label{Question:Q-117}Q-117 & Michael Stoddard & Confirm whether the adjacent \path|mseManual-V1.40.pdf| supplies project evidence or course guidance and identify any relevant sections before incorporating it.\\
+\end{tabularx}
+\normalsize
+
+\section{OMS Status Interface Decisions}
+\RequirementRef{REQ-OMS-01} remains Proposed pending resolution of the
+TBD values below. The dates are proposed decision targets. Michael Stoddard
+owns coordination of the decisions and records the program-approved values
+and their sources before routing the requirement for approval.
+
+\small
+\begin{tabularx}{\linewidth}{YL{1.2cm}L{3.5cm}L{3.45cm}}
+\caption{OMS Status Interface Decisions\label{Table:OMSStatusDecisions}}\\
+\toprule
+Decision & Value & Owner & Target decision date\\\midrule
+\endfirsthead
+\toprule
+Decision & Value & Owner & Target decision date\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+OMS standard version & TBD & Michael Stoddard & December 2, 2026\\
+CAL profile & TBD & Michael Stoddard & December 2, 2026\\
+UCI message & TBD & Michael Stoddard & December 2, 2026\\
+Valid, stale, and faulted status mapping & TBD & Michael Stoddard & December 2, 2026\\
+Responsible mission gateway & TBD & Michael Stoddard & December 2, 2026\\
+Derived sensor-status data product & TBD & Michael Stoddard & December 2, 2026\\
+CAL service contract & TBD & Michael Stoddard & December 2, 2026\\
 \end{tabularx}
 \normalsize
 

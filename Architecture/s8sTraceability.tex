@@ -6,12 +6,51 @@ Maintain each stakeholder-to-requirement-to-evidence relationship.
 
 \noindent\textbf{Expected result:} Reciprocal links from each need through design and planned evidence.
 
-\section{Project Traceability Register}
-This register is the canonical relationship map for the current architectural revision. IDs are retained across refinement; no implementation version is assigned. The source facts are in \ChapterRef{AIPromptLog}; decisions are in \ChapterRef{ArchitectureOverview}. Product verification and stakeholder validation remain Pending.
+\section{Trace Matrix}
+The matrix links each requirement to its originating stories and verification
+entry. Pass evidence identifies the executed record for a passing disposition.
+All current evidence entries are pending.
+
+\small
+\begin{tabularx}{\linewidth}{L{2.9cm}L{2.45cm}L{2.45cm}Y}
+\caption{Trace Matrix\label{Table:TraceabilityMatrix}}\\
+\toprule
+Story & Requirement & Verification & Pass evidence\\\midrule
+\endfirsthead
+\toprule
+Story & Requirement & Verification & Pass evidence\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\UserStoryRef{US-01}, \UserStoryRef{US-02} & \RequirementRef{REQ-F-101} & \VerificationRef{VER-101} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01}, \UserStoryRef{US-02} & \RequirementRef{REQ-F-102} & \VerificationRef{VER-102} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01}, \UserStoryRef{US-02} & \RequirementRef{REQ-F-103} & \VerificationRef{VER-103} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01} & \RequirementRef{REQ-C-101} & \VerificationRef{VER-104} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01} & \RequirementRef{REQ-C-102} & \VerificationRef{VER-105} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01}, \UserStoryRef{US-03} & \RequirementRef{REQ-C-103} & \VerificationRef{VER-106} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01}, \UserStoryRef{US-02} & \RequirementRef{REQ-F-104} & \VerificationRef{VER-107} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01}, \UserStoryRef{US-02} & \RequirementRef{REQ-F-105} & \VerificationRef{VER-108} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01} & \RequirementRef{REQ-F-106} & \VerificationRef{VER-109} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01}, \UserStoryRef{US-02}, \UserStoryRef{US-04} & \RequirementRef{REQ-F-107} & \VerificationRef{VER-110} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01} & \RequirementRef{REQ-F-108} & \VerificationRef{VER-111} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01} & \RequirementRef{REQ-F-109} & \VerificationRef{VER-112} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-04} & \RequirementRef{REQ-I-101} & \VerificationRef{VER-113} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01}, \UserStoryRef{US-02} & \RequirementRef{REQ-SMP-01} & \VerificationRef{VER-114} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-02} & \RequirementRef{REQ-TIM-01} & \VerificationRef{VER-115} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-04} & \RequirementRef{REQ-IF-01} & \VerificationRef{VER-116} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01} & \RequirementRef{REQ-SMP-02} & \VerificationRef{VER-117} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-01} & \RequirementRef{REQ-TIM-02} & \VerificationRef{VER-118} & Pending. No pass evidence recorded.\\
+\UserStoryRef{US-04} & \RequirementRef{REQ-OMS-01} & \VerificationRef{VER-119} & Pending. No pass evidence recorded.\\
+\end{tabularx}
+\normalsize
+
+\section{Supporting Trace Links}
+These links connect each requirement to its test, use case, design, and
+validation entry.
 
 \small
 \begin{tabularx}{\linewidth}{L{2.3cm}L{1.8cm}Y}
-\caption{Traceability Register\label{Table:TraceabilityMatrix}}\\
+\caption{Supporting Trace Links\label{Table:SupportingTraceLinks}}\\
 \toprule
 Requirement & Test & Need, scenario, design, and evidence\\\midrule
 \endfirsthead
@@ -20,18 +59,24 @@ Requirement & Test & Need, scenario, design, and evidence\\\midrule
 \endhead
 \bottomrule
 \endlastfoot
-\RequirementRef{REQ-F-101} & \TestCaseRef{TC-101} & \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ArchitectureRef{ARC-103}; \VerificationRef{VER-101}; \ValidationRef{VAL-101}\\
-\RequirementRef{REQ-F-102} & \TestCaseRef{TC-102} & \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ArchitectureRef{ARC-103}; \VerificationRef{VER-102}; \ValidationRef{VAL-101}\\
-\RequirementRef{REQ-F-103} & \TestCaseRef{TC-103} & \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ArchitectureRef{ARC-103}; \VerificationRef{VER-103}; \ValidationRef{VAL-101}\\
-\RequirementRef{REQ-C-101} & \TestCaseRef{TC-104} & \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ArchitectureRef{ARC-101}; \VerificationRef{VER-104}; \ValidationRef{VAL-101}\\
-\RequirementRef{REQ-C-102} & \TestCaseRef{TC-105} & \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ArchitectureRef{ARC-101}; \VerificationRef{VER-105}; \ValidationRef{VAL-101}\\
-\RequirementRef{REQ-C-103} & \TestCaseRef{TC-106} & \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ArchitectureRef{ARC-103}; \VerificationRef{VER-106}; \ValidationRef{VAL-101}\\
-\RequirementRef{REQ-F-104} & \TestCaseRef{TC-107} & \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ArchitectureRef{ARC-103}; \VerificationRef{VER-107}; \ValidationRef{VAL-101}\\
-\RequirementRef{REQ-F-105} & \TestCaseRef{TC-108} & \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ArchitectureRef{ARC-103}; \VerificationRef{VER-108}; \ValidationRef{VAL-101}\\
-\RequirementRef{REQ-F-106} & \TestCaseRef{TC-109} & \UserStoryRef{US-101}; \UseCaseRef{UC-101}; \ArchitectureRef{ARC-104}; \VerificationRef{VER-109}; \ValidationRef{VAL-101}\\
-\RequirementRef{REQ-F-107} & \TestCaseRef{TC-110} & \UserStoryRef{US-101}, \UserStoryRef{US-102}; \UseCaseRef{UC-101}, \UseCaseRef{UC-102}; \ArchitectureRef{ARC-104}; \VerificationRef{VER-110}; \ValidationRef{VAL-101}, \ValidationRef{VAL-102}\\
-\RequirementRef{REQ-F-108} & \TestCaseRef{TC-111} & \UserStoryRef{US-103}; \UseCaseRef{UC-103}; \ArchitectureRef{ARC-104}; \VerificationRef{VER-111}; \ValidationRef{VAL-103}\\
-\RequirementRef{REQ-F-109} & \TestCaseRef{TC-112} & \UserStoryRef{US-103}; \UseCaseRef{UC-103}; \ArchitectureRef{ARC-104}; \VerificationRef{VER-112}; \ValidationRef{VAL-103}\\
-\RequirementRef{REQ-I-101} & \TestCaseRef{TC-113} & \UserStoryRef{US-102}; \UseCaseRef{UC-102}; \ArchitectureRef{ARC-104}; \VerificationRef{VER-113}; \ValidationRef{VAL-102}\\
+\RequirementRef{REQ-F-101} & \TestCaseRef{TC-101} & \UserStoryRef{US-01}, \UserStoryRef{US-02}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-103}; \VerificationRef{VER-101}; \ValidationRef{VAL-106}\\
+\RequirementRef{REQ-F-102} & \TestCaseRef{TC-102} & \UserStoryRef{US-01}, \UserStoryRef{US-02}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-103}; \VerificationRef{VER-102}; \ValidationRef{VAL-107}\\
+\RequirementRef{REQ-F-103} & \TestCaseRef{TC-103} & \UserStoryRef{US-01}, \UserStoryRef{US-02}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-103}; \VerificationRef{VER-103}; \ValidationRef{VAL-108}\\
+\RequirementRef{REQ-C-101} & \TestCaseRef{TC-104} & \UserStoryRef{US-01}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-101}; \VerificationRef{VER-104}; \ValidationRef{VAL-109}\\
+\RequirementRef{REQ-C-102} & \TestCaseRef{TC-105} & \UserStoryRef{US-01}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-101}; \VerificationRef{VER-105}; \ValidationRef{VAL-110}\\
+\RequirementRef{REQ-C-103} & \TestCaseRef{TC-106} & \UserStoryRef{US-01}, \UserStoryRef{US-03}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-103}; \VerificationRef{VER-106}; \ValidationRef{VAL-111}\\
+\RequirementRef{REQ-F-104} & \TestCaseRef{TC-107} & \UserStoryRef{US-01}, \UserStoryRef{US-02}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-103}; \VerificationRef{VER-107}; \ValidationRef{VAL-112}\\
+\RequirementRef{REQ-F-105} & \TestCaseRef{TC-108} & \UserStoryRef{US-01}, \UserStoryRef{US-02}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-103}; \VerificationRef{VER-108}; \ValidationRef{VAL-113}\\
+\RequirementRef{REQ-F-106} & \TestCaseRef{TC-109} & \UserStoryRef{US-01}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-104}; \VerificationRef{VER-109}; \ValidationRef{VAL-101}\\
+\RequirementRef{REQ-F-107} & \TestCaseRef{TC-110} & \UserStoryRef{US-01}, \UserStoryRef{US-02}, \UserStoryRef{US-04}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-104}; \VerificationRef{VER-110}; \ValidationRef{VAL-114}\\
+\RequirementRef{REQ-F-108} & \TestCaseRef{TC-111} & \UserStoryRef{US-01}; \UseCaseRef{UC-02}; \ArchitectureRef{ARC-104}; \VerificationRef{VER-111}; \ValidationRef{VAL-103}\\
+\RequirementRef{REQ-F-109} & \TestCaseRef{TC-112} & \UserStoryRef{US-01}; \UseCaseRef{UC-02}; \ArchitectureRef{ARC-104}; \VerificationRef{VER-112}; \ValidationRef{VAL-115}\\
+\RequirementRef{REQ-I-101} & \TestCaseRef{TC-113} & \UserStoryRef{US-04}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-104}; \VerificationRef{VER-113}; \ValidationRef{VAL-102}\\
+\RequirementRef{REQ-SMP-01} & \TestCaseRef{TC-114} & \UserStoryRef{US-01}, \UserStoryRef{US-02}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-105}; \VerificationRef{VER-114}; \ValidationRef{VAL-116}\\
+\RequirementRef{REQ-TIM-01} & \TestCaseRef{TC-115} & \UserStoryRef{US-02}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-105}; \VerificationRef{VER-115}; \ValidationRef{VAL-117}\\
+\RequirementRef{REQ-IF-01} & \TestCaseRef{TC-116} & \UserStoryRef{US-04}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-105}; \VerificationRef{VER-116}; \ValidationRef{VAL-104}\\
+\RequirementRef{REQ-SMP-02} & \TestCaseRef{TC-117} & \UserStoryRef{US-01}; \UseCaseRef{UC-02}; \ArchitectureRef{ARC-105}; \VerificationRef{VER-117}; \ValidationRef{VAL-118}\\
+\RequirementRef{REQ-TIM-02} & \TestCaseRef{TC-118} & \UserStoryRef{US-01}; \UseCaseRef{UC-01}; \ArchitectureRef{ARC-105}; \VerificationRef{VER-118}; \ValidationRef{VAL-119}\\
+\RequirementRef{REQ-OMS-01} & \TestCaseRef{TC-119} & \UserStoryRef{US-04}; \UseCaseRef{UC-02}; \ArchitectureRef{ARC-105}; \VerificationRef{VER-119}; \ValidationRef{VAL-105}\\
 \end{tabularx}
 \normalsize
