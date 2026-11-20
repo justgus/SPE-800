@@ -4,6 +4,10 @@ Chat ID: `01a1db23-3229-73b2-bef8-a7cc517a5b84`
 
 Timestamps are recorded message timestamps converted to America/New_York, with milliseconds and UTC offset. Message bodies are verbatim, including original whitespace and spelling. Includes user prompts, assistant progress updates, and final responses through the last recorded message. App-injected context, system/developer instructions, internal reasoning, and tool calls/results are omitted. Historical statements describe the state at the time.
 
+Last included message: 2026-11-19T20:52:42.286-05:00. The active turn may still be in progress.
+
+<!-- s8s-chat-messages: 40 -->
+
 ## 2026-11-14T12:38:00.349-05:00 · User
 
 Draft the context description and update the separate context drawing to agree with it.  The draft must identify external devices, host application, consumer and the information crossing each boundary.  It must also expose missing facts which are engineering result that the device name or the drawing answers.  
