@@ -15,7 +15,7 @@ ARCHITECTURE = Path(__file__).resolve().parent
 LEGACY = {
     "01a1c299-1c30-7eb0-bee5-c977ee11572f": (
         "Initialize Architecture project from…",
-        "s8sChatLog-2026-11-19-project-initialization.md",
+        "2026-11-09-project-initialization.md",
     ),
     "01a1db23-3229-73b2-bef8-a7cc517a5b84": (
         "Draft context description and drawing",

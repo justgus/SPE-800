@@ -2,18 +2,23 @@
 \ChapterLabel{UseCases}
 \section{Chapter Responsibility}
 \label{Section:UseCasesResponsibility}
-Describe measurement qualification, result interpretation, and maintenance scenarios.
+Describe how the Mission application receives qualified sensor samples and monitors sensor status.
 
-\noindent\textbf{Expected result:} Reviewable measurement and maintenance scenarios with explicit open flows.
+\noindent\textbf{Expected result:} Two candidate scenarios with explicit inputs, outputs, and open interface decisions.
 
 \section{Scenario Scope}
-These candidate scenarios derive from \hyperref[Table:StakeholderNeeds]{the supplied stakeholder needs}. Each main flow states the supported goal; unresolved alternate and exception behavior remains an owned decision. A successful document build does not execute these scenarios.
+The use-case boundary is the sensor processing subsystem. The Sensor/FTDI
+hardware and the Mission application are external to this boundary.
+Both scenarios send output to the Mission application using the Open Mission
+Systems (OMS) interface selected for this project. Record the applicable
+OMS baseline and the sample and status contracts in
+\hyperref[Question:Q-114]{Q-114}.
 
-\section{Qualify and publish a measurement}
+\section{Receive Qualified Sensor Samples}
 
 \small
 \begin{tabularx}{\linewidth}{L{2.8cm}Y}
-\caption{Qualify and publish a measurement Use Case\label{Table:UC-101}\label{Table:SensorUseCase}}\\
+\caption{Receive Qualified Sensor Samples\label{Table:UC-01}\label{Table:SensorUseCase}}\\
 \toprule
 Field & Candidate scenario\\\midrule
 \endfirsthead
@@ -22,25 +27,86 @@ Field & Candidate scenario\\\midrule
 \endhead
 \bottomrule
 \endlastfoot
-ID & \UseCaseID{UC-101}\\
-Stakeholder & \hyperref[Stakeholder:Operator]{Operator}\\
-Source story & \UserStoryRef{US-101}\\
-Requirements & \RequirementRef{REQ-F-101}, \RequirementRef{REQ-F-102}, \RequirementRef{REQ-F-103}, \RequirementRef{REQ-C-101}, \RequirementRef{REQ-C-102}, \RequirementRef{REQ-C-103}, \RequirementRef{REQ-F-104}, \RequirementRef{REQ-F-105}, \RequirementRef{REQ-F-106}, \RequirementRef{REQ-F-107}\\
-Tests & \TestCaseRef{TC-101}, \TestCaseRef{TC-102}, \TestCaseRef{TC-103}, \TestCaseRef{TC-104}, \TestCaseRef{TC-105}, \TestCaseRef{TC-106}, \TestCaseRef{TC-107}, \TestCaseRef{TC-108}, \TestCaseRef{TC-109}, \TestCaseRef{TC-110}\\
-Preconditions & A sensor/ADC0804, clock/counter, capture/association contract, FT245R path, and supported macOS environment are configured; detailed configuration remains \hyperref[Question:Q-102]{Q-102}, \hyperref[Question:Q-103]{Q-103}, \hyperref[Question:Q-106]{Q-106}, \hyperref[Question:Q-111]{Q-111}, \hyperref[Question:Q-112]{Q-112}.\\
-Trigger & A measurement acquisition occurs under the agreed capture rule.\\
-Main flow & The ADC0804 produces an 8-bit conversion code; the clock/counter provides its value; interface logic captures and associates the inputs and transfers them via FT245R USB; the macOS control app receives the association, qualifies measurement usability, and publishes code, status, and timing to the downstream consumer.\\
-Success outcome & The published disposition agrees with the approved qualification examples. Usability rules, published-code meaning, and Operator presentation remain \hyperref[Question:Q-113]{Q-113}, \hyperref[Question:Q-114]{Q-114}, \hyperref[Question:Q-105]{Q-105}.\\
-Exceptions & Capture mismatch, rollover, partial record, disconnect, stale input, and invalid measurements require defined outcomes in \hyperref[Question:Q-107]{Q-107}, \hyperref[Question:Q-111]{Q-111}, \hyperref[Question:Q-112]{Q-112}, \hyperref[Question:Q-113]{Q-113}. No rejection, suppression, or retry policy is invented.\\
-Postconditions & A qualified result is available at the downstream boundary under the approved contract; storage and human display remain open.\\
+ID & \UseCaseID{UC-01}\\
+External input & Sensor/FTDI hardware delivers a conversion code and its associated counter value.\\
+External recipient & Mission application via OMS.\\
+Source stories & \UserStoryRef{US-01}, \UserStoryRef{US-02}, \UserStoryRef{US-04}.\\
+Requirements & \RequirementRef{REQ-F-101}, \RequirementRef{REQ-F-102}, \RequirementRef{REQ-F-103}, \RequirementRef{REQ-C-101}, \RequirementRef{REQ-C-102}, \RequirementRef{REQ-C-103}, \RequirementRef{REQ-F-104}, \RequirementRef{REQ-F-105}, \RequirementRef{REQ-F-106}, \RequirementRef{REQ-F-107}, \RequirementRef{REQ-I-101}, \RequirementRef{REQ-SMP-01}, \RequirementRef{REQ-TIM-01}, \RequirementRef{REQ-IF-01}, \RequirementRef{REQ-TIM-02}, \RequirementRef{REQ-F-110}\\
+Tests & \TestCaseRef{TC-101}, \TestCaseRef{TC-102}, \TestCaseRef{TC-103}, \TestCaseRef{TC-104}, \TestCaseRef{TC-105}, \TestCaseRef{TC-106}, \TestCaseRef{TC-107}, \TestCaseRef{TC-108}, \TestCaseRef{TC-109}, \TestCaseRef{TC-110}, \TestCaseRef{TC-113}, \TestCaseRef{TC-114}, \TestCaseRef{TC-115}, \TestCaseRef{TC-116}, \TestCaseRef{TC-118}, \TestCaseRef{TC-120}\\
+Preconditions & The hardware link, capture rules, qualification rules, and OMS sample contract are configured for the scenario.\\
+Trigger & A sample arrives from the Sensor/FTDI hardware.\\
+Main flow & The subsystem receives the sample and associated counter value, determines measurement usability, and exposes the local sample record under \RequirementRef{REQ-IF-01}. The Mission application receives the qualified value, status, and timing over OMS. The producer and contract for mission sample delivery are open in \hyperref[Question:Q-118]{Q-118}. The Operator sees the reading attributes at the agreed point of use under \RequirementRef{REQ-F-110}. As earlier samples are processed, acquisition continues as called for by \UserStoryRef{US-02}.\\
+Success outcome & The Mission application receives and interprets the qualified sample according to the agreed OMS sample contract.\\
+Alternate flow & If a reading is unusable, apply the qualification and publication rules agreed in \hyperref[Question:Q-113]{Q-113} and \hyperref[Question:Q-114]{Q-114}. The disposition remains open.\\
+Exceptions & Partial records, loss of input, and delivery failures require agreed handling in \hyperref[Question:Q-107]{Q-107} and \hyperref[Question:Q-114]{Q-114}. Stream cadence and allowable gaps remain open in \hyperref[Question:Q-104]{Q-104}.\\
+Postconditions & The Mission application has the sample and its qualification information for the successful transfer.\\
 \end{tabularx}
 \normalsize
 
-\section{Interpret a published result}
+\subsection{Quality Scenarios}
+These candidate measures identify what to observe. The linked questions own
+the operating limits, expected outputs, and pass thresholds.
+
+\subsubsection{QS-01 Sample integrity and qualification}
+\label{Scenario:QS-01}
+\begin{description}[leftmargin=0pt,labelindent=0pt,labelsep=0pt,style=nextline]
+\item[Stimulus source] Sensor/FTDI hardware driven by reference inputs.
+\item[Stimulus] Delivers known conversion-code and counter pairs, including qualification boundary cases.
+\item[Environment] Configured acquisition link under nominal operation and qualification boundary conditions.
+\item[Artifact] Capture, sample association, qualification, and OMS sample output.
+\item[Response] Preserve the sample-to-counter association and publish the value and qualification disposition specified for each reference case.
+\item[Response measure] Use the reference vectors to check received values, counter associations, and qualification dispositions. Count mismatches by field and case. Reference inputs and limits are open in \hyperref[Question:Q-108]{Q-108}, \hyperref[Question:Q-112]{Q-112}, and \hyperref[Question:Q-113]{Q-113}.
+\end{description}
+
+\subsubsection{QS-02 Acquisition continuity under processing load}
+\label{Scenario:QS-02}
+\begin{description}[leftmargin=0pt,labelindent=0pt,labelsep=0pt,style=nextline]
+\item[Stimulus source] Sensor/FTDI hardware.
+\item[Stimulus] Delivers new samples while earlier samples are still being processed.
+\item[Environment] Sustained acquisition under the supported processing load.
+\item[Artifact] Acquisition, processing, and OMS sample delivery path.
+\item[Response] Continue acquiring new samples and deliver the qualified stream to the Mission application.
+\item[Response measure] Measure delivered sample rate, maximum gap between deliveries, and count of missing expected samples over the agreed observation interval. Check the 10 ms local publication allocation in \RequirementRef{REQ-TIM-01}. Stream load and delivery limits are open in \hyperref[Question:Q-104]{Q-104}.
+\end{description}
+
+\subsubsection{QS-03 Sample freshness}
+\label{Scenario:QS-03}
+\begin{description}[leftmargin=0pt,labelindent=0pt,labelsep=0pt,style=nextline]
+\item[Stimulus source] Sensor/FTDI hardware and the sample processing path.
+\item[Stimulus] A sample reaches qualification or delivery after a delay near or beyond the freshness limit.
+\item[Environment] Active acquisition with representative processing and delivery delay.
+\item[Artifact] Sample timing, qualification, and OMS sample output.
+\item[Response] Preserve timing information and apply the agreed freshness disposition so the Mission application can interpret sample age and usability.
+\item[Response measure] Measure capture-to-receipt latency and reported or derived age error against reference timestamps. Compare dispositions at the freshness boundary with the agreed examples and check local event timestamp error against the 1 ms allocation in \RequirementRef{REQ-TIM-02}. Timing origin and mission delivery limits are open in \hyperref[Question:Q-104]{Q-104}, \hyperref[Question:Q-113]{Q-113}, and \hyperref[Question:Q-114]{Q-114}.
+\end{description}
+
+\subsubsection{QS-04 Sample stream degradation and recovery}
+\label{Scenario:QS-04}
+\begin{description}[leftmargin=0pt,labelindent=0pt,labelsep=0pt,style=nextline]
+\item[Stimulus source] Sensor/FTDI hardware or the OMS delivery path.
+\item[Stimulus] Input becomes partial or unavailable, or delivery is interrupted.
+\item[Environment] An established sample stream during a fault and subsequent restoration.
+\item[Artifact] Acquisition, qualification, and OMS sample delivery path.
+\item[Response] Apply the agreed disposition for affected readings and the agreed policy for resuming delivery.
+\item[Response measure] Compare affected readings and observable outputs with expected fault outcomes. Measure time from fault onset to observable disposition and from restoration to the first accepted sample, where applicable. Outcomes and limits are open in \hyperref[Question:Q-107]{Q-107} and \hyperref[Question:Q-114]{Q-114}.
+\end{description}
+
+\subsubsection{QS-05 Sample interface substitutability}
+\label{Scenario:QS-05}
+\begin{description}[leftmargin=0pt,labelindent=0pt,labelsep=0pt,style=nextline]
+\item[Stimulus source] Mission-Integrator.
+\item[Stimulus] Independently replaces the sensor or Mission application with a compatible implementation.
+\item[Environment] Integration using the documented sensor-side and OMS sample contracts.
+\item[Artifact] Sensor-side sample interface and OMS sample output.
+\item[Response] Accept equivalent sensor input or deliver samples the replacement Mission application can interpret using the existing contracts.
+\item[Response measure] Run the same sample contract cases before and after each swap. Record field or interpretation mismatches and whether either contract or connection design needed to change. Compatibility criteria are open in \hyperref[Question:Q-102]{Q-102} and \hyperref[Question:Q-114]{Q-114}.
+\end{description}
+
+\section{Monitor Sensor Status}
 
 \small
 \begin{tabularx}{\linewidth}{L{2.8cm}Y}
-\caption{Interpret a published result Use Case\label{Table:UC-102}}\\
+\caption{Monitor Sensor Status\label{Table:UC-02}}\\
 \toprule
 Field & Candidate scenario\\\midrule
 \endfirsthead
@@ -49,49 +115,69 @@ Field & Candidate scenario\\\midrule
 \endhead
 \bottomrule
 \endlastfoot
-ID & \UseCaseID{UC-102}\\
-Stakeholder & \hyperref[Stakeholder:Integrator]{Integrator}\\
-Source story & \UserStoryRef{US-102}\\
-Requirements & \RequirementRef{REQ-F-107}, \RequirementRef{REQ-I-101}\\
-Tests & \TestCaseRef{TC-110}, \TestCaseRef{TC-113}\\
-Preconditions & The result contract and an approved example set exist; both are pending \hyperref[Question:Q-114]{Q-114}, \hyperref[Question:Q-108]{Q-108}.\\
-Trigger & The Integrator configures a downstream consumer to interpret a published result.\\
-Main flow & The control app publishes code, status, and timing; the downstream consumer receives the result; the Integrator interprets fields and their association using the approved contract.\\
-Success outcome & The consumer interpretation matches the approved semantic examples, including code meaning, status, timing origin/units, and schema/version.\\
-Exceptions & Unknown schema, missing fields, and incomplete/error results need a contract-defined disposition in \hyperref[Question:Q-114]{Q-114}.\\
-Postconditions & A downstream interpretation is produced; transport, acknowledgements, delivery guarantees, and downstream actuation are not selected.\\
+ID & \UseCaseID{UC-02}\\
+Status source & The subsystem uses observed source connection and operating-health information.\\
+External recipient & Mission application via OMS.\\
+Source stories & \UserStoryRef{US-01} for availability and \UserStoryRef{US-04} for the documented status interface.\\
+Requirements & \RequirementRef{REQ-F-108}, \RequirementRef{REQ-F-109}, \RequirementRef{REQ-SMP-02}, \RequirementRef{REQ-OMS-01}\\
+Tests & \TestCaseRef{TC-111}, \TestCaseRef{TC-112}, \TestCaseRef{TC-117}, \TestCaseRef{TC-119}\\
+Preconditions & Source-health criteria and the OMS status contract are defined for the scenario.\\
+Trigger & A source-status observation becomes available for reporting. Reporting cadence and change triggers remain open in \hyperref[Question:Q-114]{Q-114}.\\
+Main flow & The subsystem determines source connection and operating-health status from available observations and reports derived status to the Mission application. The mapping from observations to valid, stale, or faulted status remains open in \hyperref[Question:Q-125]{Q-125}.\\
+Success outcome & The Mission application can interpret the reported source condition using the agreed OMS status contract.\\
+Alternate flow & When observations are stale or insufficient, apply the agreed reporting policy. Status vocabulary and handling remain open in \hyperref[Question:Q-115]{Q-115}.\\
+Exceptions & Missing observations and loss of delivery require agreed handling in \hyperref[Question:Q-107]{Q-107} and \hyperref[Question:Q-114]{Q-114}.\\
+Postconditions & Source status is available to the Mission application for the successful transfer. The acquisition service exposes stale state and the mission gateway reports derived status under the candidate contracts in \RequirementRef{REQ-SMP-02} and \RequirementRef{REQ-OMS-01}.\\
 \end{tabularx}
 \normalsize
 
-\section{Assess source connection and operating health}
+\subsection{Quality Scenarios}
 
-\small
-\begin{tabularx}{\linewidth}{L{2.8cm}Y}
-\caption{Assess source connection and operating health Use Case\label{Table:UC-103}}\\
-\toprule
-Field & Candidate scenario\\\midrule
-\endfirsthead
-\toprule
-Field & Candidate scenario\\\midrule
-\endhead
-\bottomrule
-\endlastfoot
-ID & \UseCaseID{UC-103}\\
-Stakeholder & \hyperref[Stakeholder:Maintainer]{Maintainer}\\
-Source story & \UserStoryRef{US-103}\\
-Requirements & \RequirementRef{REQ-F-108}, \RequirementRef{REQ-F-109}\\
-Tests & \TestCaseRef{TC-111}, \TestCaseRef{TC-112}\\
-Preconditions & The source boundary, detection evidence, and reporting mechanism are defined; these remain \hyperref[Question:Q-115]{Q-115}, \hyperref[Question:Q-105]{Q-105}.\\
-Trigger & The Maintainer requests or observes source condition; no particular screen or command is specified.\\
-Main flow & The control app makes source connection state and operating-health information available; the Maintainer interprets them using the approved diagnostic criteria.\\
-Success outcome & The Maintainer correctly identifies the approved connected/disconnected and healthy/faulted/unknown examples; actual state vocabulary and coverage remain \hyperref[Question:Q-115]{Q-115}.\\
-Exceptions & Stale information, missing data, clock failure, and ambiguous connection require defined evidence and reporting in \hyperref[Question:Q-107]{Q-107}, \hyperref[Question:Q-115]{Q-115}. Enumeration alone is not a source-health conclusion.\\
-Postconditions & The source condition is understood to the agreed diagnostic coverage; no repair, reset, reconnect, or recovery action is implied.\\
-\end{tabularx}
-\normalsize
+\subsubsection{QS-06 Status accuracy and delivery timeliness}
+\label{Scenario:QS-06}
+\begin{description}[leftmargin=0pt,labelindent=0pt,labelsep=0pt,style=nextline]
+\item[Stimulus source] Sensor source and connection observations.
+\item[Stimulus] A reference fixture produces a known connection transition or operating-health change.
+\item[Environment] Monitoring is active and OMS delivery is available.
+\item[Artifact] Source-status determination and OMS status output.
+\item[Response] Determine the source condition and deliver the corresponding status to the Mission application according to the reporting policy.
+\item[Response measure] Compare each delivered state against independent fixture evidence. Measure time from the effective source transition to receipt by the Mission application. Compare CAL messages for valid, stale, and faulted states against the mapping in \RequirementRef{REQ-OMS-01} after program approval. State criteria, reporting cadence, and latency limits are open in \hyperref[Question:Q-114]{Q-114} and \hyperref[Question:Q-115]{Q-115}.
+\end{description}
 
-Figure~\ref{Figure:UseCaseDiagram} links each stakeholder goal to its scenario.
+\subsubsection{QS-07 Stale or insufficient status evidence}
+\label{Scenario:QS-07}
+\begin{description}[leftmargin=0pt,labelindent=0pt,labelsep=0pt,style=nextline]
+\item[Stimulus source] Source-status observations.
+\item[Stimulus] Observations age past the agreed limit, disappear, or become insufficient to determine source condition.
+\item[Environment] Monitoring continues after a previously confirmed state.
+\item[Artifact] Status freshness evaluation and OMS status output.
+\item[Response] Apply the agreed disposition for stale, missing, or insufficient evidence.
+\item[Response measure] Compare the delivered status with the expected fault disposition. Measure elapsed time from the evidence timeout or loss to the observable disposition where applicable. Check the 100 ms local stale-state allocation in \RequirementRef{REQ-SMP-02} separately from OMS delivery. Evidence criteria and reporting policy are open in \hyperref[Question:Q-107]{Q-107}, \hyperref[Question:Q-114]{Q-114}, and \hyperref[Question:Q-115]{Q-115}.
+\end{description}
+
+\subsubsection{QS-08 Status delivery interruption and recovery}
+\label{Scenario:QS-08}
+\begin{description}[leftmargin=0pt,labelindent=0pt,labelsep=0pt,style=nextline]
+\item[Stimulus source] OMS delivery path.
+\item[Stimulus] Status delivery is interrupted and later becomes available.
+\item[Environment] Monitoring remains active while source observations continue.
+\item[Artifact] OMS status publication path and Mission application receipt.
+\item[Response] Apply the agreed reporting and recovery policy during and after the interruption.
+\item[Response measure] Measure the reporting gap and the time from delivery restoration to receipt of the first status allowed by the recovery policy. Compare its state and age with reference observations. Recovery policy and limits are open in \hyperref[Question:Q-107]{Q-107} and \hyperref[Question:Q-114]{Q-114}.
+\end{description}
+
+\subsubsection{QS-09 Status interface substitutability}
+\label{Scenario:QS-09}
+\begin{description}[leftmargin=0pt,labelindent=0pt,labelsep=0pt,style=nextline]
+\item[Stimulus source] Mission-Integrator.
+\item[Stimulus] Replaces the Mission application with a compatible OMS status consumer.
+\item[Environment] Integration using the documented OMS status contract and representative source states.
+\item[Artifact] OMS status output and Mission application interpretation.
+\item[Response] Deliver status the replacement Mission application can interpret using the existing contract.
+\item[Response measure] Run the same status contract cases before and after the swap. Record state, freshness, and interpretation mismatches and whether the contract or connection design needed to change. Compatibility criteria are open in \hyperref[Question:Q-114]{Q-114}.
+\end{description}
+
 \begin{figure}[htbp]\centering
 \input{TikZ/s8sUseCases/s8sUseCaseDiagram.tex}
-\caption{Operator, Integrator, and Maintainer goals for the measurement system.}\label{Figure:UseCaseDiagram}
+\caption{Sensor/FTDI input and OMS outputs at the sensor processing subsystem boundary.}\label{Figure:UseCaseDiagram}
 \end{figure}

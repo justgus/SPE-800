@@ -9,29 +9,38 @@ Retain pending requirement dispositions without converting test intent into resu
 \section{Verification Register}
 Michael Stoddard owns verification planning. Every disposition is Pending: there is no controlled implementation or executed product evidence for this architectural change. Each future disposition must identify the actual test record and controlled configuration in \ChapterRef{TestEvidence}. Supporting need/use-case/design links are in \hyperref[Table:TraceabilityMatrix]{the traceability register}.
 
+Retain the controlled hardware and software versions, fixture configuration, and reviewer disposition with each result.
+
 \small
-\begin{tabularx}{\linewidth}{L{2cm}Y}
+\begin{tabularx}{\linewidth}{L{1.55cm}L{2.22cm}L{2.65cm}YL{2.05cm}}
 \caption{Verification Register\label{Table:VerificationRegister}}\\
 \toprule
-ID & Requirement, method, evidence, and state\\\midrule
+ID & Requirement & Method & Required Evidence & Status\\\midrule
 \endfirsthead
 \toprule
-ID & Requirement, method, evidence, and state\\\midrule
+ID & Requirement & Method & Required Evidence & Status\\\midrule
 \endhead
 \bottomrule
 \endlastfoot
-\VerificationID{VER-101} & \RequirementRef{REQ-F-101}; \TestCaseRef{TC-101}. Method: test, inspection, and comparison. Required evidence: approved expected data and observed result from the mapped test, controlled hardware/software versions, fixture/configuration, and reviewer disposition. \StatusPending; no executed evidence available.\\
-\VerificationID{VER-102} & \RequirementRef{REQ-F-102}; \TestCaseRef{TC-102}. Method: test, inspection, and comparison. Required evidence: approved expected data and observed result from the mapped test, controlled hardware/software versions, fixture/configuration, and reviewer disposition. \StatusPending; no executed evidence available.\\
-\VerificationID{VER-103} & \RequirementRef{REQ-F-103}; \TestCaseRef{TC-103}. Method: test, inspection, and comparison. Required evidence: approved expected data and observed result from the mapped test, controlled hardware/software versions, fixture/configuration, and reviewer disposition. \StatusPending; no executed evidence available.\\
-\VerificationID{VER-104} & \RequirementRef{REQ-C-101}; \TestCaseRef{TC-104}. Method: inspection and build. Required evidence: approved expected data and observed result from the mapped test, controlled hardware/software versions, fixture/configuration, and reviewer disposition. \StatusPending; no executed evidence available.\\
-\VerificationID{VER-105} & \RequirementRef{REQ-C-102}; \TestCaseRef{TC-105}. Method: inspection and build. Required evidence: approved expected data and observed result from the mapped test, controlled hardware/software versions, fixture/configuration, and reviewer disposition. \StatusPending; no executed evidence available.\\
-\VerificationID{VER-106} & \RequirementRef{REQ-C-103}; \TestCaseRef{TC-106}. Method: test, inspection, and comparison. Required evidence: approved expected data and observed result from the mapped test, controlled hardware/software versions, fixture/configuration, and reviewer disposition. \StatusPending; no executed evidence available.\\
-\VerificationID{VER-107} & \RequirementRef{REQ-F-104}; \TestCaseRef{TC-107}. Method: test, inspection, and comparison. Required evidence: approved expected data and observed result from the mapped test, controlled hardware/software versions, fixture/configuration, and reviewer disposition. \StatusPending; no executed evidence available.\\
-\VerificationID{VER-108} & \RequirementRef{REQ-F-105}; \TestCaseRef{TC-108}. Method: test, inspection, and comparison. Required evidence: approved expected data and observed result from the mapped test, controlled hardware/software versions, fixture/configuration, and reviewer disposition. \StatusPending; no executed evidence available.\\
-\VerificationID{VER-109} & \RequirementRef{REQ-F-106}; \TestCaseRef{TC-109}. Method: test, inspection, and comparison. Required evidence: approved expected data and observed result from the mapped test, controlled hardware/software versions, fixture/configuration, and reviewer disposition. \StatusPending; no executed evidence available.\\
-\VerificationID{VER-110} & \RequirementRef{REQ-F-107}; \TestCaseRef{TC-110}. Method: test, inspection, and comparison. Required evidence: approved expected data and observed result from the mapped test, controlled hardware/software versions, fixture/configuration, and reviewer disposition. \StatusPending; no executed evidence available.\\
-\VerificationID{VER-111} & \RequirementRef{REQ-F-108}; \TestCaseRef{TC-111}. Method: test, inspection, and comparison. Required evidence: approved expected data and observed result from the mapped test, controlled hardware/software versions, fixture/configuration, and reviewer disposition. \StatusPending; no executed evidence available.\\
-\VerificationID{VER-112} & \RequirementRef{REQ-F-109}; \TestCaseRef{TC-112}. Method: test, inspection, and comparison. Required evidence: approved expected data and observed result from the mapped test, controlled hardware/software versions, fixture/configuration, and reviewer disposition. \StatusPending; no executed evidence available.\\
-\VerificationID{VER-113} & \RequirementRef{REQ-I-101}; \TestCaseRef{TC-113}. Method: test, inspection, and comparison. Required evidence: approved expected data and observed result from the mapped test, controlled hardware/software versions, fixture/configuration, and reviewer disposition. \StatusPending; no executed evidence available.\\
+\VerificationID{VER-101} & \RequirementRef{REQ-F-101} & Reference-input test & Reference input and calibration settings, ADC trace, and comparison with expected 8-bit codes. See \TestCaseRef{TC-101}. & \StatusPending\\
+\VerificationID{VER-102} & \RequirementRef{REQ-F-102} & Transfer test & Transmitted reference sequence, USB capture, and record comparison under agreed framing and load. See \TestCaseRef{TC-102}. & \StatusPending\\
+\VerificationID{VER-103} & \RequirementRef{REQ-F-103} & Reception test & Reference code and counter pairs, host capture, and a comparison of received pairs. See \TestCaseRef{TC-103}. & \StatusPending\\
+\VerificationID{VER-104} & \RequirementRef{REQ-C-101} & Inspection and build & Allocated embedded source inventory, C++ toolchain configuration, and reproducible build log. See \TestCaseRef{TC-104}. & \StatusPending\\
+\VerificationID{VER-105} & \RequirementRef{REQ-C-102} & Inspection and build & Control-app source inventory, approved macOS C++ toolchain settings, and build log. See \TestCaseRef{TC-105}. & \StatusPending\\
+\VerificationID{VER-106} & \RequirementRef{REQ-C-103} & Platform demonstration & Approved macOS version and architecture matrix with scenario logs for each configuration. See \TestCaseRef{TC-106}. & \StatusPending\\
+\VerificationID{VER-107} & \RequirementRef{REQ-F-104} & Counter test & Reference event and counter trace, captured value beside each code, and reset and rollover comparisons. See \TestCaseRef{TC-107}. & \StatusPending\\
+\VerificationID{VER-108} & \RequirementRef{REQ-F-105} & Association test & Reference and captured code/counter pairs at boundary transitions and under backpressure. See \TestCaseRef{TC-108}. & \StatusPending\\
+\VerificationID{VER-109} & \RequirementRef{REQ-F-106} & Decision-vector test & Approved usable, unusable, and boundary vectors with expected and observed qualification outcomes. See \TestCaseRef{TC-109}. & \StatusPending\\
+\VerificationID{VER-110} & \RequirementRef{REQ-F-107} & Publication test & Records captured at the downstream boundary and comparison with the approved value, status, and timing contract. See \TestCaseRef{TC-110}. & \StatusPending\\
+\VerificationID{VER-111} & \RequirementRef{REQ-F-108} & Connection fault test & Fixture connection states, observed reports, and comparison against the approved detection criteria. See \TestCaseRef{TC-111}. & \StatusPending\\
+\VerificationID{VER-112} & \RequirementRef{REQ-F-109} & Health fault test & Nominal and fault fixture evidence, reported health, and comparison against the approved diagnostic criteria. See \TestCaseRef{TC-112}. & \StatusPending\\
+\VerificationID{VER-113} & \RequirementRef{REQ-I-101} & Contract inspection and test & Approved schema and semantic examples, captured records, and consumer decoding comparison. See \TestCaseRef{TC-113}. & \StatusPending\\
+\VerificationID{VER-114} & \RequirementRef{REQ-SMP-01} & Logic-trace test & Conversion-ready, read, and publication traces including no-ready intervals, correlated with the reference codes and validity states. See \TestCaseRef{TC-114}. & \StatusPending\\
+\VerificationID{VER-115} & \RequirementRef{REQ-TIM-01} & Latency test & Independent-clock captures of ready and corresponding publication events at the approved rate, with elapsed time per sample and the agreed uncertainty and verdict rule in \hyperref[Question:Q-123]{Q-123}. See \TestCaseRef{TC-115}. & \StatusPending\\
+\VerificationID{VER-116} & \RequirementRef{REQ-IF-01} & Record inspection & Controlled local stream capture showing code, validity, timestamp, and sequence, checked against the approved ordering rule. See \TestCaseRef{TC-116}. & \StatusPending\\
+\VerificationID{VER-117} & \RequirementRef{REQ-SMP-02} & Source-interruption test & Independent-clock trace of previous valid publication, source interruption, and observable stale-state transition. See \TestCaseRef{TC-117}. & \StatusPending\\
+\VerificationID{VER-118} & \RequirementRef{REQ-TIM-02} & Timestamp accuracy test & Calibrated reference clock record, matched service timestamps, per-event absolute errors, and clock synchronization and uncertainty records under \hyperref[Question:Q-123]{Q-123}. See \TestCaseRef{TC-118}. & \StatusPending\\
+\VerificationID{VER-119} & \RequirementRef{REQ-OMS-01} & Contract inspection and state injection & Approved CAL contract and UCI mapping, injected states, and captured messages compared with approved products. See \TestCaseRef{TC-119}. & \StatusPending\\
+\VerificationID{VER-120} & \RequirementRef{REQ-F-110} & Presentation test & Approved presentation examples, reference inputs and timing, and captured output for each expected reading state. See \TestCaseRef{TC-120}. & \StatusPending\\
 \end{tabularx}
 \normalsize

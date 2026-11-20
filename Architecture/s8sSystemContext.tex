@@ -6,22 +6,24 @@ Define the mission, system boundary, stakeholders, and external result boundary.
 
 \noindent\textbf{Expected result:} An explicit measurement-usability mission, boundary, and stakeholder context.
 
-\index{measurement usability}\index{ADC0804}\index{FT245R}\index{Operator}\index{Integrator}\index{Maintainer}
+\index{measurement usability}\index{ADC0804}\index{FT245R}\index{Operator}\index{Mission-Integrator}\index{Field-Engineer}
 \section{Mission and Boundary}
 \label{Section:MeasurementMission}
 The mission is to determine whether a measurement can be used. In
 Figure~\ref{Figure:SensorContext}, the system of interest includes the
 acquisition hardware and the C++ control app on macOS. The sensor, ADC0804,
 clock/counter, interface logic, and FT245R are external to the control app.
-The physical quantity enters the system at the sensor. The downstream
-consumer is external to the system and receives the published result.
+The physical quantity enters the system at the sensor. The Mission application is external to the system. It receives qualified
+sensor samples and sensor status through the Open Mission Systems (OMS)
+interface. The \ChapterRef{UseCases} boundary is the sensor processing
+subsystem, which receives samples from the external Sensor/FTDI hardware.
 The arrows show the direction and content of the measurement flow. See
 \ArchitectureRef{ARC-103} and \ArchitectureRef{ARC-104} for the allocation
 and its requirement links.
 \begin{figure}[!htbp]
 \centering
 \input{TikZ/s8sSystemContext/s8sSensorContext.tex}
-\caption{Measurement flow across the acquisition hardware, control app, and downstream consumer boundaries.}
+\caption{Measurement flow across the acquisition hardware, control app, and Mission application boundaries.}
 \label{Figure:SensorContext}
 \end{figure}
 
@@ -58,15 +60,15 @@ USB carries the associated conversion code and counter value to the control
 app. Define the macOS driver and API, reception and recovery behavior, and
 the evidence and decision rules the control app uses to assess measurement
 usability. Establish what observations support connection and operating-health
-reporting and how the Maintainer receives that information
+reporting and how the Field-Engineer receives that information
 (\hyperref[Question:Q-106]{Q-106}, \hyperref[Question:Q-107]{Q-107},
 \hyperref[Question:Q-113]{Q-113}, \hyperref[Question:Q-115]{Q-115}).
 
-\item[Control app to downstream consumer.]
-The control app qualifies measurement usability and publishes code, status,
-and timing. Identify the receiving application or system and define the code
-meaning, status semantics, timing origin and units, schema and version,
-delivery transport, and incomplete or error result policy with the consumer
+\item[Control app to Mission application.]
+The control app qualifies measurement usability and supplies qualified samples
+and sensor status to the Mission application over OMS. Define the applicable
+OMS baseline, field semantics, timing origin and units, and delivery and
+error handling with the Mission-Integrator
 (\hyperref[Question:Q-114]{Q-114}).
 \end{description}
 
@@ -75,10 +77,10 @@ flow remain open in \hyperref[Question:Q-105]{Q-105}.
 
 \section{Stakeholders}
 \label{Section:MeasurementStakeholders}
-The following needs were supplied by the user. Stakeholder roles are distinct from engineering ownership in \hyperref[Table:ProjectOwners]{the owner register}.
+The following roles define the sensor-system stakeholder set. The associated stories describe draft needs for stakeholder review. Stakeholder roles are distinct from engineering ownership in \hyperref[Table:ProjectOwners]{the owner register}.
 
 \small
-\begin{tabularx}{\linewidth}{L{2.5cm}Y}
+\begin{tabularx}{\linewidth}{L{3.6cm}Y}
 \caption{Measurement Stakeholder Needs\label{Table:StakeholderNeeds}}\\
 \toprule
 Stakeholder & Need and story\\\midrule
@@ -88,11 +90,12 @@ Stakeholder & Need and story\\\midrule
 \endhead
 \bottomrule
 \endlastfoot
-\phantomsection\label{Stakeholder:Operator}Operator & Cares about the decision: whether the measurement can be used. \UserStoryRef{US-101}.\\
-\phantomsection\label{Stakeholder:Integrator}Integrator & Cares about the meaning and format of the published result. \UserStoryRef{US-102}.\\
-\phantomsection\label{Stakeholder:Maintainer}Maintainer & Needs to know whether the source is connected and operating properly. \UserStoryRef{US-103}.\\
+\phantomsection\label{Stakeholder:Operator}Operator & Needs to see sensor values and their validity, availability, and age so that they can decide whether to use each reading. \UserStoryRef{US-01}.\\
+\phantomsection\label{Stakeholder:Acquisition-Developer}Acquisition-Developer & Needs sensor acquisition to continue while prior samples are processed so that mission software receives a continuous stream of readings. \UserStoryRef{US-02}.\\
+\phantomsection\label{Stakeholder:Field-Engineer}Field-Engineer & Needs the sensor subsystem to run on macOS, iOS, Windows, and Linux so that they can use any available computer in the field. \UserStoryRef{US-03}.\\
+\phantomsection\label{Stakeholder:Mission-Integrator}Mission-Integrator & Needs a documented interface for sensor data and status so that they can replace the sensor or the mission consumer without redesigning the connection. \UserStoryRef{US-04}.\\
 \end{tabularx}
 \normalsize
 
 \section{Stage and Allocation Boundaries}
-This stage remains documentation only; no circuit, firmware, host implementation, or product evidence is produced. macOS is the current host scope, replacing the earlier macOS/Windows/Linux scope. Both software applications retain the earlier C++ direction. The execution target and responsibility of embedded software relative to interface logic remain \hyperref[Question:Q-116]{Q-116}. Selecting ADC0804 and FT245R does not select a processor, FPGA, microcontroller, multiplexer, or host driver. The control app is the host application throughout this book; its name does not imply reverse commands or a graphical UI.
+This stage remains documentation only; no circuit, firmware, host implementation, or product evidence is produced. The current host architecture addresses macOS. \UserStoryRef{US-03} calls for field operation on macOS, iOS, Windows, and Linux. Platform requirements and architecture coverage for that need are pending. Both software applications retain the earlier C++ direction. The execution target and responsibility of embedded software relative to interface logic remain \hyperref[Question:Q-116]{Q-116}. Selecting ADC0804 and FT245R does not select a processor, FPGA, microcontroller, multiplexer, or host driver. The control app is the host application throughout this book; its name does not imply reverse commands or a graphical UI.
