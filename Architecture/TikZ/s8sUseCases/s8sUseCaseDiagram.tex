@@ -1,12 +1,15 @@
 \begin{tikzpicture}[>=Latex]
-\node[draw,align=center,text width=2.4cm,minimum height=1cm] (op) at (0,3) {\hyperref[Stakeholder:Operator]{Operator}};
-\node[draw,align=center,text width=2.4cm,minimum height=1cm] (in) at (0,0) {\hyperref[Stakeholder:Integrator]{Integrator}};
-\node[draw,align=center,text width=2.4cm,minimum height=1cm] (ma) at (0,-3) {\hyperref[Stakeholder:Maintainer]{Maintainer}};
-\node[draw,ellipse,align=center,text width=4.8cm,minimum height=1.4cm] (u1) at (6,3) {\hyperref[UseCase:UC-101]{UC-101: Qualify and publish a measurement}};
-\node[draw,ellipse,align=center,text width=4.8cm,minimum height=1.4cm] (u2) at (6,0) {\hyperref[UseCase:UC-102]{UC-102: Interpret a published result}};
-\node[draw,ellipse,align=center,text width=4.8cm,minimum height=1.4cm] (u3) at (6,-3) {\hyperref[UseCase:UC-103]{UC-103: Assess source condition}};
-\node[draw,dashed,fit=(u1)(u2)(u3),inner sep=0.5cm,label=above:{Measurement system interactions}] {};
-\draw (op.east) -- (u1.west);
-\draw (in.east) -- (u2.west);
-\draw (ma.east) -- (u3.west);
+\node[draw,align=center,text width=2.6cm] (sensor) at (0,1.3)
+  {Sensor/FTDI hardware};
+\node[draw,ellipse,align=center,text width=3.3cm] (sample) at (4.8,1.3)
+  {\hyperref[UseCase:UC-01]{UC-01\\Receive Qualified Sensor Samples}};
+\node[draw,ellipse,align=center,text width=3.3cm] (status) at (4.8,-1.3)
+  {\hyperref[UseCase:UC-02]{UC-02\\Monitor Sensor Status}};
+\node[draw,dashed,fit=(sample)(status),inner sep=0.35cm,
+  label=above:{Sensor processing subsystem}] {};
+\node[draw,align=center,text width=2.3cm,minimum height=3.2cm] (mission) at (10,0)
+  {Mission application};
+\draw[->] (sensor.east) -- (sample.west);
+\draw[->] (sample.east) -- node[above,pos=0.62]{OMS} (mission.west |- sample.east);
+\draw[->] (status.east) -- node[above,pos=0.62]{OMS} (mission.west |- status.east);
 \end{tikzpicture}

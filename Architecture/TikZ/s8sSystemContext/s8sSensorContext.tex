@@ -12,7 +12,7 @@
 \node[box,minimum width=8.1cm] (logic) at (0,-4.0) {Interface logic};
 \node[box] (ftdi) at (0,-5.4) {FT245R};
 \node[box] (host) at (0,-7.0) {Control app\\C++ on macOS};
-\node[box,draw=s8sGray,fill=white] (consumer) at (0,-9.0) {Downstream consumer};
+\node[box,draw=s8sGray,fill=white] (consumer) at (0,-9.0) {Mission application};
 
 \coordinate (right edge) at (5.2,-4);
 \node[boundary,fit=(sensor)(adc)(counter)(logic)(ftdi)(host)(right edge)] (system) {};
@@ -27,5 +27,5 @@
   (counter.south |- logic.north);
 \draw[flow] (logic.south) -- node[data,right]{Associated conversion code and\\counter value via parallel FIFO} (ftdi.north);
 \draw[flow] (ftdi.south) -- node[data,right]{Associated conversion code and\\counter value via USB} (host.north);
-\draw[flow] (host.south) -- node[data,right,pos=0.66]{Published result\\Code, status, timing} (consumer.north);
+\draw[flow] (host.south) -- node[data,right,pos=0.66]{OMS\\Qualified samples and sensor status} (consumer.north);
 \end{tikzpicture}

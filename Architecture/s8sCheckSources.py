@@ -68,14 +68,28 @@ for rid,row in requirements.items():
         assert tc<=references(case_blocks[cid],'TestCase'),(rid,cid,'test gap')
     vv=[(vid,vrow) for vid,vrow in verification.items() if rid in references(vrow,'Requirement')]
     assert len(vv)==1 and references(vv[0][1],'TestCase')==tc,(rid,'verification gap')
-    matching=[line for line in trace.splitlines() if r'\RequirementRef{'+rid+'} &' in line]
+    requirement_ref = r'\RequirementRef{' + rid + '}'
+    matching = [line for line in trace.splitlines() if line.startswith(requirement_ref + ' &')]
     assert len(matching)==1,(rid,'trace row')
     tr=matching[0]
     assert references(tr,'UserStory')==us and references(tr,'UseCase')==uc and references(tr,'TestCase')==tc,(rid,'trace mismatch')
     assert references(tr,'Verification')=={vv[0][0]} and references(tr,'Architecture'),(rid,'design/evidence gap')
-    vl=references(tr,'Validation'); assert vl,(rid,'missing validation')
-    for sid in us:
-        assert any(vid in validation and sid in references(validation[vid],'UserStory') and rid in references(validation[vid],'Requirement') and tc<=references(validation[vid],'TestCase') for vid in vl),(rid,sid,'validation gap')
+    matrix_rows = [line.split(' & ') for line in trace.splitlines()
+                   if line.startswith(r'\UserStoryRef{') and references(line, 'Requirement') == {rid}]
+    assert len(matrix_rows) == 1 and len(matrix_rows[0]) == 4, (rid, 'trace matrix row')
+    story_cell, _, verification_cell, evidence_cell = matrix_rows[0]
+    assert references(story_cell, 'UserStory') == us, (rid, 'trace matrix story mismatch')
+    assert references(verification_cell, 'Verification') == {vv[0][0]}, (rid, 'trace matrix verification mismatch')
+    assert evidence_cell.removesuffix(r'\\').strip(), (rid, 'missing pass evidence disposition')
+    validation_rows = [(vid, row) for vid, row in validation.items()
+                       if rid in references(row, 'Requirement')]
+    assert len(validation_rows) == 1, (rid, 'expected one validation entry')
+    vid, validation_row = validation_rows[0]
+    assert references(tr, 'Validation') == {vid}, (rid, 'validation link mismatch')
+    assert references(validation_row, 'Requirement') == {rid}, (rid, 'validation requirement mismatch')
+    assert references(validation_row, 'UserStory') == us, (rid, 'validation story mismatch')
+    assert references(validation_row, 'UseCase') == uc, (rid, 'validation use case mismatch')
+    assert references(validation_row, 'TestCase') == tc, (rid, 'validation test mismatch')
 for tid,trow in tests.items():
     assert references(trow,'Requirement'),(tid,'orphan test')
     for rid in references(trow,'Requirement'):
