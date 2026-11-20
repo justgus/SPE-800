@@ -19,3 +19,11 @@ scope and system boundary, stakeholders, owners, and the Embedded Systems
 profile. AIS-02 established this standalone review candidate in
 \path|Architecture/|. See \ChapterRef{AIPromptLog},
 \ChapterRef{DevelopmentPlan}, and \ChapterRef{InstantiationReview}.
+
+\paragraph{November 19, 2026}
+The user requested routine verbatim conversation exports to
+\path|docs/chats/| under Architecture, with timestamps on prompts and responses.
+Added \hyperref[Rule:AIChatLogging]{the conversation transcript rule}, a local
+exporter, and a thin Architecture discovery pointer. The rule states the
+capture boundary for an active final response; no background service or
+publication authorization is implied. See \ChapterRef{AIPromptLog}.

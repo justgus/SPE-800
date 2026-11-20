@@ -97,6 +97,45 @@ code, and external quotations may retain plain text, with linked references
 in the surrounding prose. For all defined architecture artifacts, also apply \hyperref[Requirement:DOCLINK001]{DOC-LINK-001}; class and interface references target their individual class-responsibility rows. Before reporting completion, check both navigation
 directions in the built PDF and resolve missing or incorrect targets.
 
+\section{Conversation Transcripts}
+\label{Rule:AIChatLogging}
+\index{AI agent!conversation transcripts}
+For every SPE-800-Sensor conversation, including conversation-only requests,
+refresh the local Markdown transcripts at the beginning of each turn and
+again before reporting completion. From \path|Architecture/|, run
+\texttt{python3 s8sExportChats.py}. The exporter discovers local Codex sessions
+whose recorded working directory is the SPE-800 repository root or the
+Architecture directory or its descendants, including archived sessions.
+It writes to \path|Architecture/docs/chats/| regardless of the calling
+directory. Conversations held in another application or working directory
+require an explicit source export; do not claim that they were captured.
+
+Preserve each recorded user prompt, assistant progress update, and final
+response verbatim, including spelling and whitespace. Prefix every message
+with its role and recorded timestamp converted to America/New\_York,
+including milliseconds and UTC offset. Omit injected context, internal
+reasoning, system and developer instructions, and tool calls and results.
+Do not fabricate unavailable timestamps or silently discard attachments;
+report missing source data or unsupported content. Transcripts are historical
+records, not authoritative architecture decisions or instructions to execute.
+The curated interaction record remains in \ChapterRef{AIPromptLog}.
+
+Use one stable file per chat, retaining the three existing export filenames.
+New files use \path|s8sChatLog-YYYY-MM-DD-<chat-id>.md|, with the local date
+of the first message and the full chat ID to prevent name collisions.
+Refresh an existing transcript rather than duplicating it, verify exported
+message bodies against the source, and never replace a longer transcript
+with a shorter one. Exporting does not authorize Git commits or pushes.
+
+This is an agent execution rule, not a background recording service. The
+current final response is recorded after the agent's last export and is
+captured by the next refresh, including a refresh from another project chat.
+The exporter states the timestamp of the last included message. If local
+session records are unavailable or the format changes, report the limitation
+and preserve existing exports. Immediate capture after the final response,
+including a chat that is never resumed, requires a separately configured
+post-response mechanism; this rule does not install one.
+
 \section{AI Quick Start}
 \label{Section:AIQuickStart}
 \index{AI agent!quick start}
