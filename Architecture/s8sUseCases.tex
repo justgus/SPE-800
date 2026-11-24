@@ -2,17 +2,26 @@
 \ChapterLabel{UseCases}
 \section{Chapter Responsibility}
 \label{Section:UseCasesResponsibility}
-Describe how the Mission application receives qualified sensor samples and monitors sensor status.
+Describe live measurement delivery and diagnostic recording and playback from stakeholder goals through observable flows.
 
-\noindent\textbf{Expected result:} Two candidate scenarios with explicit inputs, outputs, and open interface decisions.
+\noindent\textbf{Expected result:} Six candidate scenarios with explicit actors, flows, requirements, planned evidence and open decisions.
 
 \section{Scenario Scope}
 The use-case boundary is the sensor processing subsystem. The Sensor/FTDI
 hardware and the Mission application are external to this boundary.
-Both scenarios send output to the Mission application using the Open Mission
+The two live measurement scenarios send output to the Mission application using the Open Mission
 Systems (OMS) interface selected for this project. Record the applicable
 OMS baseline and the sample and status contracts in
 \hyperref[Question:Q-114]{Q-114}.
+
+
+Diagnostic scenarios retain the sensor processing subsystem boundary and add the engineering actors, recording storage and selected replay consumer. \gls{diagnosticrecording} preserves the observations available at the selected capture boundary; \gls{playback} supplies those recorded inputs for investigation. These scenarios and diagrams are proposed behavior, not selected software components or an executed product. No new hardware platform or GUI is selected.
+\index{diagnostic recording}\index{playback}
+Figure~\ref{Figure:DiagnosticUseCases} introduces \UseCaseRef{UC-03}, \UseCaseRef{UC-04}, \UseCaseRef{UC-05}, and \UseCaseRef{UC-06}.
+\begin{figure}[htbp]\centering
+\resizebox{0.98\linewidth}{!}{\input{TikZ/s8sUseCases/s8sDiagnosticUseCases.tex}}
+\caption{Engineering actors and recording/playback goals at the subsystem boundary.}\label{Figure:DiagnosticUseCases}
+\end{figure}
 
 \section{Receive Qualified Sensor Samples}
 
@@ -180,4 +189,139 @@ Postconditions & Source status is available to the Mission application for the s
 \begin{figure}[htbp]\centering
 \input{TikZ/s8sUseCases/s8sUseCaseDiagram.tex}
 \caption{Sensor/FTDI input and OMS outputs at the sensor processing subsystem boundary.}\label{Figure:UseCaseDiagram}
+\end{figure}
+
+\section{Record a Diagnostic Session}
+\par\medskip
+\small
+\begin{tabularx}{\linewidth}{L{2.8cm}Y}
+\caption{Record a Diagnostic Session\label{Table:UC-03}}\\
+\toprule
+Field & Candidate scenario\\\midrule
+\endfirsthead
+\toprule
+Field & Candidate scenario\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+ID & \UseCaseID{UC-03}\\
+Actors & Field-Engineer; Acquisition-Developer supplies reference inputs during verification.\\
+Source stories & \UserStoryRef{US-05}, \UserStoryRef{US-08}\\
+Requirements & \RequirementRef{REQ-F-111}, \RequirementRef{REQ-F-112}, \RequirementRef{REQ-D-101}, \RequirementRef{REQ-D-102}, \RequirementRef{REQ-F-113}, \RequirementRef{REQ-D-103}, \RequirementRef{REQ-Q-102}, \RequirementRef{REQ-Q-103}, \RequirementRef{REQ-Q-104}, \RequirementRef{REQ-Q-105}\\
+Tests & \TestCaseRef{TC-121}, \TestCaseRef{TC-122}, \TestCaseRef{TC-123}, \TestCaseRef{TC-124}, \TestCaseRef{TC-125}, \TestCaseRef{TC-126}, \TestCaseRef{TC-144}, \TestCaseRef{TC-145}, \TestCaseRef{TC-146}, \TestCaseRef{TC-147}\\
+Validation & \ValidationRef{VAL-121}\\
+Preconditions & The recording boundary, schema, context metadata and fault policy are defined; storage and representative input are available.\\
+Trigger & The Field-Engineer requests a diagnostic recording.\\
+Main flow & 1. The Field-Engineer starts recording. 2. The subsystem records the observed samples, results and diagnostic events with capture context. 3. Recording continues under the agreed live load. 4. The Field-Engineer requests stop. 5. The subsystem finalizes the recording under the stop-and-flush policy.\\
+Success outcome & A readable incident recording retains the agreed capture interval, data associations and context for later investigation.\\
+Alternate flow & Known input/recorder gaps are identified; invalid inputs retain the representation defined by the recording schema.\\
+Exceptions & Storage is unavailable/full, writes fail, or capture is interrupted. Report failure and preserve recoverable content according to the policy; do not report successful completion for a failed recording.\\
+Postconditions & The recording is finalized, or an explicit failure and incomplete-content disposition is available.\\
+Open decisions & \hyperref[Question:Q-127]{Q-127}, \hyperref[Question:Q-131]{Q-131}. Other applicable contracts are linked from each requirement.\\
+\end{tabularx}
+\normalsize
+Figure~\ref{Figure:RecordingActivity} shows the recording success and failure paths.
+\begin{figure}[htbp]\centering
+\resizebox{0.92\linewidth}{!}{\input{TikZ/s8sUseCases/s8sRecordingActivity.tex}}
+\caption{Candidate recording activity, including explicit recording failure.}\label{Figure:RecordingActivity}
+\end{figure}
+
+\section{Open and Validate a Recording}
+\par\medskip
+\small
+\begin{tabularx}{\linewidth}{L{2.8cm}Y}
+\caption{Open and Validate a Recording\label{Table:UC-04}}\\
+\toprule
+Field & Candidate scenario\\\midrule
+\endfirsthead
+\toprule
+Field & Candidate scenario\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+ID & \UseCaseID{UC-04}\\
+Actors & Acquisition-Developer.\\
+Source stories & \UserStoryRef{US-06}, \UserStoryRef{US-08}\\
+Requirements & \RequirementRef{REQ-F-114}, \RequirementRef{REQ-F-115}, \RequirementRef{REQ-F-116}\\
+Tests & \TestCaseRef{TC-127}, \TestCaseRef{TC-128}, \TestCaseRef{TC-129}\\
+Validation & \ValidationRef{VAL-122}\\
+Preconditions & Compatibility rules, format readers and the context presentation contract are defined; the selected recording is accessible.\\
+Trigger & The Acquisition-Developer selects a recorded session.\\
+Main flow & 1. Select a recording. 2. The subsystem reads its format and capture context. 3. It evaluates compatibility. 4. The Acquisition-Developer reviews the context and compatibility disposition. 5. A compatible recording becomes ready for playback.\\
+Success outcome & The developer understands the capture context and knows whether the recording can be replayed.\\
+Alternate flow & Missing metadata or a different software/configuration version receives the disposition specified by the compatibility rules.\\
+Exceptions & Unsupported, incompatible, corrupt, truncated, or changed content is classified under the approved rules; playback is prevented when incompatible and the reason is presented.\\
+Postconditions & A compatible recording is ready for playback, or an incompatibility disposition is available without admitting recorded input.\\
+Open decisions & \hyperref[Question:Q-128]{Q-128}, \hyperref[Question:Q-131]{Q-131}. Other applicable contracts are linked from each requirement.\\
+\end{tabularx}
+\normalsize
+
+\section{Replay a Diagnostic Session}
+\par\medskip
+\small
+\begin{tabularx}{\linewidth}{L{2.8cm}Y}
+\caption{Replay a Diagnostic Session\label{Table:UC-05}}\\
+\toprule
+Field & Candidate scenario\\\midrule
+\endfirsthead
+\toprule
+Field & Candidate scenario\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+ID & \UseCaseID{UC-05}\\
+Actors & Acquisition-Developer; Mission-Integrator observes the selected output consumer.\\
+Source stories & \UserStoryRef{US-06}, \UserStoryRef{US-09}\\
+Requirements & \RequirementRef{REQ-F-117}, \RequirementRef{REQ-D-104}, \RequirementRef{REQ-Q-101}, \RequirementRef{REQ-I-102}, \RequirementRef{REQ-I-103}, \RequirementRef{REQ-F-126}\\
+Tests & \TestCaseRef{TC-130}, \TestCaseRef{TC-131}, \TestCaseRef{TC-132}, \TestCaseRef{TC-141}, \TestCaseRef{TC-142}, \TestCaseRef{TC-143}\\
+Validation & \ValidationRef{VAL-123}\\
+Preconditions & The recording has passed the compatibility gate; input boundary, time/order rules, replay identification and output routing contracts are defined; an allowed endpoint is selected.\\
+Trigger & The Acquisition-Developer requests playback of a compatible recording.\\
+Main flow & 1. Start playback without Sensor/FTDI hardware. 2. The subsystem admits recorded events in their defined order and timing. 3. The processing path produces results. 4. The consumer and engineer receive explicitly identified replay outputs at the selected endpoint. 5. At end of recording, completion is reported.\\
+Success outcome & The developer can investigate the captured software behavior and the Mission-Integrator can distinguish recorded measurements from current live measurements.\\
+Alternate flow & Recorded gaps and disconnect events are replayed as defined by the captured event schema; playback can be inspected through \UseCaseRef{UC-06}.\\
+Exceptions & Read, processing or delivery failure follows the defined lifecycle/routing disposition. Missing endpoint selection does not silently select a mission endpoint.\\
+Postconditions & The last processed position and completion/failure state are available; outputs have followed the approved replay-identification and routing rules.\\
+Open decisions & \hyperref[Question:Q-129]{Q-129}, \hyperref[Question:Q-131]{Q-131}. Other applicable contracts are linked from each requirement.\\
+\end{tabularx}
+\normalsize
+Figure~\ref{Figure:PlaybackSequence} shows externally meaningful playback interactions. Subsystem lanes denote behavior, not selected processes, threads or classes. See \hyperref[Question:Q-129]{Q-129} and \hyperref[Question:Q-130]{Q-130} for the input and routing contracts.
+\begin{figure}[htbp]\centering
+\resizebox{0.98\linewidth}{!}{\input{TikZ/s8sUseCases/s8sPlaybackSequence.tex}}
+\caption{Candidate playback interaction after compatibility and endpoint selection.}\label{Figure:PlaybackSequence}
+\end{figure}
+
+\section{Inspect Events During Playback}
+\par\medskip
+\small
+\begin{tabularx}{\linewidth}{L{2.8cm}Y}
+\caption{Inspect Events During Playback\label{Table:UC-06}}\\
+\toprule
+Field & Candidate scenario\\\midrule
+\endfirsthead
+\toprule
+Field & Candidate scenario\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+ID & \UseCaseID{UC-06}\\
+Actors & Field-Engineer.\\
+Source stories & \UserStoryRef{US-07}\\
+Requirements & \RequirementRef{REQ-F-118}, \RequirementRef{REQ-F-119}, \RequirementRef{REQ-F-120}, \RequirementRef{REQ-F-121}, \RequirementRef{REQ-F-122}, \RequirementRef{REQ-F-123}, \RequirementRef{REQ-F-124}, \RequirementRef{REQ-F-125}, \RequirementRef{REQ-Q-106}\\
+Tests & \TestCaseRef{TC-133}, \TestCaseRef{TC-134}, \TestCaseRef{TC-135}, \TestCaseRef{TC-136}, \TestCaseRef{TC-137}, \TestCaseRef{TC-138}, \TestCaseRef{TC-139}, \TestCaseRef{TC-140}, \TestCaseRef{TC-148}\\
+Validation & \ValidationRef{VAL-124}\\
+Preconditions & A compatible recording is open; supported controls, playback states, replay-clock and state-restoration policies are defined.\\
+Trigger & The Field-Engineer requests a playback control action while investigating an incident.\\
+Main flow & 1. Locate the incident position. 2. Pause and inspect the selected record and status. 3. Step through individual events. 4. Seek backward or forward with the defined state restoration. 5. Change speed or resume and inspect the event sequence.\\
+Success outcome & The engineer can examine the events surrounding a fault with interpretable position, state and timing information.\\
+Alternate flow & A seek restores the approved state before further event admission; pausing and speed changes apply the replay-clock policy to freshness and timeouts.\\
+Exceptions & Invalid locations, unsupported speeds and controls issued in an invalid state receive the approved disposition. End-of-recording and processing errors follow the playback lifecycle policy.\\
+Postconditions & Playback position and state correspond to the last accepted action, with restored processing state where required.\\
+Open decisions & \hyperref[Question:Q-129]{Q-129}, \hyperref[Question:Q-131]{Q-131}. Other applicable contracts are linked from each requirement.\\
+\end{tabularx}
+\normalsize
+Figure~\ref{Figure:PlaybackStates} illustrates the candidate observable states. Ready follows successful compatibility evaluation; Playing admits events, Paused permits inspection and single-step, Completed indicates end of recording, and Error indicates failed playback. Seeking and speed selection apply the policy in \hyperref[Question:Q-129]{Q-129}; the diagram does not select an internal state-machine implementation.
+\begin{figure}[htbp]\centering
+\resizebox{0.96\linewidth}{!}{\input{TikZ/s8sUseCases/s8sPlaybackStates.tex}}
+\caption{Candidate playback states and stakeholder control transitions.}\label{Figure:PlaybackStates}
 \end{figure}

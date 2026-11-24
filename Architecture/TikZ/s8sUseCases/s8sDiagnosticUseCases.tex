@@ -1,0 +1,21 @@
+\begin{tikzpicture}[>=Latex,font=\small,
+ actor/.style={draw,rounded corners,align=center,text width=2.8cm,minimum height=0.9cm},
+ goal/.style={draw,ellipse,align=center,text width=3.6cm,minimum height=1.25cm}]
+\node[actor] (field) at (0,0) {\hyperref[Stakeholder:Field-Engineer]{Field-Engineer}};
+\node[actor] (devopen) at (0,-3) {\hyperref[Stakeholder:Acquisition-Developer]{Acquisition-Developer}};
+\node[actor] (devplay) at (0,-6) {\hyperref[Stakeholder:Acquisition-Developer]{Acquisition-Developer}};
+\node[actor] (inspect) at (0,-9) {\hyperref[Stakeholder:Field-Engineer]{Field-Engineer}};
+\node[goal] (record) at (5.4,0) {\hyperref[UseCase:UC-03]{UC-03\\Record a Diagnostic Session}};
+\node[goal] (open) at (5.4,-3) {\hyperref[UseCase:UC-04]{UC-04\\Open and Validate a Recording}};
+\node[goal] (play) at (5.4,-6) {\hyperref[UseCase:UC-05]{UC-05\\Replay a Diagnostic Session}};
+\node[goal] (control) at (5.4,-9) {\hyperref[UseCase:UC-06]{UC-06\\Inspect Events During Playback}};
+\node[actor] (integrator) at (10.7,-6) {\hyperref[Stakeholder:Mission-Integrator]{Mission-Integrator}};
+\node[draw,dashed,fit=(record)(open)(play)(control),inner sep=0.32cm,
+ label=above:{Sensor processing subsystem}] {};
+\draw (field.east) -- (record.west);
+\draw (devopen.east) -- (open.west);
+\draw (devplay.east) -- (play.west);
+\draw (inspect.east) -- (control.west);
+\draw (play.east) -- (integrator.west);
+\node[align=center] at (5.4,-11.2) {Repeated actor labels denote the same stakeholder role.};
+\end{tikzpicture}

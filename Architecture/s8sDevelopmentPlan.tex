@@ -200,6 +200,25 @@ What sample or status may be published first after restoration? Specify
 loss, recovery-time, and freshness limits, and identify the test fixtures
 and the observation points for both mission outputs.
 
+\section{Recording and Playback Decisions}
+\label{Section:RecordingPlaybackDecisions}
+Owner: Michael Stoddard for each question below. Status: Open. Decisions require stakeholder review and the applicable acceptance-authority disposition before dependent implementation or quantitative verdicts.
+
+\paragraph{Q-127. Recording boundary and fault policy.}\label{Question:Q-127}
+Select the recording input boundary and schema, including received bytes or decoded records, invalid/partial inputs, sample/result associations, event order, start/stop boundaries, stop-and-flush behavior, file identity, known-gap representation, interrupted-file recovery, and storage-failure indications. Define retention, storage permissions, sensitive-data handling, and resource budgets; replay cannot recover physical or transfer observations that were not captured.
+
+\paragraph{Q-128. Recording context and compatibility.}\label{Question:Q-128}
+Define format/version identification, required software/configuration/calibration metadata, available versus unknown fields, context presentation, accepted compatibility combinations, corrupt/truncated-file classification, rejection reasons, and revalidation when a selected file changes. Identify compatible and incompatible fixtures and the expected disposition of each.
+
+\paragraph{Q-129. Playback time, state, and controls.}\label{Question:Q-129}
+Define the playback processing boundary, event tie-break and rollover rules, supported speeds, timing-error limits in milliseconds, observation clock and uncertainty, pause/resume boundaries, valid seek locations, restoration strategy, transient-output disposition, single-step event meaning, presentation, and completion/failure behavior. Choose replay-clock semantics for freshness and timeouts during pause, stepping, speed changes, and seeking. Decide concurrency with live input; it is not assumed. Set state/output reference oracles. Software replay reproduces captured inputs, not the physical sensor or USB hardware.
+
+\paragraph{Q-130. Replay identification and routing.}\label{Question:Q-130}
+Agree how playback is identified at presentation and sample/status output boundaries, the test-consumer contract, endpoint selection and changes, handling of absent selection or delivery failure, and conditions for any mission endpoint. Reconcile with the OMS decisions; no unapproved OMS field or live mission delivery is selected by this proposal.
+
+\paragraph{Q-131. Recording and playback acceptance budgets.}\label{Question:Q-131}
+Approve sustained recording rate in records/s, burst rate and duration, minimum run duration in seconds or hours, storage allocation, recorder loss count/fraction and observation interval, allowed added live latency in milliseconds, allowed delivery-rate/gap degradation, and per-control response limits in milliseconds or seconds. Identify fixture sizes, concurrent loads, storage conditions, repeat counts, calibrated clocks and uncertainty/verdict rules. Agree the representative fault, stakeholder tasks and success criteria for the four use-case validations. These TBDs block quantitative verdicts; no numerical value is inferred from existing live-path timing allocations.
+
 \section{Risks and Lifecycle Gates}
 Unresolved capture coherence may pair a conversion with the wrong counter value. Undefined qualification or publication semantics may produce an unusable decision or a misinterpreted result. Source connection may be confused with source health. ADC0804 and FT245R are selected, but remaining electrical, timing, allocation, and macOS-version decisions still block detailed design and conformance claims. Owners and affected decisions are identified in \hyperref[Table:OwnedQuestions]{the question register}. No probabilities, severity ratings, schedules, or mitigations have been approved.
 
