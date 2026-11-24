@@ -1,10 +1,8 @@
 \chapter{Document History}
 \ChapterLabel{DocumentHistory}
-\section{Chapter Responsibility}
 \label{Section:DocumentHistoryResponsibility}
-Record the project draft evolution without inventing approval.
+This chapter records the project draft evolution without inventing approval.
 
-\noindent\textbf{Expected result:} A reviewable project record with explicit evidence and gaps.
 
 
 \section{Project Draft History}
@@ -12,6 +10,12 @@ The prior SPE-800 project draft at Git commit \texttt{49c9020} provided the
 starting point for project facts, open questions, and stable trace links.
 
 Template lineage is archived in \path|s8sTemplateHistory.tex|.
+
+\paragraph{November 9, 2026}
+The user confirmed SPE-800-Sensor, namespace \texttt{s8s}, the documentation
+scope and system boundary, stakeholders, owners, and the Embedded Systems
+profile. AIS-02 established this standalone review candidate in
+\path|Architecture/|. See \ChapterRef{DevelopmentPlan}; the initialization interaction and review are retained in \href{s8sAIPromptLog.tex}{the prompt-log source} and \href{s8sInstantiationReview.tex}{the instantiation-review source}.
 
 \paragraph{November 18, 2026}
 Added user-supplied candidate acquisition behavior, timing, local sample
@@ -26,17 +30,31 @@ The technical review follow-up added \RequirementRef{REQ-F-110}, expanded
 candidate evidence, and linked each quality scenario to evidence or an open
 decision. See \hyperref[Section:ReviewDecisions]{the review decision agenda}.
 
-\paragraph{November 9, 2026}
-The user confirmed SPE-800-Sensor, namespace \texttt{s8s}, the documentation
-scope and system boundary, stakeholders, owners, and the Embedded Systems
-profile. AIS-02 established this standalone review candidate in
-\path|Architecture/|. See \ChapterRef{AIPromptLog},
-\ChapterRef{DevelopmentPlan}, and \ChapterRef{InstantiationReview}.
-
 \paragraph{November 19, 2026}
 The user requested routine verbatim conversation exports to
 \path|docs/chats/| under Architecture, with timestamps on prompts and responses.
-Added \hyperref[Rule:AIChatLogging]{the conversation transcript rule}, a local
+Added \href{s8sAIAgentGuide.tex}{the repository conversation transcript rule}, a local
 exporter, and a thin Architecture discovery pointer. The rule states the
 capture boundary for an active final response; no background service or
-publication authorization is implied. See \ChapterRef{AIPromptLog}.
+publication authorization is implied. See \href{s8sAIPromptLog.tex}{the retained prompt-log source}.
+
+\paragraph{November 23, 2026}
+The user requested an integrated System Requirements and Architecture
+Specification retaining the complete requirements, tests, verification,
+validation, and traceability. The main body now presents project needs and
+design, including \ChapterRef{Interfaces} and
+\ChapterRef{VerificationApproach}. Detailed registers are appendices.
+Authoring and AI guidance remain repository sources outside the publication.
+The generated review artifact is \path|s8sArchitecture.pdf|; draft revision
+\DocumentVersion\ replaces template lineage as the publication revision.
+Stable artifact IDs and candidate obligations are preserved. The misplaced
+\RequirementRef{REQ-F-110} supporting row was moved into
+\hyperref[Table:SupportingTraceLinks]{its supporting-links table}.
+No product execution, requirements approval, or engineering acceptance is
+inferred from this editorial restructuring.
+
+The user also confirmed Chadwick Adebiyi as co-author alongside Michael
+Stoddard for all project documents. Shared authorship metadata now supplies
+the publication byline, PDF author field, and generated transcript headers.
+See \hyperref[Section:ProjectAuthorship]{Project Authorship}. The recorded
+ownership and acceptance roles are unchanged.

@@ -16,6 +16,15 @@ def visit(p):
             active.add(target); visit(target)
 visit(root)
 joined='\n'.join(authored(p.read_text()) for p in active)
+# Check every reader-facing internal target after publication scope changes.
+labels=set(re.findall(r'\\label\{([^{}]+)\}',joined))
+labels.update('Chapter:'+v for v in re.findall(r'\\ChapterLabel\{([^{}]+)\}',joined))
+for kind in ['UserStory','Requirement','UseCase','Architecture','TestCase','Verification','Validation']:
+    labels.update(kind+':'+v for v in re.findall(r'\\'+kind+r'ID\{([^{}]+)\}',joined))
+targets=set(re.findall(r'\\(?:hyperref|hyperlink)\[([^\]]+)\]',joined))
+targets.update(re.findall(r'\\(?:ref|pageref|autoref)\*?\{([^{}]+)\}',joined))
+targets.update('Chapter:'+v for v in re.findall(r'\\ChapterRef\{([^{}]+)\}',joined))
+assert targets<=labels, ('unresolved publication targets', sorted(targets-labels))
 assert r'\newcommand{\FileNamespace}{s8s}' in joined
 assert not re.search(r'(?m)^\s*\\includeonly\{',root.read_text())
 for p in active:
@@ -49,6 +58,10 @@ for part in usecases.split(r'\caption{')[1:]:
     match=re.search(r'\\UseCaseID\{([^{}]+)\}',part)
     if match: case_blocks[match[1]]=part
 trace=authored((b/'s8sTraceability.tex').read_text())
+primary_trace=trace.split(r'\section{Supporting Trace Links}')[0]
+for line in primary_trace.splitlines():
+    if line.startswith((r'\UserStoryRef{',r'\RequirementRef{')):
+        assert line.startswith(r'\UserStoryRef{') and len(line.split(' & '))==4, ('malformed primary trace row',line)
 assert len(requirements)==counts['Requirement'], 'unparsed requirement rows'
 assert len(tests)==counts['TestCase'], 'unparsed test rows'
 assert len(stories)==counts['UserStory'], 'unparsed story rows'

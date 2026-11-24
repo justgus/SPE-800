@@ -1,4 +1,7 @@
 # SPE-800-Sensor
+
+Project document authors: Michael Stoddard and Chadwick Adebiyi.
+
 Course materials and the 8-bit sensor-system architecture project for SPE-800.
 
 The mission is to determine whether a measurement can be used. The current
@@ -10,7 +13,7 @@ and publication contracts remain to be specified.
 
 - [Project overview, stakeholders, open decisions, and build instructions](s8sReadme.md)
 - [Architecture source](s8sManual.tex)
-- [Architecture PDF](s8sManual.pdf)
+- [System Requirements and Architecture Specification](s8sArchitecture.pdf)
 
 [ArchitectureDesignTemplate-2.33](../ArchitectureDesignTemplate-2.33/) holds the reusable template. Project-specific work belongs in this directory. This stage covers documentation only. The confirmed file namespace is `s8s`.
 

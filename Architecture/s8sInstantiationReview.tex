@@ -31,3 +31,52 @@ and hashes before and after authoring.
 Michael Stoddard coordinates review and the
 \hyperref[Table:OwnedQuestions]{owned questions}. Dr. Darian Muresan retains
 technical acceptance authority. See the publication gate in \ChapterRef{Release}.
+
+\section{Integrated Specification Publication Review: November 23, 2026}
+\label{Section:SpecificationPublicationReview}
+The user authorized the integrated publication layout. One agent performed
+source restructuring and self-review on
+\path|codex/integrated-architecture-specification|. The root remains
+\path|s8sManual.tex| and the reader output is \path|s8sArchitecture.pdf|.
+This record concerns document processing and presentation, not product
+verification, stakeholder validation, or acceptance of the engineering baseline.
+
+The complete macOS command \texttt{make -f s8sMakefileMacLinux pdf}
+succeeded. The final LaTeX log contained no undefined references, overfull
+boxes, or LaTeX warnings. The source checker passed with four stories,
+two use cases, five architecture decisions, twenty requirements, twenty
+tests, twenty verification entries, and twenty validation entries.
+The requirement, test, verification, validation, and story register rows
+were compared with pre-change snapshots and preserved exactly. The reusable
+template file hashes were unchanged.
+
+The final PDF has seventy pages. All 1,238 internal links resolved against
+336 named destinations, and the generated auxiliary labels for every
+controlled artifact mapped to an existing PDF destination. Missing-target
+and malformed-primary-trace-row mutations were correctly rejected by the
+extended source checker. The misplaced \RequirementRef{REQ-F-110}
+supporting row was moved to the supporting-links table without changing its
+relationships.
+
+The complete initial publication was rendered to page images and inspected
+in overview sheets. Final affected pages were rendered and inspected at
+larger size, including the cover, contents, requirement register,
+\ChapterRef{Interfaces}, \ChapterRef{VerificationApproach}, test and evidence
+registers, traceability, history, glossary, and bibliography. No clipping or
+overlap remained. The obsolete generated \path|s8sManual.pdf| was removed;
+its earlier versions remain available in Git history. The PowerShell build
+was updated for the new job name but was not executed on Windows.
+
+\section{Co-author Credit Review: November 23, 2026}
+The user confirmed Chadwick Adebiyi as co-author of all project documents.
+Shared \texttt{DocumentAuthors} metadata now credits Michael Stoddard and
+Chadwick Adebiyi on the publication cover, abstract byline, and PDF author
+field. README credits and all eight generated transcript headers use the
+same project authorship. The repository authorship rule applies to future
+project documents; recorded transcript bodies remain verbatim.
+
+The complete macOS build and source checker passed. The rebuilt PDF remains
+seventy pages; its 1,241 internal links resolve. The cover, abstract,
+authorship section, and history addition were rendered for visual review.
+The final log contained no undefined references, overfull boxes, or LaTeX
+warnings. Existing ownership and acceptance assignments were preserved.

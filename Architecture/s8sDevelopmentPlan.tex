@@ -1,10 +1,17 @@
-\chapter{Development Plan}
+\chapter{Governance, Risks, and Open Decisions}
 \ChapterLabel{DevelopmentPlan}
-\section{Chapter Responsibility}
 \label{Section:DevelopmentPlanResponsibility}
-Define project ownership, decision gates, tailoring, and change control.
+This chapter defines project ownership, decision gates, tailoring, and change control.
 
-\noindent\textbf{Expected result:} A reviewable project record with explicit evidence and gaps.
+
+\section{Project Authorship}
+\label{Section:ProjectAuthorship}
+Project documentation is co-authored by \DocumentAuthors.
+The user confirmed Chadwick Adebiyi as co-author of all project documents
+on November 23, 2026. The authorship metadata applies to this integrated
+specification and to project-authored supporting documents. Ownership,
+decision coordination, and acceptance authority are recorded separately in
+\hyperref[Table:ProjectOwners]{the owner register}.
 
 \section{Confirmed Governance}
 The user reconfirmed these assignments for SPE-800-Sensor on November 9, 2026. These roles remain in effect until changed by the project owner. Recording these assignments does not claim that technical acceptance has occurred.
@@ -41,12 +48,12 @@ Profile & Status & Rationale and decision provenance\\\midrule
 \endhead
 \bottomrule
 \endlastfoot
-\hyperref[Chapter:EmbeddedSystemsProfile]{Embedded Systems} & Applicable & Confirmed by the user November 9, 2026: the system includes sensor hardware, conversion, timing, and a hardware/software interface. Technical tailoring owner: Michael Stoddard. This is the only supplied profile; additional profiles require a separate decision.\\
+Embedded Systems & Applicable & Confirmed by the user November 9, 2026: the system includes sensor hardware, conversion, timing, and a hardware/software interface. Technical tailoring owner: Michael Stoddard. This is the only supplied profile; additional profiles require a separate decision.\\
 \end{tabularx}
 \normalsize
 
 \section{Stage and Change Control}
-This stage covers documentation only. The user confirmed the namespace \texttt{s8s}. Authored sources and editable diagrams in \path|Architecture/| are authoritative for this project; the reusable template remains separate. One AI agent coordinates, drafts, and self-reviews this change. Delegation is not authorized for this task. Independent technical review and acceptance remain human work.
+This stage covers documentation only. The user confirmed the namespace \texttt{s8s}. Authored sources and editable diagrams in \path|Architecture/| are authoritative for this project; the reusable template remains separate. Independent technical review and acceptance remain human work. Repository authoring and AI execution guidance are maintained outside this publication.
 
 Maintain the architecture in \path|Architecture/| within the SPE-800 repository. Changes use a branch and pull request against \texttt{main}. This candidate is pending document review. Michael Stoddard coordinates the document review; Dr. Darian Muresan retains technical acceptance authority. No approval or publication is inferred from a successful build.
 

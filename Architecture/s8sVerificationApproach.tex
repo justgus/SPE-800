@@ -1,0 +1,64 @@
+\chapter{Verification and Validation Approach}
+\ChapterLabel{VerificationApproach}
+\label{Section:VerificationApproachResponsibility}
+This chapter explains how the architecture and requirements will be evaluated and how
+objective evidence differs from planned outcomes.
+
+
+\section{Evaluation Baseline}
+The candidate contains twenty requirements with mapped tests, verification
+entries, and validation entries. All product tests remain unexecuted and
+all evidence dispositions remain Pending. The detailed
+\hyperref[Table:ProjectTests]{test definitions} are blocked outlines pending
+accepted contracts, reference inputs, fixtures, and controlled product
+configurations. A complete set of trace links does not establish complete
+stakeholder coverage or a passing product.
+
+\section{Requirement Verification}
+Verification compares observed behavior or inspected artifacts with the
+specified obligation. Planned methods include source inspection and builds
+for the C++ constraints, reference-input and transfer tests for acquisition,
+association and qualification tests, timing measurements, record inspection,
+fault injection, and interface-contract checks. The authoritative methods
+and required evidence remain in
+\hyperref[Table:VerificationRegister]{the verification register}; the
+procedures and expected results remain in
+\hyperref[Table:ProjectTests]{the test register}.
+
+Each execution requires a controlled requirement and implementation baseline,
+hardware and tool versions, resolved contracts, known or calibrated fixtures,
+and approved expected data. Retained records identify input, procedure,
+expected and observed results, date, operator, and evidence location under
+\ChapterRef{TestEvidence}. An expected result is not an observed result.
+
+\section{Stakeholder Validation}
+Validation evaluates whether the system supports the intended stakeholder
+use. Operator scenarios address reading interpretation; acquisition scenarios
+address continuity under processing load; field scenarios address platform
+use; integration scenarios address contract interpretation and compatible
+replacement. The authoritative scenarios and success criteria remain in
+\hyperref[Table:ValidationRegister]{the validation register}. Michael
+Stoddard coordinates participants and evidence; Dr. Darian Muresan retains
+the recorded disposition authority. No stakeholder observation or acceptance
+is claimed by this publication.
+
+\section{Architecture Evaluation and Open Coverage}
+The \hyperref[Table:QualityScenarioCoverage]{quality scenario coverage}
+connects architecture concerns to candidate evidence and owned decisions.
+The 10 ms local publication deadline, 100 ms local stale-state limit, and
+1 ms timestamp-error limit are candidate allocations under
+\RequirementRef{REQ-TIM-01}, \RequirementRef{REQ-SMP-02}, and
+\RequirementRef{REQ-TIM-02}. Mission delivery rate, platform scope,
+interface compatibility, uncertainty, and recovery criteria require the
+\hyperref[Section:ReviewDecisions]{technical review decisions} before
+objective acceptance can be assessed.
+
+\section{Traceability and Evidence Disposition}
+The \hyperref[Table:TraceabilityMatrix]{traceability matrix} connects needs
+to requirements and verification; the
+\hyperref[Table:SupportingTraceLinks]{supporting links} connect tests, use
+cases, architectural decisions, and validation. These relationships remain
+current when an obligation or design changes. Verification and validation
+are recorded separately, and missing evidence remains explicit. Successful
+PDF compilation and source-link checks concern the document, not product
+behavior or stakeholder acceptance.

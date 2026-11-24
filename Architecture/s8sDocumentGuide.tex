@@ -40,6 +40,112 @@ checks, and human-review boundaries, are contained in
 \ChapterRef{AIAgentGuide}. This appendix retains installation, build, file, and
 LaTeX authoring guidance that applies to both human authors and AI agents.
 
+\section{Initializing a New Project from This Template}
+\label{Section:InitializeNewProject}
+\index{template!project initialization}
+\index{AI agent!project initialization}
+Create a project-specific architecture book from a copy of this template;
+keep the master template generic. Use
+\hyperref[Skill:AIS-02]{AIS-02: Initialize a Project} for the authoritative
+Context, Steps, and Acceptance, including confirmation of project information,
+review of supplied evidence, and replacement of supported placeholders.
+
+To start initialization with an AI agent, use the request in
+\hyperref[Section:AIInitializePrompt]{Section~\ref{Section:AIInitializePrompt},
+Initialize the Architecture Book}. Execute the task using
+\ChapterRef{AIImplementationWorkflow}.
+
+\section{Template Tailoring and Domain Profiles}
+\label{Section:DomainProfiles}
+\index{domain tailoring profile}
+\index{template!tailoring}
+The core chapters form a generic software-architecture template. A domain
+tailoring profile augments those chapters with concerns, artifacts, diagrams,
+and review criteria for a particular class of system. It does not replace a
+core chapter or create a second authoritative location for project facts.
+Requirements, interfaces, architecture decisions, tests, and evidence remain
+in their normal core chapters and link to one another through their stable IDs.
+
+Select applicable profiles during project initialization. More than one
+profile may apply. Record each applicability decision and rationale in
+\ChapterRef{DevelopmentPlan}, retain applicable profile appendices as
+authoritative tailoring guidance, and exclude an inapplicable profile from an
+instantiated project only after recording the decision. If profile guidance
+conflicts, identify the conflict and obtain an authorized human decision before
+editing controlled project content.
+
+\begin{table}[htbp]
+\centering
+\caption{Domain Profile Applicability}\label{Table:DomainProfileApplicability}
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\toprule Profile & Applicability record\\\midrule
+\hyperref[Chapter:EmbeddedSystemsProfile]{Embedded Systems} & See the authoritative decision in \hyperref[Table:ProjectDomainProfiles]{the project profile register}.\\\bottomrule
+\end{tabularx}
+\end{table}
+
+When the Embedded Systems profile is Applicable or TBD, read
+\ChapterRef{EmbeddedSystemsProfile} during initialization and for every task
+affected by hardware, firmware, real-time behavior, constrained resources,
+physical interfaces, safety, security, manufacturing, or field service.
+
+\section{Using This Template with AI Agents}
+\label{Section:UsingTemplateAI}
+\index{AI agent!architecture workflow}
+Use \ChapterRef{AIAgentGuide} to select AI Skills and read their
+linked Context, Steps, and Acceptance. Use
+\ChapterRef{AIImplementationWorkflow} for execution with one or multiple
+agents. To start a task, use
+\hyperref[Section:AIStartSelectedTaskPrompt]{Start Any Selected AIS};
+\hyperref[Section:AIExamplePrompts]{the task-specific example requests}
+provide additional starting prompts. The
+\hyperref[Figure:AIGuideActivity]{guide activity diagram} shows the reading
+route from repository bootstrap files to task selection and execution.
+
+
+\section{Integrated Specification Publication}
+\label{Section:SpecificationPublication}
+The authoritative root remains \path|s8sManual.tex|. The reader publication
+is \path|s8sArchitecture.pdf|, titled System Requirements and Architecture
+Specification. The root includes the complete project requirements and
+architecture in the main body, followed by detailed test, verification,
+validation, traceability, evidence, and history appendices. Each controlled
+artifact has one authoritative source and retains its stable ID.
+
+Authoring instructions, template initialization, the Embedded Systems
+tailoring profile, the AI Agent Usage Guide and execution workflow, prompt
+log, and instantiation review are retained in repository LaTeX sources and
+excluded from the reader publication. Generic requirement-writing guidance
+is retained in \path|s8sRequirementsGuide.tex|. This exclusion changes
+publication scope, not the applicability of repository instructions or the
+Embedded Systems profile. Source-only records can be linked by filename;
+internal PDF links shall target included labels.
+
+From \path|Architecture/|, run
+\texttt{make -f s8sMakefileMacLinux pdf} and
+\texttt{python3 s8sCheckSources.py}. The build uses the root above with
+job name \texttt{s8sArchitecture}, then runs BibTeX, makeglossaries,
+makeindex, and two additional LaTeX passes. The Windows counterpart is
+\texttt{s8sMakefilePowerShell.ps1 -Action pdf}; its execution is not claimed
+by a macOS build. No includeonly filter is used for publication checks.
+Inspect all changed pages and validate internal link targets before delivery.
+The former generated \path|s8sManual.pdf| is superseded by this output;
+its previous versions remain in Git history.
+
+\section{Project Document Authorship}
+\label{Rule:ProjectDocumentAuthorship}
+All project-authored documents shall credit both project authors using
+\texttt{DocumentAuthors}, defined once in \path|s8sManual.tex|.
+The current authorship decision is recorded in
+\hyperref[Section:ProjectAuthorship]{Project Authorship}. Publications shall
+use this metadata for their visible byline and PDF author field; chapters
+and supporting LaTeX sources inherit the same project authorship. Standalone
+documents, README summaries, reports, and generated transcript headers shall
+carry the same credit. Transcript message bodies and speaker labels remain
+verbatim. New project documents inherit this convention without a separate
+request. Preserve original attribution in externally supplied publications,
+archived template provenance, and historical quotations. Authorship does not
+assign an ownership or acceptance role.
+
 \section{File Naming}
 
 Every project-owned file created for this document shall begin with the project
@@ -119,11 +225,7 @@ in the built PDF, including both directions between AIS rows and definitions.\\
 \section{One Responsibility per Chapter}
 \label{Section:ChapterResponsibilityConvention}
 
-Every authored chapter and appendix shall begin with a numbered
-\textit{Chapter Responsibility} section, after its chapter label and index
-entries. State the chapter's primary responsibility and expected result. Give
-the section a stable label so other chapters can link to its scope. Keep this
-summary aligned with the chapter content when tailoring the template.
+Every published project chapter and appendix begins with a concise scope paragraph after its chapter label and index entries. Preserve its stable responsibility anchor for links. Omit repetitive author-facing Chapter Responsibility headings and Expected result instructions from the reader publication. Repository-only guides may retain their explicit responsibility sections. Keep the scope paragraph aligned with the chapter content.
 
 A chapter answers one major engineering question. When content belongs
 to another responsibility, link to its authoritative chapter instead of
@@ -134,7 +236,7 @@ decides whether the evidence is sufficient.
 \section{Adding a Chapter}
 
 Create the namespaced file, begin it with a chapter title and stable chapter
-label, add useful index terms and a Chapter Responsibility section, and include it once from
+label, add useful index terms and a concise scope paragraph with a stable responsibility anchor, and include it once from
 \texttt{s8sManual.tex}. Add or change artifact mappings only in the canonical
 traceability matrix.
 
@@ -144,14 +246,11 @@ traceability matrix.
 \index{example}
 \index{Chapter!Example Chapter}
 
-\section{Chapter Responsibility}
 \label{Section:ExampleChapterResponsibility}
-State the primary responsibility of this chapter.
+Describe the project concern addressed in this chapter.
 
-\noindent\textbf{Expected result:} State its reviewable output.
-
-\section{How to Use This Chapter}
-Chapter content goes here.
+\section{Project Content}
+Project-specific content goes here.
 \end{verbatim}
 
 \section{Diagram Authoring with TikZ}
@@ -342,19 +441,19 @@ Included TikZ sources require no separate rendering command; \texttt{pdflatex}
 compiles them with their owning chapters:
 
 \begin{verbatim}
-pdflatex -interaction=nonstopmode -halt-on-error s8sManual.tex
-bibtex s8sManual
-makeglossaries s8sManual
-makeindex s8sManual.idx
-pdflatex -interaction=nonstopmode -halt-on-error s8sManual.tex
-pdflatex -interaction=nonstopmode -halt-on-error s8sManual.tex
+pdflatex -interaction=nonstopmode -halt-on-error -jobname=s8sArchitecture s8sManual.tex
+bibtex s8sArchitecture
+makeglossaries s8sArchitecture
+makeindex s8sArchitecture.idx
+pdflatex -interaction=nonstopmode -halt-on-error -jobname=s8sArchitecture s8sManual.tex
+pdflatex -interaction=nonstopmode -halt-on-error -jobname=s8sArchitecture s8sManual.tex
 \end{verbatim}
 
 \subsection{Build Verification and Troubleshooting}
 
 Confirm that the output PDF opens, all expected chapters and appendices appear,
 the glossary and index are populated, hyperlinks reach their targets, and no
-table or figure is clipped. Search \texttt{s8sManual.log} for fatal errors,
+table or figure is clipped. Search \texttt{s8sArchitecture.log} for fatal errors,
 undefined references, missing files, and overfull boxes. Common remedies are:
 
 \begin{itemize}

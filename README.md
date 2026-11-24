@@ -1,5 +1,7 @@
 # SPE-800
 
+Project document authors: Michael Stoddard and Chadwick Adebiyi.
+
 Course materials and the sensor-system architecture project for SPE-800.
 
 The mission is to determine whether a measurement can be used. The current
@@ -11,7 +13,7 @@ and publication contracts remain to be specified.
 
 - [Project overview, stakeholders, open decisions, and build instructions](Architecture/s8sReadme.md)
 - [Architecture source](Architecture/s8sManual.tex)
-- [Architecture PDF](Architecture/s8sManual.pdf)
+- [System Requirements and Architecture Specification](Architecture/s8sArchitecture.pdf)
 
 `ArchitectureDesignTemplate-2.33/` holds the reusable template. Project-specific
 work belongs in `Architecture/`; the template is preserved for reuse. This stage covers
