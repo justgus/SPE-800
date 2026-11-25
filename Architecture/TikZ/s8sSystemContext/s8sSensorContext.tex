@@ -11,8 +11,8 @@
 \node[box] (counter) at (2.6,-2.8) {Clock/counter};
 \node[box,minimum width=8.1cm] (logic) at (0,-4.0) {Interface logic};
 \node[box] (ftdi) at (0,-5.4) {FT245R};
-\node[box] (host) at (0,-7.0) {Control app\\C++ on macOS};
-\node[box,draw=s8sGray,fill=white] (consumer) at (0,-9.0) {Mission application};
+\node[box] (host) at (0,-7.1) {Control app: C++ core\\macOS, Windows 11, iOS\\iOS UI: SwiftUI};
+\node[box,draw=s8sGray,fill=white] (consumer) at (0,-10.0) {Mission application};
 
 \coordinate (right edge) at (5.2,-4);
 \node[boundary,fit=(sensor)(adc)(counter)(logic)(ftdi)(host)(right edge)] (system) {};

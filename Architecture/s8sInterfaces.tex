@@ -59,3 +59,6 @@ Candidate verification uses record inspection, load and fault tests. Inject
 ready events at the approved rate, compare timestamps with an independent
 clock, and interrupt the source to check stale-data behavior. Perform OMS
 conformance checks after approval of the program interface decision.
+
+\section{Platform Connection and iOS UI Boundaries}
+The control-app platform scope is \RequirementRef{REQ-C-103}; the C++ processing core and iOS SwiftUI UI follow \RequirementRef{REQ-C-102} and \RequirementRef{REQ-C-104}. Define each platform's acquisition-access contract and the iOS UI/core contract under \hyperref[Question:Q-106]{Q-106} and \hyperref[Question:Q-121]{Q-121}. The latter must address transferred data/status, ownership, concurrency, lifecycle and errors before an interoperation mechanism is selected. The existing sample and OMS contracts remain the semantic authorities; selecting iOS does not establish a working hardware-access path.

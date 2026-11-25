@@ -21,17 +21,14 @@ Mission application is an external consumer. The distinction between the
 whole system and the sensor processing subsystem is defined in
 \hyperref[Section:MeasurementMission]{the system context}.
 
-The current host architecture addresses macOS. The four-platform field-use
-need in \UserStoryRef{US-03} remains partially covered pending
-\hyperref[Question:Q-121]{Q-121}. C++ constraints remain subject to the
-embedded execution allocation in \hyperref[Question:Q-116]{Q-116}.
+The control app targets macOS, Windows 11, and iOS, with a primarily C++ core and an iOS SwiftUI UI. The selected platform matrix, connection feasibility and language boundary remain \hyperref[Question:Q-106]{Q-106} and \hyperref[Question:Q-121]{Q-121}. Linux remains an additional stakeholder request in \UserStoryRef{US-03}. The embedded C++ execution allocation remains \hyperref[Question:Q-116]{Q-116}.
 No hardware construction, application implementation, or executed product
 evidence is included in this documentation stage.
 
 \section{Audience and Authority}
 The Operator, Acquisition-Developer, Field-Engineer, and Mission-Integrator
 concerns are defined in \hyperref[Table:StakeholderNeeds]{the stakeholder
-register}. Michael Stoddard coordinates technical decisions and evidence
+register}. Michael Stoddard and Chadwick Adebiyi co-own document and technical content. Michael Stoddard coordinates technical decisions and evidence
 planning. Dr. Darian Muresan retains acceptance authority under
 \hyperref[Table:ProjectOwners]{the owner register}. Publication layout and a
 successful document build do not approve requirements or establish product
