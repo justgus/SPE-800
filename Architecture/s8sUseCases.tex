@@ -272,15 +272,15 @@ Field & Candidate scenario\\\midrule
 ID & \UseCaseID{UC-05}\\
 Actors & Acquisition-Developer; Mission-Integrator observes the selected output consumer.\\
 Source stories & \UserStoryRef{US-06}, \UserStoryRef{US-09}\\
-Requirements & \RequirementRef{REQ-F-117}, \RequirementRef{REQ-D-104}, \RequirementRef{REQ-Q-101}, \RequirementRef{REQ-I-102}, \RequirementRef{REQ-I-103}, \RequirementRef{REQ-F-126}\\
-Tests & \TestCaseRef{TC-130}, \TestCaseRef{TC-131}, \TestCaseRef{TC-132}, \TestCaseRef{TC-141}, \TestCaseRef{TC-142}, \TestCaseRef{TC-143}\\
+Requirements & \RequirementRef{REQ-F-117}, \RequirementRef{REQ-F-127}, \RequirementRef{REQ-D-104}, \RequirementRef{REQ-Q-101}, \RequirementRef{REQ-I-102}, \RequirementRef{REQ-I-103}, \RequirementRef{REQ-F-126}\\
+Tests & \TestCaseRef{TC-130}, \TestCaseRef{TC-149}, \TestCaseRef{TC-131}, \TestCaseRef{TC-132}, \TestCaseRef{TC-141}, \TestCaseRef{TC-142}, \TestCaseRef{TC-143}\\
 Validation & \ValidationRef{VAL-123}\\
 Preconditions & The recording has passed the compatibility gate; input boundary, time/order rules, replay identification and output routing contracts are defined; an allowed endpoint is selected.\\
 Trigger & The Acquisition-Developer requests playback of a compatible recording.\\
-Main flow & 1. Start playback without Sensor/FTDI hardware. 2. The subsystem admits recorded events in their defined order and timing. 3. The processing path produces results. 4. The consumer and engineer receive explicitly identified replay outputs at the selected endpoint. 5. At end of recording, completion is reported.\\
+Main flow & 1. Start playback without Sensor/FTDI hardware and establish the approved initial processing state before admitting the first event. 2. The subsystem admits recorded events in their defined order and timing. 3. The processing path produces results. 4. The consumer and engineer receive explicitly identified replay outputs at the selected endpoint. 5. At end of recording, completion is reported.\\
 Success outcome & The developer can investigate the captured software behavior and the Mission-Integrator can distinguish recorded measurements from current live measurements.\\
 Alternate flow & Recorded gaps and disconnect events are replayed as defined by the captured event schema; playback can be inspected through \UseCaseRef{UC-06}.\\
-Exceptions & Read, processing or delivery failure follows the defined lifecycle/routing disposition. Missing endpoint selection does not silently select a mission endpoint.\\
+Exceptions & Unavailable initial processing state receives the approved disposition without admitting recorded input. Read, processing or delivery failure follows the defined lifecycle/routing disposition. Missing endpoint selection does not silently select a mission endpoint.\\
 Postconditions & The last processed position and completion/failure state are available; outputs have followed the approved replay-identification and routing rules.\\
 Open decisions & \hyperref[Question:Q-129]{Q-129}, \hyperref[Question:Q-131]{Q-131}. Other applicable contracts are linked from each requirement.\\
 \end{tabularx}
