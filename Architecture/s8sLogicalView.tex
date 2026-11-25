@@ -1,13 +1,11 @@
 \chapter{Logical View}
 \ChapterLabel{LogicalView}
-\section{Chapter Responsibility}
 \label{Section:LogicalViewResponsibility}
-Define conceptual responsibilities and data boundaries without selecting C++ classes.
+This chapter defines conceptual responsibilities and data boundaries without selecting C++ classes.
 
-\noindent\textbf{Expected result:} A consistent conceptual responsibility and interface model.
 
 \section{Responsibility and Contract Map}
-These are conceptual responsibilities, not implemented classes. No class diagram or C++ API is selected. Future class/interface diagrams require the titled, linked responsibility register under \hyperref[Requirement:DOCCLASS001]{DOC-CLASS-001} and \hyperref[Requirement:DOCLINK001]{DOC-LINK-001}.
+These are conceptual responsibilities, not implemented classes. The register identifies their inputs, outputs, and governing requirements. No class diagram or C++ API is selected.
 
 \small
 \begin{tabularx}{\linewidth}{L{3.0cm}Y}
@@ -31,4 +29,5 @@ Source condition & \RequirementRef{REQ-F-108}, \RequirementRef{REQ-F-109}; defin
 \normalsize
 
 \section{Data Meaning and Invariants Awaiting Definition}
+\label{Section:DataMeaning}
 Conversion code, counter value, host qualification status, and published code are separate terms. The published code is not assumed to be the raw conversion code. Counter value is not assumed to be elapsed time, absolute time, or the host receive timestamp. A record's association, timing origin, field units, lifecycle, and representation are defined only after \hyperref[Question:Q-111]{Q-111}, \hyperref[Question:Q-112]{Q-112}, \hyperref[Question:Q-114]{Q-114} is resolved. No packed structure, byte order, checksum, or wall-clock mapping is introduced here.

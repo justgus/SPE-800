@@ -1,179 +1,71 @@
-\chapter{Introduction}
+\chapter{Purpose and Scope}
 \ChapterLabel{Introduction}
-\index{introduction}
-\index{Chapter!Introduction}
-\index{normative language}
-\index{priority}
-\index{source of truth}
-\index{V-model}
-
-\section{Chapter Responsibility}
 \label{Section:IntroductionResponsibility}
-Establish the purpose, scope, audience, and conventions of the engineering record.
+This chapter establishes the purpose, scope, audience, and status of this specification.
+\glsadd{acceptancecriterion}\glsadd{requirement}\glsadd{stakeholder}\glsadd{traceability}\glsadd{usecase}\glsadd{validation}\glsadd{verification}%
 
-\noindent\textbf{Expected result:} A shared understanding of how to read and use the architecture.
-
-\section{How to Use This Chapter}
-State the document purpose, scope, audience, conventions, and relationship to
-other project artifacts. Replace bracketed text with project-specific content.
-Keep binding obligations in the Requirements chapter.
 
 \section{Purpose}
-This document is the authoritative engineering specification for
-\ProjectName. It records why the system is needed, what it shall do, how it is
-structured, how it will be tested, and what evidence is required before
-release. It is readable by people and structured for use by engineering and
-\gls{ai}-assisted development tools.
+This System Requirements and Architecture Specification records the
+stakeholder needs, candidate obligations, selected architecture, and planned
+verification and validation for \ProjectName. Requirements and design views
+share stable references with the detailed test and evidence registers.
+The authored LaTeX and editable diagram sources are authoritative; this PDF
+is the integrated review publication.
 
-\begin{s8sNote}[Central lesson]
-A vague request produces unpredictable software. A precise, traceable
-specification allows engineers to generate, review, test, and, when necessary,
-regenerate a conforming implementation.
-\end{s8sNote}
+\section{Scope and Boundaries}
+The mission is to determine whether a measurement can be used. The system
+includes the sensor and ADC0804 conversion path, clock/counter, interface
+logic, FT245R USB transfer, and host-side measurement processing. The
+Mission application is an external consumer. The distinction between the
+whole system and the sensor processing subsystem is defined in
+\hyperref[Section:MeasurementMission]{the system context}.
 
-\section{Scope}
-This documentation stage describes the measurement-usability mission in \hyperref[Section:MeasurementMission]{the System Context}. It includes the sensor and ADC0804 conversion path, clock/counter, interface logic, FT245R USB transfer, macOS control app qualification, and downstream publication boundary. Hardware capture, association, qualification rules, and result-contract details remain owned questions in \hyperref[Table:OwnedQuestions]{the decision register}. This stage produces architecture documentation only; no hardware construction, software implementation, or executed product evidence is included. macOS replaces the earlier multi-OS host scope; both software applications retain their C++ direction subject to the embedded allocation in \hyperref[Question:Q-116]{Q-116}.
+The current host architecture addresses macOS. The four-platform field-use
+need in \UserStoryRef{US-03} remains partially covered pending
+\hyperref[Question:Q-121]{Q-121}. C++ constraints remain subject to the
+embedded execution allocation in \hyperref[Question:Q-116]{Q-116}.
+No hardware construction, application implementation, or executed product
+evidence is included in this documentation stage.
 
-\section{Audience}
-Michael Stoddard owns the document, technical decisions, and verification/validation planning. Dr. Darian Muresan is the acceptance authority until changed by the project owner. The organization is Stevens Institute. The Operator, Acquisition-Developer, Field-Engineer, and Mission-Integrator needs are defined in \hyperref[Table:StakeholderNeeds]{the stakeholder register}. The controlled role assignments are in \hyperref[Table:ProjectOwners]{the owner register}.
+\section{Audience and Authority}
+The Operator, Acquisition-Developer, Field-Engineer, and Mission-Integrator
+concerns are defined in \hyperref[Table:StakeholderNeeds]{the stakeholder
+register}. Michael Stoddard coordinates technical decisions and evidence
+planning. Dr. Darian Muresan retains acceptance authority under
+\hyperref[Table:ProjectOwners]{the owner register}. Publication layout and a
+successful document build do not approve requirements or establish product
+conformance.
 
-\section{Normative Language and Priority}
-Use \textbf{shall} for every binding requirement. Do not use \textbf{should} as
-guidance in normative statements. Assign each requirement one priority:
-\textbf{\gls{must}}, \textbf{\gls{should}}, \textbf{\gls{could}}, or
-\textbf{\gls{would}}. Priority expresses delivery importance; it does not change
-whether a statement containing \textbf{shall} is binding for its assigned
-implementation version.
+\section{Document Status and Conventions}
+This is a Draft, revision \DocumentVersion, dated \DocumentDate.
+The revision identifies this document presentation; an accepted engineering
+baseline remains subject to \hyperref[Question:Q-110]{Q-110}.
+Template lineage 2.33 is provenance, not the project revision or a software
+release version.
 
-\section{Document as Source of Truth}
-Requirements alone do not define a reproducible implementation. The complete
-source of truth consists of stakeholder needs, user stories, requirements, use
-cases, architecture and interface decisions, implementation constraints,
-tests, verification evidence, validation evidence, and release criteria.
-Generated code is an implementation artifact governed by this specification.
+A statement containing \textbf{shall} expresses a candidate binding
+obligation subject to its recorded lifecycle and approval conditions.
+Priority uses \gls{must}, \gls{should}, \gls{could}, and \gls{would}; it is
+separate from lifecycle status. TBD identifies an unresolved value or
+contract. Pending verification or validation identifies missing executed
+evidence, rather than a passing result.
 
-\section{Architecture as Maintained Input for AI Design}
-\label{Section:ArchitectureAIDesign}
-\index{AI!architecture as maintained input}
-\index{architecture!AI-assisted design}
-Figure~\ref{Figure:MaintainedSourceComparison} distinguishes two workflows.
-A compiler regenerates lower-level output from reviewed C/C++ source and its
-build configuration. An AI request is often incomplete: it may omit interface
-assumptions, error behavior, or earlier decisions. Generated code therefore
-requires review, tests, and version control. Repeating a prompt does not
-reproduce an approved implementation by itself.
+\section{Document Organization}
+\ChapterRef{SystemContext}, \ChapterRef{UserStories},
+\ChapterRef{UseCases}, and \ChapterRef{Requirements} define the context,
+needs, scenarios, and complete candidate requirement register.
+\ChapterRef{ArchitectureOverview} and the logical, interface, interaction,
+runtime, deployment, development, and implementation chapters describe the
+current design and its unresolved allocations.
+\ChapterRef{VerificationApproach} defines the evaluation approach;
+\ChapterRef{DevelopmentPlan} owns risks, decisions, and review authority.
 
-\begin{figure}[htbp]
-\centering
-\resizebox{\textwidth}{!}{\input{TikZ/s8sIntroduction/s8sMaintainedSourceComparison.tex}}
-\caption{Maintained source in compiler and AI workflows, adapted from MSE Figure 2.1.}
-\label{Figure:MaintainedSourceComparison}
-\end{figure}
-
-The goal of this template is to make the approved architecture the maintained
-engineering input to AI-assisted design and implementation. Its linked needs,
-requirements, interfaces, responsibilities, constraints, and rationale give a
-bounded task its context. The task request identifies the affected baseline and
-change; the architecture remains the authoritative record of design intent.
-This analogy does not make an AI agent a deterministic compiler. Engineers must
-review, verify, and version its code and tests, and resolve missing acceptance
-criteria before claiming conformance.
-
-Figure~\ref{Figure:ArchitectureUpdateFeedback} shows how implementation and
-test findings can improve the architecture. An engineer may edit the affected
-views directly, or an AI agent may prepare a proposed update. In either route,
-authorized reviewers assess the evidence and approve changes before they enter
-the baseline. A finding may affect requirements, interfaces, allocations, and
-planned checks together; update those links before using the revised baseline
-for the next implementation task. \ChapterRef{AIAgentGuide} and
-\ChapterRef{AIImplementationWorkflow} define the task and execution controls.
-
-\begin{figure}[htbp]
-\centering
-\resizebox{\textwidth}{!}{\input{TikZ/s8sIntroduction/s8sArchitectureUpdateFeedback.tex}}
-\caption{Human and AI-assisted architecture feedback, adapted from MSE Figure 2.2.}
-\label{Figure:ArchitectureUpdateFeedback}
-\end{figure}
-
-\section{Initializing a New Project from This Template}
-\label{Section:InitializeNewProject}
-\index{template!project initialization}
-\index{AI agent!project initialization}
-Create a project-specific architecture book from a copy of this template;
-keep the master template generic. Use
-\hyperref[Skill:AIS-02]{AIS-02: Initialize a Project} for the authoritative
-Context, Steps, and Acceptance, including confirmation of project information,
-review of supplied evidence, and replacement of supported placeholders.
-
-To start initialization with an AI agent, use the request in
-\hyperref[Section:AIInitializePrompt]{Section~\ref{Section:AIInitializePrompt},
-Initialize the Architecture Book}. Execute the task using
-\ChapterRef{AIImplementationWorkflow}.
-
-\section{Template Tailoring and Domain Profiles}
-\label{Section:DomainProfiles}
-\index{domain tailoring profile}
-\index{template!tailoring}
-The core chapters form a generic software-architecture template. A domain
-tailoring profile augments those chapters with concerns, artifacts, diagrams,
-and review criteria for a particular class of system. It does not replace a
-core chapter or create a second authoritative location for project facts.
-Requirements, interfaces, architecture decisions, tests, and evidence remain
-in their normal core chapters and link to one another through their stable IDs.
-
-Select applicable profiles during project initialization. More than one
-profile may apply. Record each applicability decision and rationale in
-\ChapterRef{DevelopmentPlan}, retain applicable profile appendices as
-authoritative tailoring guidance, and exclude an inapplicable profile from an
-instantiated project only after recording the decision. If profile guidance
-conflicts, identify the conflict and obtain an authorized human decision before
-editing controlled project content.
-
-\begin{table}[htbp]
-\centering
-\caption{Domain Profile Applicability}\label{Table:DomainProfileApplicability}
-\begin{tabularx}{\linewidth}{L{3.2cm}Y}
-\toprule Profile & Applicability record\\\midrule
-\hyperref[Chapter:EmbeddedSystemsProfile]{Embedded Systems} & See the authoritative decision in \hyperref[Table:ProjectDomainProfiles]{the project profile register}.\\\bottomrule
-\end{tabularx}
-\end{table}
-
-When the Embedded Systems profile is Applicable or TBD, read
-\ChapterRef{EmbeddedSystemsProfile} during initialization and for every task
-affected by hardware, firmware, real-time behavior, constrained resources,
-physical interfaces, safety, security, manufacturing, or field service.
-
-\section{Using This Template with AI Agents}
-\label{Section:UsingTemplateAI}
-\index{AI agent!architecture workflow}
-Use \ChapterRef{AIAgentGuide} to select AI Skills and read their
-linked Context, Steps, and Acceptance. Use
-\ChapterRef{AIImplementationWorkflow} for execution with one or multiple
-agents. To start a task, use
-\hyperref[Section:AIStartSelectedTaskPrompt]{Start Any Selected AIS};
-\hyperref[Section:AIExamplePrompts]{the task-specific example requests}
-provide additional starting prompts. The
-\hyperref[Figure:AIGuideActivity]{guide activity diagram} shows the reading
-route from repository bootstrap files to task selection and execution.
-
-\section{V-Model Organization}
-Figure~\ref{Figure:VModel} connects development decisions with evidence.
-Stakeholder needs motivate requirements, which guide architecture, detailed
-design, and implementation. Unit tests address detailed behavior; integration
-tests address interactions; system verification assesses specified obligations;
-and stakeholder validation assesses intended use. These correspondences help
-identify the evidence needed for each design decision.
-
-The model includes iteration. Validation findings can return to stakeholder
-needs during development. After deployment, operational findings and change
-requests can trigger another cycle. A changed baseline requires review of its
-requirements, design links, and affected checks. This organization is
-compatible with the system and software life-cycle process frameworks in
-\cite{ISO15288,ISO12207}; those standards do not prescribe one life-cycle model.
-
-\begin{figure}[htbp]
-\centering
-\resizebox{\textwidth}{!}{\input{TikZ/s8sIntroduction/s8sVModel.tex}}
-\caption{V-model relationships, agile iteration, and operational feedback, adapted from MSE Figure 1.2.}
-\label{Figure:VModel}
-\end{figure}
+The appendices retain the full \hyperref[Table:ProjectTests]{test definitions},
+\hyperref[Table:VerificationRegister]{verification register},
+\hyperref[Table:ValidationRegister]{validation register},
+\hyperref[Table:TraceabilityMatrix]{traceability matrix}, and
+\ChapterRef{TestEvidence}. Each controlled statement has one source; links
+connect its need, obligation, design, and planned evidence.
+Repository authoring and AI guidance are maintained separately and are
+excluded from this reader publication.

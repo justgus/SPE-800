@@ -1,0 +1,61 @@
+\chapter{Interfaces and Data}
+\ChapterLabel{Interfaces}
+\label{Section:InterfacesResponsibility}
+This chapter defines the acquisition, local publication, and mission exchange boundaries.
+
+
+\section{Boundary Allocation}
+The acquisition hardware delivers an associated conversion code and counter
+value to the control app. The acquisition service publishes a local sample
+record under \RequirementRef{REQ-IF-01}. The mission gateway publishes the
+derived sensor-status product under \RequirementRef{REQ-OMS-01}.
+The owner and contract for mission sample delivery remain open in
+\hyperref[Question:Q-118]{Q-118}; local publication and Mission application
+receipt are separate observation points. These are conceptual boundaries,
+not selected APIs, byte layouts, or physical deployment assignments.
+
+The hardware exchange is described in
+\hyperref[Section:ContextBoundaryInformation]{the context boundary information}.
+\ArchitectureRef{ARC-103}, \ArchitectureRef{ARC-104}, and
+\ArchitectureRef{ARC-105} record the current allocation. Code, counter,
+qualification, and published-result meanings remain distinct under
+\hyperref[Section:DataMeaning]{the data meaning and invariants}.
+
+\section{Sensor-Path Evidence and Interface Boundaries}
+\begin{tabularx}{\linewidth}{L{2.2cm}L{6.2cm}Y}
+\caption{Candidate Sensor-Path Observations\label{Table:SensorPathEvidence}}\\
+\toprule
+Need & Requirement direction & Candidate evidence\\\midrule
+\endfirsthead
+\toprule
+Need & Requirement direction & Candidate evidence\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Readiness & Read only after conversion completes. See \RequirementRef{REQ-SMP-01}. & Logic trace\\
+Input range & Identify values outside the approved range. Range and disposition are open in \hyperref[Question:Q-102]{Q-102} and \hyperref[Question:Q-113]{Q-113}. & Boundary test\\
+Scaling & Map code to units within the error allocation. Calibration and error allocation are open in \hyperref[Question:Q-102]{Q-102}. & Calibration analysis\\
+Freshness & Publish a timestamp and bound output age. See \RequirementRef{REQ-IF-01}, \RequirementRef{REQ-TIM-02}, and \RequirementRef{REQ-SMP-02}. & Timestamp test\\
+Validity & Mark missing or stale samples explicitly. Stale output is covered by \RequirementRef{REQ-SMP-02}. Missing-sample disposition is open in \hyperref[Question:Q-107]{Q-107}. & Fault injection\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{L{3.2cm}Y}
+\caption{Local Sample Record and Mission Exchange Decisions\label{Table:SampleExchangeBoundaries}}\\
+\toprule
+Contract element & Question to settle\\\midrule
+\endfirsthead
+\toprule
+Contract element & Question to settle\\\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Local record & How are code, validity, timestamp, and sequence encoded? Set the timestamp clock and units and define sequence wraparound. See \RequirementRef{REQ-IF-01}.\\
+Rate and buffering & What sample load and host queue depth must be sustained? See \hyperref[Question:Q-104]{Q-104}.\\
+Integrity and recovery & How are missing records and disconnects detected and reported? See \hyperref[Question:Q-107]{Q-107}.\\
+Mission boundary & The derived product, UCI message, CAL contract, and other program interface values are TBD in the \hyperref[Table:OMSStatusDecisions]{owned OMS interface decisions}. See \RequirementRef{REQ-OMS-01}.\\
+\end{tabularx}
+
+Candidate verification uses record inspection, load and fault tests. Inject
+ready events at the approved rate, compare timestamps with an independent
+clock, and interrupt the source to check stale-data behavior. Perform OMS
+conformance checks after approval of the program interface decision.

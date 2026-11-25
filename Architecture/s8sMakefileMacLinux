@@ -1,15 +1,16 @@
-MAIN := s8sManual
+SOURCE := s8sManual
+MAIN := s8sArchitecture
 
 .PHONY: pdf clean
 
 pdf:
-	pdflatex -interaction=nonstopmode -halt-on-error $(MAIN).tex
+	pdflatex -interaction=nonstopmode -halt-on-error -jobname=$(MAIN) $(SOURCE).tex
 	bibtex $(MAIN)
 	makeglossaries $(MAIN)
 	makeindex $(MAIN).idx
-	pdflatex -interaction=nonstopmode -halt-on-error $(MAIN).tex
-	pdflatex -interaction=nonstopmode -halt-on-error $(MAIN).tex
+	pdflatex -interaction=nonstopmode -halt-on-error -jobname=$(MAIN) $(SOURCE).tex
+	pdflatex -interaction=nonstopmode -halt-on-error -jobname=$(MAIN) $(SOURCE).tex
 
 clean:
-	latexmk -c $(MAIN).tex
+	latexmk -c -jobname=$(MAIN) $(SOURCE).tex
 	rm -f $(MAIN).acn $(MAIN).acr $(MAIN).alg $(MAIN).bbl $(MAIN).blg $(MAIN).glg $(MAIN).glo $(MAIN).gls $(MAIN).ist $(MAIN).xdy

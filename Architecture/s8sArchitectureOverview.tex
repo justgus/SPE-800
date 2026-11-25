@@ -1,10 +1,8 @@
 \chapter{Architecture Overview}
 \ChapterLabel{ArchitectureOverview}
-\section{Chapter Responsibility}
 \label{Section:ArchitectureOverviewResponsibility}
-Record the selected measurement path and the unresolved design decisions.
+This chapter records the selected measurement path and the unresolved design decisions.
 
-\noindent\textbf{Expected result:} A traced hardware and host allocation with unresolved design choices visible.
 
 \section{Software Direction}
 \ArchitectureID{ARC-101}: Retain C++ for the control app and the previously scoped embedded software (\RequirementRef{REQ-C-101}, \RequirementRef{REQ-C-102}). The host executes on macOS (\RequirementRef{REQ-C-103}). C++ is a user-selected constraint, not the outcome of a language trade study. The embedded execution allocation and toolchains remain \hyperref[Question:Q-106]{Q-106}, \hyperref[Question:Q-116]{Q-116}. A FIFO interface IC does not by itself establish an embedded processor or firmware target.

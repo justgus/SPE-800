@@ -1,10 +1,8 @@
-\chapter{Process View}
+\chapter{Runtime Behavior}
 \ChapterLabel{ProcessView}
-\section{Chapter Responsibility}
 \label{Section:ProcessViewResponsibility}
-Describe conversion, association, qualification, and publication while exposing timing/fault gaps.
+This chapter describes conversion, association, qualification, and publication while exposing timing/fault gaps.
 
-\noindent\textbf{Expected result:} A defined high-level measurement flow with capture and fault semantics left explicit.
 
 \section{Measurement Flow}
 The high-level flow is \UseCaseRef{UC-01}: conversion code and clock/counter value become available; interface logic captures and associates them, transfers the acquisition record through FT245R USB, and the macOS host receives, qualifies, and publishes the result. Figure~\ref{Figure:SensorContext} shows this direction; \ArchitectureRef{ARC-103} and \ArchitectureRef{ARC-104} define the allocation.

@@ -95,8 +95,15 @@ def export(path, destination, zone):
         f"s8sChatLog-{messages[0][0]:%Y-%m-%d}-{ident}.md",
     ))
     target = destination / filename
+    authors = re.search(
+        r"\\newcommand\{\\DocumentAuthors\}\{([^{}]+)\}",
+        (ARCHITECTURE / "s8sManual.tex").read_text(),
+    )
+    if not authors:
+        raise ValueError("Missing project DocumentAuthors metadata")
     preface = (
         f"# {title}\n\nChat ID: `{ident}`\n\n"
+        f"Project document authors: {authors[1]}.\n\n"
         "Timestamps are recorded message timestamps converted to America/New_York, "
         "with milliseconds and UTC offset. Message bodies are verbatim, including "
         "original whitespace and spelling. Includes user prompts, assistant progress "

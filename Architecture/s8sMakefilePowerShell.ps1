@@ -5,7 +5,8 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$Main = "s8sManual"
+$Source = "s8sManual"
+$Main = "s8sArchitecture"
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Path
 
 function Assert-Tool {
@@ -39,7 +40,8 @@ try {
             Invoke-Tool -Name "pdflatex" -Arguments @(
                 "-interaction=nonstopmode",
                 "-halt-on-error",
-                "$Main.tex"
+                "-jobname=$Main",
+                "$Source.tex"
             )
             Invoke-Tool -Name "bibtex" -Arguments @($Main)
             Invoke-Tool -Name "makeglossaries" -Arguments @($Main)
@@ -47,17 +49,19 @@ try {
             Invoke-Tool -Name "pdflatex" -Arguments @(
                 "-interaction=nonstopmode",
                 "-halt-on-error",
-                "$Main.tex"
+                "-jobname=$Main",
+                "$Source.tex"
             )
             Invoke-Tool -Name "pdflatex" -Arguments @(
                 "-interaction=nonstopmode",
                 "-halt-on-error",
-                "$Main.tex"
+                "-jobname=$Main",
+                "$Source.tex"
             )
         }
         "clean" {
             Assert-Tool -Name "latexmk"
-            Invoke-Tool -Name "latexmk" -Arguments @("-c", "$Main.tex")
+            Invoke-Tool -Name "latexmk" -Arguments @("-c", "-jobname=$Main", "$Source.tex")
 
             foreach ($Extension in @(
                 "acn", "acr", "alg", "bbl", "blg", "glg", "glo", "gls",

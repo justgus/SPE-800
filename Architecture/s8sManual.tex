@@ -1,4 +1,4 @@
-% Generic System and Software Architecture Design Template
+% SPE-800-Sensor integrated system requirements and architecture specification
 % Developed by Darian Muresan, Ph.D.
 % In conjunction with the AI agents OpenAI Codex and Anthropic Claude Code.
 % dmuresan@stevens.edu
@@ -46,21 +46,22 @@
 \definecolor{s8sLightBlue}{RGB}{232,240,247}
 
 % Project metadata confirmed November 9, 2026.
-% DocumentVersion retains template lineage; this is not a software release version.
+% DocumentVersion is a draft document revision, not an accepted baseline or software release.
 \newcommand{\FileNamespace}{s8s}
 \newcommand{\ProjectName}{SPE-800-Sensor}
-\newcommand{\DocumentVersion}{2.33}
+\newcommand{\DocumentVersion}{2026-11-23}
 \newcommand{\DocumentStatus}{Draft}
 \newcommand{\DocumentOwner}{Michael Stoddard}
+\newcommand{\DocumentAuthors}{Michael Stoddard and Chadwick Adebiyi}
 \newcommand{\Organization}{Stevens Institute}
-\newcommand{\DocumentDate}{November 9, 2026}
-\newcommand{\VERSION}{Version \DocumentVersion}
+\newcommand{\DocumentDate}{November 23, 2026}
+\newcommand{\VERSION}{Revision \DocumentVersion}
 
 \hypersetup{
-  pdftitle={SPE-800-Sensor - System and Software Architecture Design},
-  pdfauthor={Michael Stoddard},
+  pdftitle={SPE-800-Sensor - System Requirements and Architecture Specification},
+  pdfauthor={\DocumentAuthors},
   pdfcreator={Darian Muresan, Ph.D., with OpenAI Codex and Anthropic Claude Code},
-  pdfsubject={System and software architecture design for SPE-800-Sensor},
+  pdfsubject={Integrated draft requirements, architecture, and verification and validation planning for SPE-800-Sensor},
   pdfkeywords={software architecture, requirements, traceability, verification, validation}
 }
 
@@ -92,7 +93,9 @@
 \newcommand{\ValidationRef}[1]{\ArtifactRef{Validation}{#1}}
 
 \newcommand{\ChapterLabel}[1]{\label{Chapter:#1}}
-\newcommand{\ChapterRef}[1]{\hyperref[Chapter:#1]{Chapter~\ref*{Chapter:#1}}}
+\newcommand{\ChapterRef}[1]{\autoref{Chapter:#1}}
+\renewcommand{\chapterautorefname}{Chapter}
+\renewcommand{\appendixautorefname}{Appendix}
 \newcommand{\StatusPass}{\textbf{\footnotesize\textcolor{s8sGreen}{PASS}}}
 \newcommand{\StatusPending}{\textbf{\footnotesize\textcolor{s8sGray}{PENDING}}}
 \newcommand{\StatusFail}{\textbf{\footnotesize\textcolor{s8sRed}{FAIL}}}
@@ -157,38 +160,43 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
+% Main body: project needs, obligations, design, evaluation, and decisions.
 \include{s8sIntroduction}
-\include{s8sDevelopmentPlan}
 \include{s8sSystemContext}
 \include{s8sUserStories}
-\include{s8sRequirements}
 \include{s8sUseCases}
+\include{s8sRequirements}
 \include{s8sArchitectureOverview}
-\include{s8sUserInterfaceDesign}
 \include{s8sLogicalView}
+\include{s8sInterfaces}
+\include{s8sUserInterfaceDesign}
 \include{s8sProcessView}
-\include{s8sDevelopmentView}
 \include{s8sPhysicalView}
+\include{s8sDevelopmentView}
 \include{s8sImplementation}
-\include{s8sTests}
-\include{s8sTraceability}
-\include{s8sVerification}
-\include{s8sValidation}
+\include{s8sVerificationApproach}
+\include{s8sDevelopmentPlan}
 \include{s8sRelease}
 
+% Appendices: full procedures and registers remain in this specification.
 \appendix
-\include{s8sDocumentGuide}
-\include{s8sEmbeddedSystemsProfile}
-\include{s8sAIAgentGuide}
-\include{s8sAIImplementationWorkflow}
-\include{s8sAIPromptLog}
+\include{s8sTests}
+\include{s8sVerification}
+\include{s8sValidation}
+\include{s8sTraceability}
 \include{s8sTestEvidence}
-\include{s8sInstantiationReview}
 \include{s8sDocumentHistory}
 
+% Authoring guides, AI workflow, prompt log, and instantiation review are
+% retained as repository sources and intentionally excluded from this PDF.
+
+\clearpage
+\let\cleardoublepage\clearpage
+\lhead{}
 \setglossarystyle{altlist}
-\glsaddall
+\begingroup\small
 \printglossaries
+\endgroup
 
 \bibliographystyle{IEEEtran}
 \bibliography{s8sReferences}
