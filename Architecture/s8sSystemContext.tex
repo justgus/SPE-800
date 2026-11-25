@@ -10,7 +10,7 @@ This chapter defines the mission, system boundary, stakeholders, and external re
 \label{Section:MeasurementMission}
 The mission is to determine whether a measurement can be used. In
 Figure~\ref{Figure:SensorContext}, the system of interest includes the
-acquisition hardware and the C++ control app on macOS. The sensor, ADC0804,
+acquisition hardware and the primarily C++ control app on macOS, Windows 11, and iOS. The sensor, ADC0804,
 clock/counter, interface logic, and FT245R are external to the control app.
 The physical quantity enters the system at the sensor. The Mission application is external to the system. It receives qualified
 sensor samples and sensor status through the Open Mission Systems (OMS)
@@ -56,7 +56,7 @@ record framing, and handling of incomplete transfers and backpressure
 
 \item[FT245R to control app.]
 USB carries the associated conversion code and counter value to the control
-app. Define the macOS driver and API, reception and recovery behavior, and
+app. Define platform-specific connection access, drivers and APIs for macOS, Windows 11, and iOS, reception and recovery behavior, and
 the evidence and decision rules the control app uses to assess measurement
 usability. Establish what observations support connection and operating-health
 reporting and how the Field-Engineer receives that information
@@ -91,10 +91,10 @@ Stakeholder & Need and story\\\midrule
 \endlastfoot
 \phantomsection\label{Stakeholder:Operator}Operator & Needs to see sensor values and their validity, availability, and age so that they can decide whether to use each reading. \UserStoryRef{US-01}.\\
 \phantomsection\label{Stakeholder:Acquisition-Developer}Acquisition-Developer & Needs sensor acquisition to continue while prior samples are processed so that mission software receives a continuous stream of readings. \UserStoryRef{US-02}. Accepted diagnostic needs: \UserStoryRef{US-06}, \UserStoryRef{US-08}.\\
-\phantomsection\label{Stakeholder:Field-Engineer}Field-Engineer & Needs the sensor subsystem to run on macOS, iOS, Windows, and Linux so that they can use any available computer in the field. \UserStoryRef{US-03}. Accepted diagnostic needs: \UserStoryRef{US-05}, \UserStoryRef{US-07}.\\
+\phantomsection\label{Stakeholder:Field-Engineer}Field-Engineer & Needs the sensor subsystem to run on macOS, Windows 11, iOS, and Linux so that they can use any available computer in the field. \UserStoryRef{US-03}. Accepted diagnostic needs: \UserStoryRef{US-05}, \UserStoryRef{US-07}.\\
 \phantomsection\label{Stakeholder:Mission-Integrator}Mission-Integrator & Needs a documented interface for sensor data and status so that they can replace the sensor or the mission consumer without redesigning the connection. \UserStoryRef{US-04}. Accepted diagnostic need: \UserStoryRef{US-09}.\\
 \end{tabularx}
 \normalsize
 
 \section{Stage and Allocation Boundaries}
-This stage remains documentation only; no circuit, firmware, host implementation, or product evidence is produced. The current host architecture addresses macOS. \UserStoryRef{US-03} calls for field operation on macOS, iOS, Windows, and Linux. Platform requirements and architecture coverage for that need are pending. Both software applications retain the earlier C++ direction. The execution target and responsibility of embedded software relative to interface logic remain \hyperref[Question:Q-116]{Q-116}. Selecting ADC0804 and FT245R does not select a processor, FPGA, microcontroller, multiplexer, or host driver. The control app is the host application throughout this book; its name does not imply reverse commands or a graphical UI.
+This stage remains documentation only; no circuit, firmware, host implementation, or product evidence is produced. The control app targets macOS, Windows 11, and iOS under \RequirementRef{REQ-C-103}. \UserStoryRef{US-03} calls for field operation on macOS, Windows 11, iOS, and Linux. The selected platform matrix and connection feasibility remain open in \hyperref[Question:Q-106]{Q-106} and \hyperref[Question:Q-121]{Q-121}; Linux remains an additional stakeholder request. The control-app core remains primarily C++ under \RequirementRef{REQ-C-102}, with an iOS SwiftUI UI under \RequirementRef{REQ-C-104}. The earlier embedded C++ direction remains. The execution target and responsibility of embedded software relative to interface logic remain \hyperref[Question:Q-116]{Q-116}. Selecting ADC0804 and FT245R does not select a processor, FPGA, microcontroller, multiplexer, or host driver. The control app is the host application throughout this book; its name does not imply reverse commands. The iOS UI is selected as SwiftUI; desktop UI technologies and screen-level behavior remain open.

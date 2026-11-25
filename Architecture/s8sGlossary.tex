@@ -53,9 +53,9 @@
 }
 
 \newglossaryentry{embeddedapplication}{name={embedded software application},description={The earlier scoped C++ acquisition software; execution target and allocation relative to interface logic remain open}}
-\newglossaryentry{controlapp}{name={control app},description={The C++ macOS host application that receives associated conversion and counter data, qualifies measurements, and publishes results}}
+\newglossaryentry{controlapp}{name={control app},description={The host application targeting macOS, Windows 11, and iOS, with a primarily C++ processing core and an iOS SwiftUI UI; it receives associated conversion and counter data, qualifies measurements, and publishes results}}
 \newglossaryentry{sample}{name={sensor sample},description={The measured data acquired through the ADC0804 path; physical units, timing, and qualification remain to be defined}}
-\newglossaryentry{platformmatrix}{name={host platform matrix},description={The approved combinations of OS family, version, CPU architecture, and toolchain; coverage is not yet selected}}
+\newglossaryentry{platformmatrix}{name={host platform matrix},description={The approved combinations of OS family, version, CPU architecture, and toolchain; the selected OS families are macOS, Windows 11, and iOS; detailed version and device coverage remain open}}
 
 \newglossaryentry{conversioncode}{name={conversion code},description={The 8-bit digital conversion output of the sensor-coupled ADC0804; analog scaling remains open}}
 \newglossaryentry{countervalue}{name={counter value},description={The value supplied by the clock/counter alongside the conversion code; width, event association, rollover, and time meaning remain open}}
@@ -72,3 +72,5 @@
   name={playback},
   description={Delivery of recorded inputs through a defined processing boundary using explicit ordering, clock, state and output-routing rules; also called replay in user stories}
 }
+
+\newglossaryentry{swiftui}{name={SwiftUI},description={The selected framework for the iOS control-app user interface; the processing core remains C++}}

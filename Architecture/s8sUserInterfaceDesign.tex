@@ -1,10 +1,10 @@
 \chapter{Stakeholder Interaction}
 \ChapterLabel{UserInterfaceDesign}
 \label{Section:UserInterfaceDesignResponsibility}
-This chapter records Operator and Field-Engineer interaction needs without choosing a screen or command interface.
+This chapter records Operator and Field-Engineer interaction needs including the selected iOS SwiftUI UI and unresolved screen and command behavior.
 
 
 \section{Stakeholder Interaction Needs}
 The \hyperref[Stakeholder:Operator]{Operator} needs the decision about measurement usability (\UserStoryRef{US-01}). The \hyperref[Stakeholder:Field-Engineer]{Field-Engineer} needs connection and operating-health information (\UserStoryRef{US-03}). The \hyperref[Stakeholder:Mission-Integrator]{Mission-Integrator} needs the semantics and format of the downstream result (\UserStoryRef{US-04}); that integration boundary is not necessarily a human UI.
 
-Qualification and result publication are supported by \RequirementRef{REQ-F-106} and \RequirementRef{REQ-F-107}. Connection and operating-health information are supported by \RequirementRef{REQ-F-108} and \RequirementRef{REQ-F-109}. No GUI, command-line syntax, polling cadence, indicator colors, status enumeration, or control channel is selected. Human presentation/access and stale/unknown/error behavior remain \hyperref[Question:Q-105]{Q-105}, \hyperref[Question:Q-113]{Q-113}, \hyperref[Question:Q-114]{Q-114}, \hyperref[Question:Q-115]{Q-115}. Future wireframes and accessibility criteria depend on those choices.
+Qualification and result publication are supported by \RequirementRef{REQ-F-106} and \RequirementRef{REQ-F-107}. Connection and operating-health information are supported by \RequirementRef{REQ-F-108} and \RequirementRef{REQ-F-109}. The iOS control-app UI uses \gls{swiftui} under \RequirementRef{REQ-C-104}; the processing core remains C++ under \RequirementRef{REQ-C-102}. Desktop UI technologies, screen layouts, command-line syntax, polling cadence, indicator colors, status enumeration and any reverse control channel remain unselected. The UI/core interface must preserve measurement and status meanings; its data ownership, concurrency and lifecycle behavior remain \hyperref[Question:Q-106]{Q-106}. Human presentation/access and stale/unknown/error behavior remain \hyperref[Question:Q-105]{Q-105}, \hyperref[Question:Q-113]{Q-113}, \hyperref[Question:Q-114]{Q-114}, \hyperref[Question:Q-115]{Q-115}. Future wireframes and accessibility criteria depend on those choices.

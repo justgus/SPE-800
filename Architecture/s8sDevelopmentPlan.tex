@@ -14,7 +14,7 @@ decision coordination, and acceptance authority are recorded separately in
 \hyperref[Table:ProjectOwners]{the owner register}.
 
 \section{Confirmed Governance}
-The user reconfirmed these assignments for SPE-800-Sensor on November 9, 2026. These roles remain in effect until changed by the project owner. Recording these assignments does not claim that technical acceptance has occurred.
+The user reconfirmed the original assignments for SPE-800-Sensor on November 9, 2026 and added Chadwick Adebiyi as a document and technical content co-owner on November 25, 2026. These roles remain in effect until changed by the project owner. Recording these assignments does not claim that technical acceptance has occurred.
 \small
 \begin{tabularx}{\linewidth}{L{4.0cm}Y}
 \caption{Project Owners\label{Table:ProjectOwners}}\\
@@ -26,9 +26,9 @@ Role & Assigned owner\\\midrule
 \endhead
 \bottomrule
 \endlastfoot
-Document owner & Michael Stoddard\\
+Document owners & \DocumentOwner\\
 Organization & Stevens Institute\\
-Technical owner & Michael Stoddard\\
+Technical content owners & \DocumentOwner\\
 Verification/validation owner & Michael Stoddard\\
 Acceptance authority & Dr. Darian Muresan\\
 \end{tabularx}
@@ -75,8 +75,8 @@ ID & Owner & Question and impact\\\midrule
 \phantomsection\label{Question:Q-102}Q-102 & Michael Stoddard & Confirmed: ADC0804 produces an 8-bit conversion code; FT245R supplies the USB-to-parallel path. Select sensor/physical quantity, signal range and units, ADC reference and conversion clock/handshake, calibration, exact device/board revisions, and electrical compatibility. Blocks the schematic and analog acceptance limits.\\
 \phantomsection\label{Question:Q-103}Q-103 & Michael Stoddard & Confirmed: two logical parallel inputs feed the interface logic and FT245R USB data path. Define bus ownership, strobes/handshake, transfer order, framing, record boundaries, error detection, loss and backpressure behavior. Blocks a realizable transfer contract; see \hyperref[Question:Q-112]{Q-112}.\\
 \phantomsection\label{Question:Q-104}Q-104 & Michael Stoddard & Set sampling rate, capture skew, end-to-end latency, jitter, queue/resource budgets, power limits, and operating conditions with units and tolerances. Hardware selection alone does not supply project performance limits.\\
-\phantomsection\label{Question:Q-105}Q-105 & Michael Stoddard & Confirmed: the host qualifies measurements and publishes code, status, and timing. Define the human interaction form, Operator decision presentation, Field-Engineer access, and whether configuration, storage, or reverse commands are needed. No GUI or command channel is selected.\\
-\phantomsection\label{Question:Q-106}Q-106 & Michael Stoddard & Confirmed: the current host is macOS; Windows/Linux are outside this revision. Select macOS versions, CPU architectures, C++ standard, compilers, libraries, FT245R driver/API, permissions, packaging, and build tools. Blocks reproducible host builds.\\
+\phantomsection\label{Question:Q-105}Q-105 & Michael Stoddard & Confirmed: the host qualifies measurements and publishes code, status, and timing. Define the human interaction form, Operator decision presentation, Field-Engineer access, and whether configuration, storage, or reverse commands are needed. The iOS control-app UI uses SwiftUI; desktop interaction forms and any reverse command channel remain open.\\
+\phantomsection\label{Question:Q-106}Q-106 & Michael Stoddard & Confirmed November 25, 2026: the control app targets macOS, Windows 11, and iOS, with a primarily C++ core and an iOS SwiftUI UI. Define supported OS versions, CPU architectures, C++ and Swift toolchains/SDKs, libraries, platform adapters, permissions, packaging and build tools. Establish the iOS connection/access path to the FT245R acquisition chain and the SwiftUI-to-C++ boundary, including data ownership, concurrency, lifecycle and error handling. Direct device access on iOS is not established by selecting the platform. Blocks reproducible host builds and connection feasibility.\\
 \phantomsection\label{Question:Q-107}Q-107 & Michael Stoddard & Define startup, shutdown, reset, disconnect, malformed/partial records, invalid data, overflow, stalled operation, degraded behavior, safe states, recovery, and security/privacy boundaries. Fault detection and handling are not implied by the named devices.\\
 \phantomsection\label{Question:Q-108}Q-108 & Michael Stoddard & Select reference analog inputs and conversion/counter vectors, fault fixtures, expected qualification/publication results, evidence retention, and representatives of all four stakeholders. Define executable procedures after the interface and decision contracts are accepted.\\
 \phantomsection\label{Question:Q-109}Q-109 & Michael Stoddard & Assess manufacturing/provisioning, field updates, maintenance, environment, standards, and component lifecycle for the selected devices; propose coverage or non-applicability dispositions for acceptance-authority approval.\\
@@ -155,14 +155,7 @@ reference stream for \ValidationRef{VAL-117}. Keep the 10 ms local
 publication allocation distinct from mission delivery limits.
 
 \paragraph{Q-121. Field platform coverage.}\label{Question:Q-121}
-Which part of the subsystem must execute on macOS, iOS, Windows, and Linux?
-Which operating-system versions, processor architectures, connection
-methods, permissions, and drivers qualify on each? Which platforms are
-required in the next baseline and which will be delivered later? Identify
-the representative field devices and the connection and reading-receipt
-success criteria for each platform. Reconcile the result with
-\hyperref[Question:Q-106]{Q-106} and the macOS-only
-\RequirementRef{REQ-C-103}.
+The user selected macOS, Windows 11, and iOS for the control app on November 25, 2026 under \RequirementRef{REQ-C-103}. Linux remains an additional stakeholder request in \UserStoryRef{US-03}, with no selected delivery commitment. Define supported OS versions, processor architectures, connection methods, permissions and drivers on each selected platform. Identify representative devices and connection/reading-receipt success criteria. For iOS, define the SwiftUI-to-C++ integration and assess the hardware-access path under \hyperref[Question:Q-106]{Q-106}; neither a desktop USB driver nor successful desktop execution proves iOS feasibility. Identify delivery sequencing without dropping any selected platform. The iOS UI constraint is \RequirementRef{REQ-C-104}.
 
 \paragraph{Q-122. Readiness, validity, and stale state.}\label{Question:Q-122}
 What edge or level constitutes one ready event, and how are multiple or
@@ -227,6 +220,6 @@ Agree how playback is identified at presentation and sample/status output bounda
 Approve sustained recording rate in records/s, burst rate and duration, minimum run duration in seconds or hours, storage allocation, recorder loss count/fraction and observation interval, allowed added live latency in milliseconds, allowed delivery-rate/gap degradation, and per-control response limits in milliseconds or seconds. Identify fixture sizes, concurrent loads, storage conditions, repeat counts, calibrated clocks and uncertainty/verdict rules. Agree the representative fault, stakeholder tasks and success criteria for the four use-case validations. These TBDs block quantitative verdicts; no numerical value is inferred from existing live-path timing allocations.
 
 \section{Risks and Lifecycle Gates}
-Unresolved capture coherence may pair a conversion with the wrong counter value. Undefined qualification or publication semantics may produce an unusable decision or a misinterpreted result. Source connection may be confused with source health. ADC0804 and FT245R are selected, but remaining electrical, timing, allocation, and macOS-version decisions still block detailed design and conformance claims. Owners and affected decisions are identified in \hyperref[Table:OwnedQuestions]{the question register}. No probabilities, severity ratings, schedules, or mitigations have been approved.
+Unresolved capture coherence may pair a conversion with the wrong counter value. Undefined qualification or publication semantics may produce an unusable decision or a misinterpreted result. Source connection may be confused with source health. ADC0804 and FT245R are selected, but remaining electrical, timing, allocation, platform-version and iOS integration decisions still block detailed design and conformance claims. Owners and affected decisions are identified in \hyperref[Table:OwnedQuestions]{the question register}. No probabilities, severity ratings, schedules, or mitigations have been approved.
 
 The documentation gate requires supported metadata, explicit gaps, consistent traceability, a complete build, visual inspection, and human review. Later needs, requirements, architecture, implementation, verification, validation, and software-release gates require their own evidence and authorized dispositions. Milestones remain \hyperref[Question:Q-110]{Q-110}.
