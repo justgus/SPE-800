@@ -1,0 +1,23 @@
+\begin{tikzpicture}[>=Latex,font=\small,
+ activity/.style={draw,rounded corners,align=center,text width=4.5cm,minimum height=0.85cm},
+ choice/.style={draw,diamond,aspect=2.3,align=center,inner sep=2pt,text width=2.2cm}]
+\node[activity] (start) at (0,0) {Field-Engineer requests recording};
+\node[activity] (context) at (0,-1.5) {Create recording identity and retain capture context};
+\node[activity] (capture) at (0,-3.2) {Persist observed samples, results and diagnostic events};
+\node[choice] (fault) at (0,-5.6) {Recording failure?};
+\node[choice] (stop) at (0,-8.2) {Stop requested?};
+\node[activity] (final) at (0,-10.8) {Apply stop-and-flush policy; finalize readable recording};
+\node[activity] (failed) at (6,-5.6) {Report failure and incomplete-content disposition};
+\node[activity] (done) at (0,-12.6) {Report completed recording};
+\draw[->] (start) -- (context);
+\draw[->] (context) -- (capture);
+\draw[->] (capture) -- (fault);
+\draw[->] (fault) -- node[right]{No} (stop);
+\draw[->] (fault.east) -- node[above]{Yes} (failed.west);
+\draw[->] (stop) -- node[right]{Yes} (final);
+\draw[->] (final) -- (done);
+\draw[->] (stop.west) -- (-3.8,-8.2) -- node[left,align=right]{No:\\continue} (-3.8,-3.2) -- (capture.west);
+\node[align=left,text width=4.4cm] at (6,-9.7) {Known gaps are retained under the recording policy. A finalization failure follows the failure path, not completion.};
+\draw[->] (final.east) -- (3,-10.8) -- (3,-7.1) -- (6,-7.1) -- (failed.south);
+\node[fill=white,inner sep=2pt] at (4.5,-7.1) {Finalize failed};
+\end{tikzpicture}

@@ -51,3 +51,34 @@ the shared \texttt{DocumentAuthors} metadata supplies publication and
 transcript-header credits. Repository authoring guidance applies the same
 credit to future project documents while retaining verbatim historical
 message bodies and original external-source attribution.
+
+\section{Recording and Playback Stories (November 23, 2026)}
+\label{Section:RecordingPlaybackPrompt}
+The user asked which stakeholder stories could support recording sensor data
+and playback for debugging. After reviewing the proposed stories, the user
+accepted stories 5, 6, 7, 8, and 11 and requested their addition to the User
+Stories chapter. AI skill \hyperref[Skill:AIS-05]{\texttt{AIS-05}} added
+\UserStoryRef{US-05}, \UserStoryRef{US-06}, \UserStoryRef{US-07},
+\UserStoryRef{US-08}, and \UserStoryRef{US-09} with their acceptance intent.
+One agent performed the edit and self-review. No stories for result comparison
+or recording export were added. No derived requirement approval, product
+verification, stakeholder validation result, or release authorization is inferred.
+The conversation's working directory is outside the source repository;
+automatic transcript discovery does not capture this chat without an explicit
+source export under \hyperref[Rule:AIChatLogging]{the transcript rule}.
+
+The user subsequently requested consecutive story numbering and suggestions
+for use cases and diagrams. The replay-output story originally proposed as
+US-11 is now \UserStoryRef{US-09}; linked references were updated.
+Use-case and diagram suggestions remain proposals pending selection.
+
+\section{Recording and Playback Engineering Package (November 23, 2026)}
+\label{Section:DiagnosticPackagePrompt}
+The user requested requirements derived from the proposed use cases, requirement verifications and use-case validations, then authorized proceeding. One aiaCoordinator/aiaDeveloper performed the connected edits and self-review using \hyperref[Skill:AIS-01]{\texttt{AIS-01}}, \hyperref[Skill:AIS-05]{\texttt{AIS-05}}, \hyperref[Skill:AIS-06]{\texttt{AIS-06}}, \hyperref[Skill:AIS-07]{\texttt{AIS-07}}, \hyperref[Skill:AIS-08]{\texttt{AIS-08}}, \hyperref[Skill:AIS-09]{\texttt{AIS-09}}, \hyperref[Skill:AIS-11]{\texttt{AIS-11}}, \hyperref[Skill:AIS-13]{\texttt{AIS-13}} and \hyperref[Skill:AIS-14]{\texttt{AIS-14}}. No delegated or independent review is claimed. The plan was a sequential 15--25 minute authoring/checking effort: scenarios and diagrams approximately 5--10 minutes, 3,000--5,000 tokens; requirements and reciprocal plans 5--10 minutes, 4,000--7,000 tokens; compilation and self-review 5 minutes, 2,000--4,000 tokens, with uncertainty from layout and compiler diagnostics. Shared registers made delegation overhead unjustified. Quantitative limits, recording/compatibility policies, replay time/state and routing remain owned questions; all new requirements are Proposed and all execution dispositions Pending. Human technical review and stakeholder execution remain future work.
+
+\section{Playback Review Corrections (November 25, 2026)}
+\label{Section:PlaybackReviewCorrectionsPrompt}
+The user requested review of PR 6, then authorized merging the changes into origin/main and updating the Architecture Specification. The review identified missing initialization on playback start/restart and ambiguous speed scaling. One aiaCoordinator/aiaDeveloper applied \hyperref[Skill:AIS-06]{\texttt{AIS-06}}, \hyperref[Skill:AIS-07]{\texttt{AIS-07}}, \hyperref[Skill:AIS-08]{\texttt{AIS-08}}, \hyperref[Skill:AIS-09]{\texttt{AIS-09}}, \hyperref[Skill:AIS-13]{\texttt{AIS-13}} and \hyperref[Skill:AIS-14]{\texttt{AIS-14}} sequentially, with self-review. No independent review, product execution, stakeholder acceptance or requirement-baseline approval is claimed. Initialization mechanisms and engineering policies remain owned decisions. The local transcript is refreshed under \hyperref[Rule:AIChatLogging]{the transcript rule}.
+
+\section{Ordered Main Integration (November 25, 2026)}
+The user clarified the workflow test: merge the Architecture Specification work first, then the updated user stories. The first merge reached origin/main as \texttt{e593772}. The user-story integration preserves the reader-publication structure, repository-only guidance, co-author metadata and generated \path|s8sArchitecture.pdf|. Conflicting history, prompt, evidence and scope text were reconciled without dropping either change. The superseded \path|s8sManual.pdf| remains removed. GitHub connector and CLI API merge attempts returned service errors before either merge; ordinary Git merges and pushes preserve the requested sequence.

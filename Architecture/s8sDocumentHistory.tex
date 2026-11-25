@@ -11,32 +11,33 @@ starting point for project facts, open questions, and stable trace links.
 
 Template lineage is archived in \path|s8sTemplateHistory.tex|.
 
-\paragraph{November 9, 2026}
-The user confirmed SPE-800-Sensor, namespace \texttt{s8s}, the documentation
-scope and system boundary, stakeholders, owners, and the Embedded Systems
-profile. AIS-02 established this standalone review candidate in
-\path|Architecture/|. See \ChapterRef{DevelopmentPlan}; the initialization interaction and review are retained in \href{s8sAIPromptLog.tex}{the prompt-log source} and \href{s8sInstantiationReview.tex}{the instantiation-review source}.
+\paragraph{November 25, 2026: Ordered Integration}
+At the user's request, the Architecture Specification publication was merged into origin/main first (\texttt{e593772}); the recording and playback stories and review corrections were then reconciled with that publication. The authoritative root remains \path|s8sManual.tex| and the reader output remains \path|s8sArchitecture.pdf|. Preserved the complete \ChapterRef{UserStories}, \ChapterRef{Requirements} and evidence registers, repository-only authoring guidance, shared co-author metadata and reciprocal trace links. Document checks are recorded in \href{s8sInstantiationReview.tex}{the review source}; product execution and stakeholder validation remain Pending.
 
-\paragraph{November 18, 2026}
-Added user-supplied candidate acquisition behavior, timing, local sample
-record, and OMS status exchange requirements. See
-\hyperref[Table:ProjectRequirements]{the candidate register},
-\hyperref[Table:SampleExchangeBoundaries]{the interface decisions}, and
-\ChapterRef{Verification} for planned evidence.
-Kept \RequirementRef{REQ-OMS-01} proposed and recorded owners and target
-dates for the \hyperref[Table:OMSStatusDecisions]{TBD interface decisions}.
+\paragraph{November 25, 2026: Playback Review Corrections}
+Added \RequirementRef{REQ-F-127}, \TestCaseRef{TC-149} and \VerificationRef{VER-149} for recording-specific initialization on every playback start/restart, with reciprocal links through \UserStoryRef{US-06}, \UseCaseRef{UC-05} and \ValidationRef{VAL-123}. Clarified speed-scaled intervals in \RequirementRef{REQ-Q-101}, matching \TestCaseRef{TC-132}. Expanded \hyperref[Section:RecordingPlaybackDecisions]{the owned decisions} for capture-start state, compatibility and initialization alternatives. All new obligations remain Proposed and product evidence Pending. See \href{s8sAIPromptLog.tex}{the interaction record source}.
 
-The technical review follow-up added \RequirementRef{REQ-F-110}, expanded
-candidate evidence, and linked each quality scenario to evidence or an open
-decision. See \hyperref[Section:ReviewDecisions]{the review decision agenda}.
+\paragraph{November 23, 2026: Recording and Playback Engineering Package}
+Added \UseCaseRef{UC-03} through \UseCaseRef{UC-06} and their four scenario diagrams in \ChapterRef{UseCases}. Added 28 \hyperref[Table:RecordingPlaybackRequirements]{Proposed requirements}, individual \hyperref[Table:RecordingPlaybackTests]{planned tests} and \hyperref[Table:RecordingPlaybackVerification]{verification plans}, and four \hyperref[Table:RecordingPlaybackValidation]{use-case validation plans}. Updated reciprocal story and trace links, \ArchitectureRef{ARC-106}, the \ChapterRef{ProcessView} cross-reference, glossary and \hyperref[Section:RecordingPlaybackDecisions]{owned decisions}. Generalized the source checker to validate grouped use-case validations while retaining requirement-level verification checks. No product execution or baseline approval is claimed. See \href{s8sAIPromptLog.tex}{the interaction record source}.
 
-\paragraph{November 19, 2026}
-The user requested routine verbatim conversation exports to
-\path|docs/chats/| under Architecture, with timestamps on prompts and responses.
-Added \href{s8sAIAgentGuide.tex}{the repository conversation transcript rule}, a local
-exporter, and a thin Architecture discovery pointer. The rule states the
-capture boundary for an active final response; no background service or
-publication authorization is implied. See \href{s8sAIPromptLog.tex}{the retained prompt-log source}.
+\paragraph{November 23, 2026: Consecutive Story Numbering}
+At the user's request, renumbered the replay-output story from its original
+proposal ID US-11 to \UserStoryRef{US-09} in
+\hyperref[Table:UserStories]{the story register} and updated references in
+\hyperref[Table:StakeholderNeeds]{the stakeholder register},
+\hyperref[Section:RecordingPlaybackTraceGaps]{traceability}, and
+\href{s8sAIPromptLog.tex}{the interaction record source}.
+
+\paragraph{November 23, 2026}
+Added the user-accepted recording and playback stories
+\UserStoryRef{US-05}, \UserStoryRef{US-06}, \UserStoryRef{US-07},
+\UserStoryRef{US-08}, and \UserStoryRef{US-09} to
+\hyperref[Table:UserStories]{the User Story Register}, preserving the accepted story content
+and acceptance intent. Updated \hyperref[Table:StakeholderNeeds]{stakeholder links}
+and recorded \hyperref[Section:RecordingPlaybackTraceGaps]{pending trace mappings}.
+Priorities and engineering details remain unresolved; this change records
+accepted needs without claiming implementation or test evidence. See
+\href{s8sAIPromptLog.tex}{the interaction record source}.
 
 \paragraph{November 23, 2026}
 The user requested an integrated System Requirements and Architecture
@@ -58,3 +59,31 @@ Stoddard for all project documents. Shared authorship metadata now supplies
 the publication byline, PDF author field, and generated transcript headers.
 See \hyperref[Section:ProjectAuthorship]{Project Authorship}. The recorded
 ownership and acceptance roles are unchanged.
+
+\paragraph{November 19, 2026}
+The user requested routine verbatim conversation exports to
+\path|docs/chats/| under Architecture, with timestamps on prompts and responses.
+Added \href{s8sAIAgentGuide.tex}{the repository conversation transcript rule}, a local
+exporter, and a thin Architecture discovery pointer. The rule states the
+capture boundary for an active final response; no background service or
+publication authorization is implied. See \href{s8sAIPromptLog.tex}{the retained prompt-log source}.
+
+\paragraph{November 18, 2026}
+Added user-supplied candidate acquisition behavior, timing, local sample
+record, and OMS status exchange requirements. See
+\hyperref[Table:ProjectRequirements]{the candidate register},
+\hyperref[Table:SampleExchangeBoundaries]{the interface decisions}, and
+\ChapterRef{Verification} for planned evidence.
+Kept \RequirementRef{REQ-OMS-01} proposed and recorded owners and target
+dates for the \hyperref[Table:OMSStatusDecisions]{TBD interface decisions}.
+
+The technical review follow-up added \RequirementRef{REQ-F-110}, expanded
+candidate evidence, and linked each quality scenario to evidence or an open
+decision. See \hyperref[Section:ReviewDecisions]{the review decision agenda}.
+
+\paragraph{November 9, 2026}
+The user confirmed SPE-800-Sensor, namespace \texttt{s8s}, the documentation
+scope and system boundary, stakeholders, owners, and the Embedded Systems
+profile. AIS-02 established this standalone review candidate in
+\path|Architecture/|. See \ChapterRef{DevelopmentPlan}; the initialization interaction and review are retained in \href{s8sAIPromptLog.tex}{the prompt-log source} and \href{s8sInstantiationReview.tex}{the instantiation-review source}.
+
