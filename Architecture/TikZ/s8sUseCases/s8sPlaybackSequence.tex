@@ -1,0 +1,19 @@
+\begin{tikzpicture}[>=Latex,font=\small,
+ lane/.style={draw,align=center,text width=2.7cm,minimum height=1.1cm}]
+\node[lane] (user) at (0,0) {Acquisition-Developer};
+\node[lane] (session) at (4,0) {Subsystem:\\recording access};
+\node[lane] (process) at (8,0) {Subsystem:\\playback processing};
+\node[lane] (consumer) at (12,0) {Selected output consumer};
+\foreach \x in {0,4,8,12} {\draw[dashed] (\x,-0.7) -- (\x,-13.3);}
+\draw[->] (0,-1.8) -- node[above]{Select recording} (4,-1.8);
+\draw[->] (4,-3.2) -- node[above]{Context and compatibility} (0,-3.2);
+\node[draw,dashed,align=center,fill=white,text width=10cm] at (6,-4.8)
+ {Precondition: compatible recording and permitted endpoint selected};
+\draw[->] (0,-6.4) -- node[above,pos=0.35]{Start playback; initialize state} (8,-6.4);
+\draw[->] (4,-7.8) -- node[above]{Recorded events} (8,-7.8);
+\node[align=center,text width=3.6cm,fill=white] at (8,-9.3) {Process in defined order and replay time};
+\draw[->] (8,-11.2) -- node[above]{Identified replay outputs} (12,-11.2);
+\draw[->] (8,-12.8) -- node[above,pos=0.6]{Position and completion/failure state} (0,-12.8);
+\node[align=center,text width=11cm] at (6,-14.6)
+ {Event delivery repeats to end of recording or failure. Sensor hardware is not required. Failure and routing alternatives are defined in the use-case table.};
+\end{tikzpicture}

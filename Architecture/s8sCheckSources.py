@@ -99,10 +99,14 @@ for rid,row in requirements.items():
     assert len(validation_rows) == 1, (rid, 'expected one validation entry')
     vid, validation_row = validation_rows[0]
     assert references(tr, 'Validation') == {vid}, (rid, 'validation link mismatch')
-    assert references(validation_row, 'Requirement') == {rid}, (rid, 'validation requirement mismatch')
-    assert references(validation_row, 'UserStory') == us, (rid, 'validation story mismatch')
-    assert references(validation_row, 'UseCase') == uc, (rid, 'validation use case mismatch')
-    assert references(validation_row, 'TestCase') == tc, (rid, 'validation test mismatch')
+    covered = references(validation_row, 'Requirement')
+    assert covered and covered <= requirements.keys(), (vid, 'unknown validation requirement')
+    expected_stories = set().union(*(references(requirements[x], 'UserStory') for x in covered))
+    expected_cases = set().union(*(references(requirements[x], 'UseCase') for x in covered))
+    expected_tests = set().union(*(references(requirements[x], 'TestCase') for x in covered))
+    assert references(validation_row, 'UserStory') == expected_stories, (vid, 'validation story coverage mismatch')
+    assert references(validation_row, 'UseCase') == expected_cases, (vid, 'validation use case coverage mismatch')
+    assert references(validation_row, 'TestCase') == expected_tests, (vid, 'validation test coverage mismatch')
 for tid,trow in tests.items():
     assert references(trow,'Requirement'),(tid,'orphan test')
     for rid in references(trow,'Requirement'):
@@ -112,6 +116,22 @@ for filename in ['s8sVerification.tex','s8sValidation.tex','s8sTestEvidence.tex'
     if filename=='s8sRequirements.tex': text=text.split(r'\section{Project Candidate Requirements}')[1]
     assert r'\StatusPass' not in text,filename
     assert not re.search(r'\\ReqStatusDone\s*&',text),filename
+
+# Check reverse story/case mappings and every validation, including grouped scenarios.
+for sid, srow in stories.items():
+    for rid in references(srow, 'Requirement'):
+        assert sid in references(requirements[rid], 'UserStory'), (sid, rid, 'reverse story gap')
+for cid, block in case_blocks.items():
+    for rid in references(block, 'Requirement'):
+        assert cid in references(requirements[rid], 'UseCase'), (cid, rid, 'reverse use case gap')
+for vid, vrow in validation.items():
+    assert references(vrow, 'Requirement') and references(vrow, 'UseCase'), (vid, 'orphan validation')
+    for rid in references(vrow, 'Requirement'):
+        assert rid in requirements, (vid, rid, 'unknown requirement')
+    if len(references(vrow, 'Requirement')) > 1:
+        for cid in references(vrow, 'UseCase'):
+            assert vid in references(case_blocks[cid], 'Validation'), (vid, cid, 'reverse validation gap')
+
 # Bibliography keys for every active citation.
 bib=(b/'s8sReferences.bib').read_text(); keys=set(re.findall(r'@\w+\s*\{\s*([^,]+)',bib))
 for cite in re.findall(r'\\cite\{([^}]+)\}',joined):
